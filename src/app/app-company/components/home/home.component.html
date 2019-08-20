@@ -1,3 +1,9 @@
-<div class="pages" fxLayout="column">
-    <company-steps></company-steps>
+<div class="full-width" fxLayout="column">
+    <div class="page-header">
+        <span class="page-title accent-color">{{userType=='CLIENT'?'Company registration':'Service partner
+            registration'}}</span>
+    </div>
+    <div class="page-container">
+        <company-steps></company-steps>
+    </div>
 </div>
