@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </section>
-            <section fxLayout="column" style="margin-top: 20px;">
+            <section fxLayout="column" style="margin-top: 20px;" *ngIf="userType=='CLIENT'">
                 <span class="title-step accent-color">Vendor Selection Criteria</span>
                 <div fxLayout="row" fxLayoutGap="10px">
                     <mat-form-field appearance="outline" class="full-width">
@@ -71,6 +71,33 @@
                         <input matInput placeholder="criteria 1">
                     </mat-form-field>
                 </div>
+            </section>
+            <section fxLayout="column" style="margin-top: 20px;" *ngIf="userType=='VENDOR'">
+                <span class="title-step accent-color">Project Logistic</span>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project management</mat-label>
+                        <input matInput placeholder="text">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project start date</mat-label>
+                        <input matInput placeholder="text">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Duration</mat-label>
+                        <input matInput placeholder="text">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Budget</mat-label>
+                        <input matInput placeholder="text">
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Project Location</mat-label>
+                    <input matInput placeholder="text">
+                </mat-form-field>
             </section>
             <section fxLayout="column" style="margin-top: 20px;">
                 <span class="title-step accent-color">Project Team</span>

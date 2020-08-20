@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="page-container" fxLayout="row" fxLayoutGap="15px">
-        <mat-nav-list fxFlex="15">
+        <mat-nav-list fxFlex="15" *ngIf="userType=='CLIENT'">
             <mat-list-item *ngFor="let vendor of vendorList">
                 {{vendor}}
             </mat-list-item>
@@ -14,7 +14,7 @@
                 Compare
             </mat-list-item>
         </mat-nav-list>
-        <mat-card fxFlex="85" fxLayout="column">
+        <mat-card [fxFlex]="userType=='CLIENT'?85:100" fxLayout="column">
             <div fxLayout="column">
                 <span>Project Manager</span>
                 <mat-form-field appearance="outline">
@@ -109,9 +109,19 @@
                         placeholder="terms"></textarea>
                 </mat-form-field>
             </div>
-            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
-                <button mat-raised-button class="gray-background">Rework</button>
-                <button mat-raised-button color="primary" (click)="acceptProposal()">Accept Proposal</button>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <mat-checkbox [(ngModel)]="checked" *ngIf="userType=='VENDOR'">Accept the terms and condition
+                </mat-checkbox>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end" class="full-width">
+                    <button mat-raised-button class="gray-background" *ngIf="userType=='CLIENT'">Rework</button>
+                    <button mat-raised-button class="gray-background" *ngIf="userType=='VENDOR'">Save</button>
+                    <button mat-raised-button color="primary" (click)="acceptProposal()"
+                        *ngIf="userType=='CLIENT'">Submit
+                        Proposal</button>
+                    <button mat-raised-button color="primary" (click)="submitProposal()"
+                        *ngIf="userType=='VENDOR'">Submit
+                        Proposal</button>
+                </div>
             </div>
         </mat-card>
     </div>

@@ -10,7 +10,10 @@ import { SolutionService } from '../../services/solution.service';
 })
 export class ProjectDetailsComponent implements OnInit {
   chips: ChipModel[];
-  constructor (private solutionService: SolutionService) { }
+  userType: string;
+  constructor (private solutionService: SolutionService) {
+    this.userType = localStorage.getItem("userType");
+  }
 
   ngOnInit(): void {
     this.chips = this.solutionService.filterListByUserType<ChipModel>(ChipData);

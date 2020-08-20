@@ -77,13 +77,19 @@
             </section>
             <div fxLayout="row" fxLayoutAlign="space-between center" style="padding-top: 25px;">
                 <div fxLayout="row" fxLayoutGap="10px">
-                    <button mat-raised-button class="gray-background">Send back for rework</button>
+                    <button mat-raised-button class="gray-background" *ngIf="userType=='CLIENT'">Send back for
+                        rework</button>
+                    <button mat-raised-button class="gray-background" *ngIf="userType=='VENDOR'">
+                        <mat-icon>description</mat-icon>
+                        <span>Upload custom agreement</span>
+                    </button>
                     <button mat-raised-button color="accent">
                         <mat-icon>cloud_download</mat-icon>
                         <span style="margin-left: 10px;">Download</span>
                     </button>
                 </div>
-                <button mat-raised-button color="primary">Accept</button>
+                <button mat-raised-button color="primary" *ngIf="userType=='CLIENT'">Accept</button>
+                <button mat-raised-button color="primary" *ngIf="userType=='VENDOR'">Send to company</button>
             </div>
         </mat-card>
     </div>

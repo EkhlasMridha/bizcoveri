@@ -20,6 +20,7 @@ import { AgreementComponent } from './components/agreement/agreement.component';
 import { RootlineDialogModule } from '@rootline-dialog';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { RatingBarModule } from '@modules/rating-bar/rating-bar.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const projectChild: Routes = [
   {
@@ -109,6 +110,7 @@ const routes: Routes = [
     BizCardModule,
     MatListModule,
     RatingBarModule,
+    MatCheckboxModule,
     RootlineDialogModule.forChild({
       modalWidth: "500px"
     })

@@ -12,7 +12,11 @@ import { SolutionService } from '../../services/solution.service';
 export class ProposalsComponent implements OnInit {
   chips: ChipModel[];
   vendorList: string[] = ["Vendor 1", "Vendor 2"];
-  constructor (private rootlineDialog: RootlineDialogService, private solutionService: SolutionService) { }
+  userType: string;
+  checked: boolean = false;
+  constructor (private rootlineDialog: RootlineDialogService, private solutionService: SolutionService) {
+    this.userType = localStorage.getItem("userType");
+  }
 
   ngOnInit(): void {
     this.primaryButton.bind(this);
@@ -33,5 +37,17 @@ export class ProposalsComponent implements OnInit {
 
   primaryButton(event) {
     console.log("Ok");
+  }
+
+  submitProposal() {
+    this.rootlineDialog.openConfirmationModal({
+      type: "success",
+      color: "primary",
+      matIcon: "check_circle",
+      headerText: "Thank you! Your proposal has been submitted",
+      description: "Please wait for the company to respond to your proposal",
+      primaryButtonName: "Ok",
+      primaryEvent: this.primaryButton
+    });
   }
 }
