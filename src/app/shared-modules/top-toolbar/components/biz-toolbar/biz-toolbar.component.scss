@@ -1,0 +1,23 @@
+:host{
+    color: white;
+    max-height: 45px;
+    width: 100%;
+}
+
+.nav-body{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.logo{
+    img{
+        height: 2.4em;
+        width: auto;
+    }
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
