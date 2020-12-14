@@ -1,6 +1,6 @@
 <div class="full-width nav-body" [ngClass]="{'toolbar-color': hasBackground}" color="primary" fxLayout="row">
     <div class="full-width" fxLayout="column" fxLayoutGap="10px">
-        <div class="full-width" fxLayoutAlign="end center" fxLayoutGap="10px">
+        <div class="full-width" fxLayoutAlign="end center" fxLayoutGap="10px" *ngIf="firstNavigation.length!=0">
             <ng-container *ngFor="let nav of firstNavigation;let i = index">
                 <span style="font-size: 14px;" class="cursor-pointer" (click)="navigateTo(nav.route)">
                     {{nav.name}}

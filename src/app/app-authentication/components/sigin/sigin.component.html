@@ -1,3 +1,32 @@
-<div class="page-theme">
-
+<div class="page-theme" fxLayout="row">
+  <div fxFlex.xs="0" fxFlex="40" class="side-image" fxLayoutAlign="center start">
+    <span class="side-title">Welcome</span>
+  </div>
+  <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
+    <div>
+      <biz-toolbar [navigationList]="navigationList" hasBackground></biz-toolbar>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start center">
+      <bizcoveri></bizcoveri>
+      <div fxLayout="column" fxLayoutGap="15px">
+        <div fxLayout="column" fxLayoutGap="5px">
+          <span style="font-weight: 600;">Email</span>
+          <input class="input-field" placeholder="email">
+        </div>
+        <div fxLayout="column" fxLayoutGap="5px">
+          <span style="font-weight: 600;">Password</span>
+          <input class="input-field" placeholder="password">
+        </div>
+        <div style="margin-top: 25px;" fxLayout="row" fxLayoutAlign="space-between center">
+          <span class="accent-color cursor-pointer">Forgot Password?</span>
+          <button mat-raised-button color="accent">Login</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center"
+          style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
+          <span>Create an Account</span>
+          <button class="gray-background" mat-raised-button>Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

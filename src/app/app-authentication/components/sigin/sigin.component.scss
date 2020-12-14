@@ -1,6 +1,6 @@
 .page-theme {
-  width: 100%;
-  height: auto;
+  display: flex;
+  flex: 1 0 auto;
 }
 
 .sigin-form {
@@ -33,4 +33,17 @@
 .forgot {
   font-size: 14px;
   margin-top: 10px;
+}
+
+.side-image{
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../../../../assets/images/login-side.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.side-title{
+  font-size: 3rem;
+  line-height: 3.5rem;
 }

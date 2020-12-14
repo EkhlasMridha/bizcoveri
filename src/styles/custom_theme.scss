@@ -3,6 +3,24 @@
 
 @include mat-core();
 
+// @font-face {
+//   font-family: 'Exo';
+//   src: url('../assets/fonts/Exo-Bold.woff2') format('woff2'),
+//       url('../assets/fonts/Exo-Bold.woff') format('woff');
+//   font-weight: bold;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+@font-face {
+  font-family: 'Exo';
+  src: url('../assets/fonts/Exo-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Exo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 $mat-theme-primary: mat-palette($mat-arc-primary);
 $mat-theme-accent: mat-palette($mat-arc-accent);
 $mat-theme-warn: mat-palette($mat-arc-warn);
@@ -13,7 +31,12 @@ $custom-theme: mat-light-theme(
   $mat-theme-warn
 );
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Exo',
+);
+
 @include angular-material-theme($custom-theme);
+@include angular-material-typography($custom-typography);
 
 /* theme color pallet classes */
 
@@ -44,4 +67,13 @@ $accent-color:map-get($custom-theme, accent );
   color: white !important;
 }
 
+.input-field{
+  border: 1px solid  #2E4183;
+  min-width: 400px;
+  padding: 5px 5px;
+}
+
+.input-field:focus{
+  outline: none;
+}
 /* ========================== */

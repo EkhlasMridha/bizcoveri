@@ -8,6 +8,8 @@ import { FormsMaterialModule } from '../shared-modules/shared-materials/forms-ma
 import { AuthGuardService } from '../shared-services/route-guards/auth-guard.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';
+import { BizcoverTitleModule } from '../shared-modules/bizcover-title/bizcover-title.module';
 
 const routes: Routes = [
   {
@@ -56,6 +58,8 @@ const routes: Routes = [
     SharedMaterialModule,
     RouterModule.forChild(routes),
     FormsMaterialModule,
+    TopToolbarModule,
+    BizcoverTitleModule
   ],
 })
-export class AppAuthenticationModule {}
+export class AppAuthenticationModule { }

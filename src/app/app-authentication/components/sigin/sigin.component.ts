@@ -1,32 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations';
 import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormControl,
 } from '@angular/forms';
 import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { AuthService } from '../../services/auth.service';
+import { NavigationModel } from 'src/app/contracts/navigation.model';
 
 @Component({
   selector: 'app-sigin',
   templateUrl: './sigin.component.html',
   styleUrls: ['./sigin.component.scss'],
-  // animations: [
-  //   trigger('fadeOut', [
-  //     transition(':enter', [
-  //       style({ transform: 'translateX(-350px)', opacity: 0 }),
-  //       animate(
-  //         '1s ease-out',
-  //         style({ transform: 'translateX(0%)', opacity: 1 })
-  //       ),
-  //     ]),
-  //   ]),
-  // ],
 })
 export class SiginComponent implements OnInit {
   loginForm: FormGroup;
+  navigationList: NavigationModel[] = [
+    {
+      name: "Solution",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "Why Bizcoveri?",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "About",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "Contact us",
+      route: "#",
+      type: "secondary"
+    },
+  ];
 
   errorObserver$ = {
     userName: '',
@@ -36,8 +46,9 @@ export class SiginComponent implements OnInit {
   constructor (
     private formBuilder: FormBuilder,
     private formService: FormService,
-    private authService: AuthService
-  ) { }
+    private authService: AuthService,
+  ) {
+  }
 
   ngOnInit(): void {
     this.loginForm = this.createForm();
