@@ -1,3 +1,12 @@
-<div class="page-theme primary-background" fxLayoutAlign="center center">
-  Signup
+<div class="page-theme" fxLayout="row">
+  <div fxFlex.xs="0" fxFlex="40" class="side-image signup-image" fxLayoutAlign="center start"></div>
+  <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
+    <div>
+      <biz-toolbar [navigationList]="navigationList" hasBackground></biz-toolbar>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start center">
+      <bizcoveri></bizcoveri>
+      <span class="sub-title">Create your account</span>
+    </div>
+  </div>
 </div>

@@ -13,26 +13,39 @@ import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { AuthService } from '../../services/auth.service';
 import { Observable } from 'rxjs';
 import { ValidationService } from '../../services/validation.service';
+import { NavigationModel } from 'src/app/contracts/navigation.model';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
-  animations: [
-    trigger('fadeOut', [
-      transition(':enter', [
-        style({ transform: 'translateX(350px)', opacity: 0 }),
-        animate(
-          '1s ease-out',
-          style({ transform: 'translateX(0%)', opacity: 1 })
-        ),
-      ]),
-    ]),
-  ],
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   signUpModel: SignUpModel;
+
+  navigationList: NavigationModel[] = [
+    {
+      name: "Solution",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "Why Bizcoveri?",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "About",
+      route: "#",
+      type: "secondary"
+    },
+    {
+      name: "Contact us",
+      route: "#",
+      type: "secondary"
+    },
+  ];
 
   errorObserver = {
     firstName: null,
@@ -43,12 +56,12 @@ export class SignupComponent implements OnInit {
     confirmPassword: null,
   };
 
-  constructor(
+  constructor (
     private formBuilder: FormBuilder,
     private formService: FormService,
     private authService: AuthService,
     private validationService: ValidationService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.signUpForm = this.createForm();

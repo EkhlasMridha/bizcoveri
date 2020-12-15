@@ -35,15 +35,11 @@
   margin-top: 10px;
 }
 
-.side-image{
-  width: 100%;
-  overflow: hidden;
-  background-image: url("../../../../assets/images/login-side.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 .side-title{
   font-size: 3rem;
   line-height: 3.5rem;
+}
+
+.login-image{
+  background-image: url("../../../../assets/images/login-side.png");
 }
