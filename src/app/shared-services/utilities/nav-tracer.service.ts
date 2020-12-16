@@ -10,7 +10,7 @@ import { isNullOrUndefined } from 'util';
 })
 export class NavTracerService {
   private static readonly BREAD_CRUMB = 'breadCrumb';
-  private routeBroadcaster: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private routeBroadcaster: BehaviorSubject<UrlSegment[]> = new BehaviorSubject<UrlSegment[]>(null);
   routeReceiver = this.routeBroadcaster.asObservable();
   private separator;
   constructor (private titleService: Title, private router: Router) { }
@@ -65,7 +65,7 @@ export class NavTracerService {
       let urlTree: UrlTree = this.router.parseUrl(this.router.url);
       let segmentGroup: UrlSegmentGroup = urlTree.root.children[PRIMARY_OUTLET];
       let urlSegments: UrlSegment[] = segmentGroup.segments;
-      this.routeBroadcaster.next(urlSegments[0].path);
+      this.routeBroadcaster.next(urlSegments);
     });
   }
 }

@@ -4,8 +4,12 @@
             hasBackground hasShadow></biz-toolbar>
     </div>
     <div class="full-height landing-container gradient-background" fxLayoutAlign="start center" fxLayout="column">
-        <div>
-
+        <div class="color-white" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+            <div *ngFor="let nav of detailsNavigation">
+                <button *ngIf="selectedRoute!=nav.route" mat-button [routerLink]="nav.route">{{nav.name}}</button>
+                <button *ngIf="selectedRoute==nav.route" mat-raised-button color="primary"
+                    [routerLink]="nav.route">{{nav.name}}</button>
+            </div>
         </div>
         <div class="child-content">
             <router-outlet></router-outlet>

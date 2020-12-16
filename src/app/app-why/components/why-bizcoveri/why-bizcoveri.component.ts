@@ -9,8 +9,21 @@ import * as navigations from "../../../shared-modules/navigations/customtoolbar.
 })
 export class WhyBizcoveriComponent implements OnInit {
   color: string = "#242424";
+  selectedRoute: string = null;
   firstNavList: NavigationModel[] = navigations.authpageNavigation;
   secondNavList: NavigationModel[] = navigations.customToolbarNavigation;
+  detailsNavigation: NavigationModel[] = [
+    {
+      name: "Companies",
+      route: "companies",
+      type: 'primary'
+    },
+    {
+      name: "Service Provider",
+      route: "service-provider",
+      type: 'secondary'
+    }
+  ];
   constructor () { }
 
   ngOnInit(): void {

@@ -10,15 +10,15 @@ import { NavigationModel } from '../../config/navigation.model';
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class SideNavComponent implements OnInit {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   activatedRoute: string = '';
 
@@ -26,28 +26,28 @@ export class SideNavComponent implements OnInit {
     {
       name: "Dashboard",
       route: "dashboard",
-      matIcon:"home"
+      matIcon: "home"
     },
     {
       name: "Navigation 2",
       route: "home",
-      matIcon:"home"
+      matIcon: "home"
     },
     {
       name: "Navigation 2",
       route: "home",
-      matIcon:"home"
+      matIcon: "home"
     }
-  ]
+  ];
 
-  constructor (private breakpointObserver: BreakpointObserver,private navTracer:NavTracerService) { }
+  constructor (private breakpointObserver: BreakpointObserver, private navTracer: NavTracerService) { }
   ngOnInit(): void {
     this.navTracer.routeReceiver.subscribe(res => {
-      this.activatedRoute = res;
-     })
+      this.activatedRoute = res[0].path;
+    });
   }
 
-  openDrawer(drawer:MatDrawer) {
+  openDrawer(drawer: MatDrawer) {
     drawer.toggle();
   }
 }
