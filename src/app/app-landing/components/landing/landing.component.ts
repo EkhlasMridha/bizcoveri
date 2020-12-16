@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
   selector: 'app-landing',
@@ -7,45 +8,8 @@ import { NavigationModel } from 'src/app/contracts/navigation.model';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  navList: NavigationModel[] = [
-    {
-      name: "Sign Up",
-      route: "signup",
-      type: "secondary"
-    },
-    {
-      name: "Login",
-      route: "signin",
-      type: "secondary"
-    }
-  ];
-  navigations: NavigationModel[] = [
-    {
-      name: "Solution",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Why Bizcoveri",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "About",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Contact us",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Create Project",
-      route: "#",
-      type: "primary"
-    }
-  ];
+  navList: NavigationModel[] = navigations.authpageNavigation;
+  navigations: NavigationModel[] = navigations.customToolbarNavigation;
   constructor () { }
 
   ngOnInit(): void {
