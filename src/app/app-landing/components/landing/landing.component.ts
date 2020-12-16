@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
-import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
+import { authpageNavigation, customToolbarNavigation } from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
   selector: 'app-landing',
@@ -9,12 +9,11 @@ import * as navigations from "../../../shared-modules/navigations/customtoolbar.
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  navList: NavigationModel[] = navigations.authpageNavigation;
-  navigations: NavigationModel[] = navigations.customToolbarNavigation;
+  navList: NavigationModel[] = authpageNavigation;
+  navigations: NavigationModel[] = customToolbarNavigation;
   constructor (private icnoService: IconService) { }
 
   ngOnInit(): void {
-    this.icnoService.loadIcons(['signout']);
   }
 
 }
