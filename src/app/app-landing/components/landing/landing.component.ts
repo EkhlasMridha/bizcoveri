@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { IconService } from 'src/app/shared-services/utilities/icon.service';
+import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
@@ -10,9 +12,10 @@ import * as navigations from "../../../shared-modules/navigations/customtoolbar.
 export class LandingComponent implements OnInit {
   navList: NavigationModel[] = navigations.authpageNavigation;
   navigations: NavigationModel[] = navigations.customToolbarNavigation;
-  constructor () { }
+  constructor (private icnoService: IconService) { }
 
   ngOnInit(): void {
+    this.icnoService.loadIcons(['signout']);
   }
 
 }
