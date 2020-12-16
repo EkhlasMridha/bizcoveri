@@ -11,11 +11,14 @@ const routes: Routes = [
   {
     path: '',
     component: WhyBizcoveriComponent,
+    data: {
+      breadCrumb: "Why Bizcoveri"
+    },
     children: [
       { path: '', redirectTo: 'companies' },
       { path: 'companies', component: CompaniesComponent },
       { path: "service-provider", component: ServiceProviderComponent }
-    ]
+    ],
   }
 ];
 

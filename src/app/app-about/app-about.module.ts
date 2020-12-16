@@ -6,7 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent }
+  {
+    path: '',
+    component: AboutComponent,
+    data: {
+      breadCrumb: "About"
+    }
+  }
 ];
 
 @NgModule({
