@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import("../app-why/app-why.module").then(m => m.AppWhyModule)
   },
   {
+    path: "about",
+    loadChildren: () => import("../app-about/app-about.module").then(m => m.AppAboutModule)
+  },
+  {
     path: '**',
     loadChildren: () => import("../app-tools/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
     data: {

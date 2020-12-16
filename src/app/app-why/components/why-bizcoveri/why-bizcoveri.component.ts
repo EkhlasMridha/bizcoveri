@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
-import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
+import { authpageNavigation, customToolbarNavigation } from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
   selector: 'app-why-bizcoveri',
@@ -13,8 +13,8 @@ import * as navigations from "../../../shared-modules/navigations/customtoolbar.
 export class WhyBizcoveriComponent implements OnInit {
   color: string = "#242424";
   selectedRoute: string = null;
-  firstNavList: NavigationModel[] = navigations.authpageNavigation;
-  secondNavList: NavigationModel[] = navigations.customToolbarNavigation;
+  firstNavList: NavigationModel[] = authpageNavigation;
+  secondNavList: NavigationModel[] = customToolbarNavigation;
   subscription: Subscription;
   detailsNavigation: NavigationModel[] = [
     {

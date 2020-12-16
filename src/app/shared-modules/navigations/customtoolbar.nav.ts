@@ -26,7 +26,7 @@ export const customToolbarNavigation: NavigationModel[] = [
     },
     {
         name: "About",
-        route: "#",
+        route: "about",
         type: "secondary"
     },
     {
