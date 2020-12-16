@@ -1,1 +1,10 @@
-<p>service-provider works!</p>
+<div>
+    <mat-card fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-card *ngFor="let type of serviceTypeList" class="service-card" fxLayout="column" fxLayoutGap="20px"
+            fxLayoutAlign="center center">
+            <mat-icon [svgIcon]="type.localIcon"></mat-icon>
+            <span class="card-title primary-color align-center">{{type.title}}</span>
+            <span class="card-subtitle gray-color align-center">{{type.subTitle}}</span>
+        </mat-card>
+    </mat-card>
+</div>

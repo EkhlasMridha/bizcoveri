@@ -29,7 +29,7 @@ export class WhyBizcoveriComponent implements OnInit {
     }
   ];
   constructor (private navTracer: NavTracerService, private iconService: IconService) {
-    this.iconService.loadIcons(['quality-person', 'collaboration', 'compliance', 'execution']);
+    this.iconService.loadIcons(['quality-person', 'collaboration', 'compliance', 'execution', 'globe', 'file']);
   }
 
   ngOnInit(): void {

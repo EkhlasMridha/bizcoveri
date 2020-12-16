@@ -19,12 +19,12 @@ export class CompaniesComponent implements OnInit {
       subTitle: "Support 100% remote teamwork"
     },
     {
-      localIcon: "compliance",
+      localIcon: "execution",
       title: "Speedy Execution",
       subTitle: "Through timely information flow and well defined templates"
     },
     {
-      localIcon: "execution",
+      localIcon: "compliance",
       title: "Compliance",
       subTitle: "Ensures fairness and full compliance       "
     }
