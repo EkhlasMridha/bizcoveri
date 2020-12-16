@@ -1,4 +1,4 @@
-import { NavigationModel } from "src/app/contracts/navigation.model";
+import { NavigationModel } from "../../contracts/navigation.model";
 
 export const authpageNavigation: NavigationModel[] = [
     {

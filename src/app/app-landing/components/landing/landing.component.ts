@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({

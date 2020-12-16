@@ -13,6 +13,13 @@ export class BizToolbarComponent implements OnInit {
   @Input() navigationList: NavigationModel[] = [];
   @Input() barColor: string = null;
   @Input()
+  get hasShadow() {
+    return this._hasShadow;
+  }
+  set hasShadow(value) {
+    this._hasShadow = coerceBooleanProperty(value);
+  }
+  @Input()
   get hasBackground() {
     return this._hasBackground;
   }
@@ -28,6 +35,7 @@ export class BizToolbarComponent implements OnInit {
   }
   private _hasLogo: boolean = false;
   private _hasBackground: boolean = false;
+  private _hasShadow: boolean = false;
 
   constructor (private router: Router) { }
 
