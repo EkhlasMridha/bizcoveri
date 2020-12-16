@@ -10,6 +10,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';
 import { BizcoverTitleModule } from '../shared-modules/bizcover-title/bizcover-title.module';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const routes: Routes = [
   {
@@ -27,6 +29,13 @@ const routes: Routes = [
       breadCrumb: 'SignUp',
     },
     canActivate: [AuthGuardService],
+  },
+  {
+    path: "signup-detail",
+    component: SignupFormComponent,
+    data: {
+      breadCrumb: "Signup Info"
+    }
   },
   {
     path: 'reset-password',
@@ -52,6 +61,7 @@ const routes: Routes = [
     SignupComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
+    SignupFormComponent,
   ],
   imports: [
     CommonModule,
@@ -59,7 +69,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsMaterialModule,
     TopToolbarModule,
-    BizcoverTitleModule
+    BizcoverTitleModule,
+    MatFormFieldModule
   ],
 })
 export class AppAuthenticationModule { }

@@ -8,16 +8,24 @@
     </div>
     <div fxLayout="column" fxLayoutAlign="start center">
       <bizcoveri></bizcoveri>
-      <div fxLayout="column" fxLayoutGap="15px">
+      <div fxLayout="column" style="min-width: 400px;margin-top: 20px;">
         <div fxLayout="column" fxLayoutGap="5px">
-          <span style="font-weight: 600;">Email</span>
-          <input class="input-field" placeholder="email">
+          <!-- <span style="font-weight: 600;">Email</span>
+          <input class="input-field" placeholder="email"> -->
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email">
+          </mat-form-field>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
-          <span style="font-weight: 600;">Password</span>
-          <input class="input-field" placeholder="password">
+          <!-- <span style="font-weight: 600;">Password</span>
+          <input class="input-field" placeholder="password"> -->
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password">
+          </mat-form-field>
         </div>
-        <div style="margin-top: 25px;" fxLayout="row" fxLayoutAlign="space-between center">
+        <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
           <span class="accent-color cursor-pointer">Forgot Password?</span>
           <button mat-raised-button color="accent">Login</button>
         </div>

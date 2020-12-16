@@ -40,3 +40,26 @@ export const customToolbarNavigation: NavigationModel[] = [
         type: "primary"
     }
 ];
+
+export const authPageToolbarNav: NavigationModel[] = [
+    {
+        name: "Solution",
+        route: "#",
+        type: "secondary"
+    },
+    {
+        name: "Why Bizcoveri",
+        route: "why-bizcovery",
+        type: "secondary"
+    },
+    {
+        name: "About",
+        route: "about",
+        type: "secondary"
+    },
+    {
+        name: "Contact us",
+        route: "#",
+        type: "secondary"
+    },
+];

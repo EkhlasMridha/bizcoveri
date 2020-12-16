@@ -14,6 +14,7 @@ import { AuthService } from '../../services/auth.service';
 import { Observable } from 'rxjs';
 import { ValidationService } from '../../services/validation.service';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -61,7 +62,8 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private formService: FormService,
     private authService: AuthService,
-    private validationService: ValidationService
+    private validationService: ValidationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -218,5 +220,9 @@ export class SignupComponent implements OnInit {
     this.authService.signUp(this.signUpModel).subscribe((res) => {
       console.log(res);
     });
+  }
+
+  navigateTo(routeType: string) {
+    this.router.navigate(['signup-detail'], { queryParams: { type: routeType } });
   }
 }
