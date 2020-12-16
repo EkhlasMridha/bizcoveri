@@ -21,7 +21,7 @@ export const customToolbarNavigation: NavigationModel[] = [
     },
     {
         name: "Why Bizcoveri",
-        route: "#",
+        route: "why-bizcovery",
         type: "secondary"
     },
     {

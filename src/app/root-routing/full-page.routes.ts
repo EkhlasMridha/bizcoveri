@@ -10,6 +10,10 @@ const routes: Routes = [
     loadChildren: () => import("../app-landing/app-landing.module").then(m => m.AppLandingModule)
   },
   {
+    path: "why-bizcovery",
+    loadChildren: () => import("../app-why/app-why.module").then(m => m.AppWhyModule)
+  },
+  {
     path: '**',
     loadChildren: () => import("../app-tools/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
     data: {
