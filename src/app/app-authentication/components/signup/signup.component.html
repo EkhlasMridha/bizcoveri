@@ -2,7 +2,7 @@
   <div fxFlex.xs="0" fxFlex="40" class="side-image signup-image" fxLayoutAlign="center start"></div>
   <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
     <div>
-      <biz-toolbar [navigationList]="navigationList" hasBackground></biz-toolbar>
+      <biz-toolbar [barColor]="color" [navigationList]="navigationList" hasBackground></biz-toolbar>
     </div>
     <div fxLayout="column" fxLayoutAlign="start center">
       <bizcoveri></bizcoveri>
@@ -22,7 +22,7 @@
       <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
         <span>Already have a Bizcovery account?</span>
         <div fxLayoutAlign="center center">
-          <button mat-raised-button class="gray-background">Login</button>
+          <button mat-raised-button class="gray-background" routerLink="/signin">Login</button>
         </div>
       </div>
     </div>

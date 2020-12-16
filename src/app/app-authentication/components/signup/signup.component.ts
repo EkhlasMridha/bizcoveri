@@ -23,6 +23,7 @@ import { NavigationModel } from 'src/app/contracts/navigation.model';
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   signUpModel: SignUpModel;
+  color: string = "#565E78";
 
   navigationList: NavigationModel[] = [
     {

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class BizToolbarComponent implements OnInit {
   @Input() firstNavigation: NavigationModel[] = [];
   @Input() navigationList: NavigationModel[] = [];
+  @Input() barColor: string = null;
   @Input()
   get hasBackground() {
     return this._hasBackground;
@@ -32,7 +33,16 @@ export class BizToolbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   navigateTo(route: string) {
     this.router.navigate([route]);
+  }
+
+  getBackground() {
+    if (this.barColor == null) {
+      return 'transperant';
+    } else {
+      return this.barColor;
+    }
   }
 }

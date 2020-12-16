@@ -15,6 +15,7 @@ import { NavigationModel } from 'src/app/contracts/navigation.model';
 })
 export class SiginComponent implements OnInit {
   loginForm: FormGroup;
+  color: string = "#565E78";
   navigationList: NavigationModel[] = [
     {
       name: "Solution",

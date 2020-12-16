@@ -4,7 +4,7 @@
   </div>
   <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
     <div>
-      <biz-toolbar [navigationList]="navigationList" hasBackground></biz-toolbar>
+      <biz-toolbar [barColor]="color" [navigationList]="navigationList" hasBackground></biz-toolbar>
     </div>
     <div fxLayout="column" fxLayoutAlign="start center">
       <bizcoveri></bizcoveri>
@@ -24,7 +24,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center"
           style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
           <span>Create an Account</span>
-          <button class="gray-background" mat-raised-button>Sign Up</button>
+          <button class="gray-background" mat-raised-button routerLink="/signup">Sign Up</button>
         </div>
       </div>
     </div>
