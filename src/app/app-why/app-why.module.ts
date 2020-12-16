@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'companies' },
       { path: 'companies', component: CompaniesComponent },
-      { path: "service=provider", component: ServiceProviderComponent }
+      { path: "service-provider", component: ServiceProviderComponent }
     ]
   }
 ];

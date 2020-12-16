@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
@@ -24,9 +25,12 @@ export class WhyBizcoveriComponent implements OnInit {
       type: 'secondary'
     }
   ];
-  constructor () { }
+  constructor (private navTracer: NavTracerService) { }
 
   ngOnInit(): void {
+    this.navTracer.routeReceiver.subscribe(res => {
+      this.selectedRoute = res[1].path;
+    });
   }
 
 }
