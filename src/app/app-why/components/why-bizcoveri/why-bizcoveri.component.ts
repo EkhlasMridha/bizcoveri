@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 import * as navigations from "../../../shared-modules/navigations/customtoolbar.nav";
 
@@ -13,6 +15,7 @@ export class WhyBizcoveriComponent implements OnInit {
   selectedRoute: string = null;
   firstNavList: NavigationModel[] = navigations.authpageNavigation;
   secondNavList: NavigationModel[] = navigations.customToolbarNavigation;
+  subscription: Subscription;
   detailsNavigation: NavigationModel[] = [
     {
       name: "Companies",
@@ -25,12 +28,16 @@ export class WhyBizcoveriComponent implements OnInit {
       type: 'secondary'
     }
   ];
-  constructor (private navTracer: NavTracerService) { }
+  constructor (private navTracer: NavTracerService, private iconService: IconService) {
+    this.iconService.loadIcons(['quality-person', 'collaboration', 'compliance', 'execution']);
+  }
 
   ngOnInit(): void {
-    this.navTracer.routeReceiver.subscribe(res => {
+    this.subscription = this.navTracer.routeReceiver.subscribe(res => {
       this.selectedRoute = res[1].path;
     });
   }
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

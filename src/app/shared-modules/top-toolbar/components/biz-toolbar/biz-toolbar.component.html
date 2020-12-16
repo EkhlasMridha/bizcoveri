@@ -10,7 +10,7 @@
             </ng-container>
         </div>
         <div class="full-width" fxLayout="row">
-            <div class="logo" *ngIf="hasLogo">
+            <div class="logo cursor-pointer" *ngIf="hasLogo" (click)="navigateTo('')">
                 <img src="../../../../../assets/images/title.png" alt="brand-logo">
             </div>
             <div class="spacer"></div>

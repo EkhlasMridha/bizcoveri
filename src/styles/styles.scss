@@ -38,7 +38,7 @@ body {
 }
 
 button{
-  border-radius: 7px !important;
+  border-radius: 8px !important;
 }
 
 .toolbar-color{
@@ -49,6 +49,9 @@ button{
   background-color: #C4C4C4 !important;
 }
 
+.gray-color{
+  color: #C4C4C4;
+}
 .side-image{
   width: 100%;
   overflow: hidden;
@@ -58,4 +61,12 @@ button{
 
 .gradient-background{
   background: linear-gradient(180deg, rgba(8,35,88,1) 0%, rgba(58,11,74,1) 100%);
+}
+
+mat-card{
+  border-radius: 8px !important;
+}
+
+.align-center{
+  text-align: center;
 }
