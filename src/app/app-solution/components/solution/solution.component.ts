@@ -88,4 +88,10 @@ export class SolutionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectProposal(proposal: any) {
+    this.proposalList.forEach(p => {
+      p.isSelected = false;
+    });
+    proposal.isSelected = true;
+  }
 }
