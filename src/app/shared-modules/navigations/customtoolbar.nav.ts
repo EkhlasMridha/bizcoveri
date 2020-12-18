@@ -31,7 +31,7 @@ export const authPageToolbarNav: NavigationModel[] = [
     },
     {
         name: "Contact us",
-        route: "#",
+        route: "contact",
         type: "secondary"
     },
 ];
@@ -54,7 +54,7 @@ export const customToolbarNavigation: NavigationModel[] = [
     },
     {
         name: "Contact us",
-        route: "#",
+        route: "contact",
         type: "secondary"
     },
     {

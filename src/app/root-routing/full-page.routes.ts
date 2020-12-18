@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import("../app-solution/app-solution.module").then(m => m.AppSolutionModule)
   },
   {
+    path: 'contact',
+    loadChildren: () => import("../app-contact/app-contact.module").then(m => m.AppContactModule)
+  },
+  {
     path: '**',
     loadChildren: () => import("../app-tools/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
     data: {

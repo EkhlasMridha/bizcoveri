@@ -56,8 +56,8 @@
                         <hr class="full-width">
                         <div fxLayout="column" fxLayoutGap="15px">
                             <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
-                            <div class="cursor-pointer" fxLayout="row" fxLayoutGap="20px">
-                                <div *ngFor="let workflow of workflowList" class="circle-element"
+                            <div fxLayout="row" fxLayoutGap="20px">
+                                <div *ngFor="let workflow of workflowList" class="circle-element cursor-pointer"
                                     fxLayoutAlign="center center" fxLayout="column">
                                     <mat-icon [svgIcon]="workflow.localIcon" color="accent"></mat-icon>
                                     <span class="accent-color align-center"

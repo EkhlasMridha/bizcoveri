@@ -14,14 +14,14 @@
                 <img src="../../../../../assets/images/title.png" alt="brand-logo">
             </div>
             <div class="spacer"></div>
-            <div fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="10px">
                 <ng-container *ngFor="let navigation of navigationList">
                     <button mat-button *ngIf="navigation.type=='secondary'"
                         [ngStyle]="{'background-color': selectedNav==navigation.route?'#cacaca73':none}"
                         (click)="navigateTo(navigation.route)">
                         <span>{{navigation.name}}</span>
                     </button>
-                    <button mat-flat-button color="primary" *ngIf="navigation.type=='primary'"
+                    <button class="primary-nav" mat-flat-button color="primary" *ngIf="navigation.type=='primary'"
                         (click)="navigateTo(navigation.route)">
                         <span>{{navigation.name}}</span>
                     </button>
