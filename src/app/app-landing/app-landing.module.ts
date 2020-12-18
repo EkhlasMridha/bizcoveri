@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: LandingComponent,
     data: {
-      breadCrumb: "Landing"
+      breadCrumb: "Home"
     }
   }
 ];
