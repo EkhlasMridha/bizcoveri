@@ -10,7 +10,7 @@ const routes2: Routes = [
   {
     path: '',
     loadChildren: () => import('../../layouts/side-nav/side-nav.module').then(m => m.SideNavModule),
-    // canActivate:[AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
     path: '',

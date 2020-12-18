@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import("../app-about/app-about.module").then(m => m.AppAboutModule)
   },
   {
+    path: 'solution',
+    loadChildren: () => import("../app-solution/app-solution.module").then(m => m.AppSolutionModule)
+  },
+  {
     path: '**',
     loadChildren: () => import("../app-tools/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
     data: {

@@ -13,10 +13,33 @@ export const authpageNavigation: NavigationModel[] = [
     }
 ];
 
+export const authPageToolbarNav: NavigationModel[] = [
+    {
+        name: "Solution",
+        route: "solution",
+        type: "secondary"
+    },
+    {
+        name: "Why Bizcoveri",
+        route: "why-bizcovery",
+        type: "secondary"
+    },
+    {
+        name: "About",
+        route: "about",
+        type: "secondary"
+    },
+    {
+        name: "Contact us",
+        route: "#",
+        type: "secondary"
+    },
+];
+
 export const customToolbarNavigation: NavigationModel[] = [
     {
         name: "Solution",
-        route: "#",
+        route: "solution",
         type: "secondary"
     },
     {
@@ -39,27 +62,4 @@ export const customToolbarNavigation: NavigationModel[] = [
         route: "#",
         type: "primary"
     }
-];
-
-export const authPageToolbarNav: NavigationModel[] = [
-    {
-        name: "Solution",
-        route: "#",
-        type: "secondary"
-    },
-    {
-        name: "Why Bizcoveri",
-        route: "why-bizcovery",
-        type: "secondary"
-    },
-    {
-        name: "About",
-        route: "about",
-        type: "secondary"
-    },
-    {
-        name: "Contact us",
-        route: "#",
-        type: "secondary"
-    },
 ];
