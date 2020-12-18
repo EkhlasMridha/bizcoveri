@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { ServiceTypeModel } from 'src/app/contracts/servicetype.model';
 import { authpageNavigation, customToolbarNavigation } from 'src/app/shared-modules/navigations/customtoolbar.nav';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { TutorialModel } from '../../models/tutorial.model';
@@ -15,18 +16,18 @@ export class SolutionComponent implements OnInit {
   secondNavList: NavigationModel[] = customToolbarNavigation;
 
   vendorList: any = ["Vendor 1", "Vendor 2", "Vendor 3", "Vendor 4"];
-  proposalList: Partial<NavigationModel>[] = [
+  proposalList: any[] = [
     {
       name: "Proposal 1",
-      type: "primary"
+      isSelected: true,
     },
     {
       name: "Proposal 2",
-      type: "secondary"
+      isSelected: false,
     },
     {
       name: "Proposal 3",
-      type: "secondary"
+      isSelected: false,
     },
   ];
   tutorialList: TutorialModel[] = [
@@ -47,8 +48,41 @@ export class SolutionComponent implements OnInit {
       subTitle: "Finish project and save repository"
     }
   ];
-  constructor (private iconService: IconService) {
 
+  workflowList: Partial<ServiceTypeModel>[] = [
+    {
+      localIcon: "meeting",
+      title: "Schedule Meeting"
+    },
+    {
+      localIcon: "qa",
+      title: "Q & A"
+    },
+    {
+      localIcon: "team",
+      title: "Manage Teams"
+    },
+    {
+      localIcon: "progress",
+      title: "Track Progress"
+    }
+  ];
+  closeProjectList: Partial<ServiceTypeModel>[] = [
+    {
+      localIcon: "deliver",
+      title: "Project Deliverables"
+    },
+    {
+      localIcon: "payments",
+      title: "Payments"
+    },
+    {
+      localIcon: "feedback",
+      title: "Feedback"
+    }
+  ];
+  constructor (private iconService: IconService) {
+    this.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
   }
 
   ngOnInit(): void {

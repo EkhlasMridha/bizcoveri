@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceTypeModel } from '../../models/servicetype.model';
+import { ServiceTypeModel } from '../../../contracts/servicetype.model';
 
 @Component({
   selector: 'app-service-provider',

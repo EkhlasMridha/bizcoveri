@@ -28,18 +28,44 @@
                         </div>
                         <span class="primary-color align-center">RECEIVE MULTIPLE PROPOSAL & SELECT THE BEST ONE</span>
                         <div fxLayout="row" fxLayoutGap="10px">
-                            <button mat-raised-button *ngFor="let proposal of proposalList"
-                                [color]="proposal.type=='primary'?'warn':'accent'" fxLayoutAlign="center center"
-                                fxLayout="row">
-                                <mat-icon>assignment_turned_in</mat-icon>
-                                <span>{{proposal.name}}</span>
+                            <div *ngFor="let proposal of proposalList" class="proposal-button">
+                                <button *ngIf="proposal.isSelected" mat-raised-button color="accent"
+                                    fxLayoutAlign="center center" fxLayout="row">
+                                    <mat-icon>assignment_turned_in</mat-icon>
+                                    <span>{{proposal.name}}</span>
+                                </button>
+                                <button *ngIf="!proposal.isSelected" mat-stroked-button color="accent">
+                                    <mat-icon>assignment_turned_in</mat-icon>
+                                    <span>{{proposal.name}}</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <button mat-raised-button color="primary">Execute Agreement</button>
+                        </div>
+                        <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
+                        <div class="cursor-pointer" fxLayout="row" fxLayoutGap="20px">
+                            <div *ngFor="let workflow of workflowList" class="circle-element"
+                                fxLayoutAlign="center center" fxLayout="column">
+                                <mat-icon [svgIcon]="workflow.localIcon" color="accent"></mat-icon>
+                                <span class="accent-color align-center"
+                                    style="font-weight: 600;">{{workflow.title}}</span>
+                            </div>
+                        </div>
+                        <span class="primary-color align-center">CLOSE PROJECT</span>
+                        <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">
+                            <button *ngFor="let closeProject of closeProjectList" mat-stroked-button color="accent"
+                                fxLayout="row" fxLayoutAlign="center center">
+                                <mat-icon [svgIcon]="closeProject.localIcon" color="accent"></mat-icon>
+                                <span class="accent-color">{{closeProject.title}}</span>
                             </button>
                         </div>
                     </mat-card>
                 </div>
                 <div class="vertical-line primary-color"></div>
                 <div fxLayout="column" class="full-width" fxLayoutGap="45px">
-                    <div *ngFor="let tutorial of tutorialList" fxLayout="row" fxLayoutAlign="center center">
+                    <div *ngFor="let tutorial of tutorialList;let i = index" fxLayout="row"
+                        fxLayoutAlign="center center">
                         <div fxFlex="20" class="primary-color" fxLayoutAlign="end end">
                             <div class="arrow-content">&#x27A5;</div>
                         </div>
