@@ -36,6 +36,10 @@ export class SolutionComponent implements OnInit {
       subTitle: "Describe your needs in a well defined template"
     },
     {
+      title: "Discover",
+      subTitle: "Find the best partner for your needs"
+    },
+    {
       title: "Contract",
       subTitle: "Sign agreement with prefered partner"
     },

@@ -23,7 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TopToolbarModule,
     FlexLayoutModule,
-    SharedMaterialModule
+    SharedMaterialModule,
   ]
 })
 export class AppSolutionModule { }

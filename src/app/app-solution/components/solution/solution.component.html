@@ -8,7 +8,7 @@
             <span class="page-title color-white">How does the platform work?</span>
             <div fxLayout="row" fxLayoutGap="10px" class="full-width" style="margin-top: 20px;">
                 <div class="full-width">
-                    <mat-card fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="center center">
+                    <mat-card fxLayout="column" fxLayoutGap="25px" fxLayoutAlign="center center">
                         <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center">
                             <div>
                                 <button mat-raised-button color="primary">Start Project</button>
@@ -20,6 +20,7 @@
                                 </button>
                             </div>
                         </div>
+                        <hr class="full-width">
                         <div fxLayout="column" fxLayoutGap="15px">
                             <span class="primary-color align-center">SELECT APPROPRIATE VENDOR</span>
                             <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
@@ -30,6 +31,7 @@
                                 </button>
                             </div>
                         </div>
+                        <hr class="full-width">
                         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
                             <span class="primary-color align-center">RECEIVE MULTIPLE PROPOSAL & SELECT THE BEST
                                 ONE</span>
@@ -51,6 +53,7 @@
                                 <button mat-raised-button color="primary">Execute Agreement</button>
                             </div>
                         </div>
+                        <hr class="full-width">
                         <div fxLayout="column" fxLayoutGap="15px">
                             <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
                             <div class="cursor-pointer" fxLayout="row" fxLayoutGap="20px">
@@ -62,6 +65,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="full-width">
                         <div fxLayout="column" fxLayoutGap="15px">
                             <span class="primary-color align-center">CLOSE PROJECT</span>
                             <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">
@@ -75,13 +79,12 @@
                     </mat-card>
                 </div>
                 <div class="vertical-line primary-color"></div>
-                <div fxLayout="column" class="full-width" fxLayoutGap="45px">
-                    <div *ngFor="let tutorial of tutorialList;let i = index" fxLayout="row"
-                        fxLayoutAlign="center center">
-                        <div fxFlex="20" class="primary-color" fxLayoutAlign="end end">
+                <div fxLayout="column" class="full-width parent-description">
+                    <div *ngFor="let tutorial of tutorialList;let i = index" class="child-description">
+                        <div fxFlex="20" class="primary-color" fxLayoutAlign="center center">
                             <div class="arrow-content">&#x27A5;</div>
                         </div>
-                        <div fxFlex="80" fxLayout="column">
+                        <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center">
                             <span class="tutorial-title align-center primary-color">{{tutorial.title}}</span>
                             <span class="detail align-center color-white">{{tutorial.subTitle}}</span>
                         </div>
