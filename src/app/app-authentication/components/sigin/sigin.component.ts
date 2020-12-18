@@ -7,6 +7,8 @@ import {
 import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { AuthService } from '../../services/auth.service';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
+import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
+import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 
 @Component({
   selector: 'app-sigin',
@@ -15,32 +17,11 @@ import { NavigationModel } from 'src/app/contracts/navigation.model';
 })
 export class SiginComponent implements OnInit {
   loginForm: FormGroup;
-  color: string = "#565E78";
-  navigationList: NavigationModel[] = [
-    {
-      name: "Solution",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Why Bizcoveri?",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "About",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Contact us",
-      route: "#",
-      type: "secondary"
-    },
-  ];
+  color: string = DomainService.domains.ctColor;
+  navigationList: NavigationModel[] = authPageToolbarNav;
 
   errorObserver$ = {
-    userName: '',
+    email: '',
     password: '',
   };
 
@@ -62,7 +43,7 @@ export class SiginComponent implements OnInit {
 
   errorTypeGenerator(type: string, owner: string) {
     switch (owner) {
-      case 'userName':
+      case 'email':
         return 'User name is required';
       case 'password':
         return 'Password is required';
@@ -71,7 +52,7 @@ export class SiginComponent implements OnInit {
 
   createForm() {
     return this.formBuilder.group({
-      userName: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -84,8 +65,8 @@ export class SiginComponent implements OnInit {
     const result = Object.assign({}, this.loginForm.value);
     console.log(result);
 
-    this.authService.signin(result).subscribe((res) => {
-      console.log(res);
-    });
+    // this.authService.signin(result).subscribe((res) => {
+    //   console.log(res);
+    // });
   }
 }

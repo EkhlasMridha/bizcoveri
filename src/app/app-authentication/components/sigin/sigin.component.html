@@ -8,32 +8,30 @@
     </div>
     <div fxLayout="column" fxLayoutAlign="start center">
       <bizcoveri></bizcoveri>
-      <div fxLayout="column" style="min-width: 400px;margin-top: 20px;">
-        <div fxLayout="column" fxLayoutGap="5px">
-          <!-- <span style="font-weight: 600;">Email</span>
-          <input class="input-field" placeholder="email"> -->
-          <mat-form-field color="accent" appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="email">
-          </mat-form-field>
-        </div>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <!-- <span style="font-weight: 600;">Password</span>
-          <input class="input-field" placeholder="password"> -->
-          <mat-form-field color="accent" appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="password">
-          </mat-form-field>
-        </div>
-        <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
-          <span class="accent-color cursor-pointer">Forgot Password?</span>
-          <button mat-raised-button color="accent">Login</button>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center"
-          style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
-          <span>Create an Account</span>
-          <button class="gray-background" mat-raised-button routerLink="/signup">Sign Up</button>
-        </div>
+      <div class="full-width">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" class="auth-form">
+          <div fxLayout="column" fxLayoutGap="5px">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="email">
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="password">
+            </mat-form-field>
+          </div>
+          <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="accent-color cursor-pointer">Forgot Password?</span>
+            <button mat-raised-button type="submit" color="accent">Login</button>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center"
+            style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
+            <span>Create an Account</span>
+            <button class="gray-background" type="button" mat-raised-button routerLink="/signup">Sign Up</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

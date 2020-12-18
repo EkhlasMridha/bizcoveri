@@ -15,6 +15,8 @@ import { Observable } from 'rxjs';
 import { ValidationService } from '../../services/validation.service';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { Router } from '@angular/router';
+import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
+import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,30 +26,9 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   signUpModel: SignUpModel;
-  color: string = "#565E78";
+  color: string = DomainService.domains.ctColor;
 
-  navigationList: NavigationModel[] = [
-    {
-      name: "Solution",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Why Bizcoveri?",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "About",
-      route: "#",
-      type: "secondary"
-    },
-    {
-      name: "Contact us",
-      route: "#",
-      type: "secondary"
-    },
-  ];
+  navigationList: NavigationModel[] = authPageToolbarNav;
 
   errorObserver = {
     firstName: null,

@@ -8,32 +8,54 @@
         </div>
         <div fxLayout="column" fxLayoutAlign="start center">
             <bizcoveri></bizcoveri>
-            <div class="signup-content">
-                <form fxLayout="column" fxLayoutGap="15px">
-                    <div fxLayout="column">
-                        <span>Work Email</span>
-                        <input class="input-field" placeholder="work email">
+            <div class="full-width">
+                <form class="auth-form" fxLayout="column">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Work Email</mat-label>
+                        <input matInput placeholder="work email">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="password">
+                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutGap="10px" class="full-width">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>First name</mat-label>
+                            <input matInput placeholder="first name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Last name</mat-label>
+                            <input matInput placeholder="last name">
+                        </mat-form-field>
                     </div>
-                    <div fxLayout="column">
-                        <span>Password</span>
-                        <input class="input-field" placeholder="password">
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Contact</mat-label>
+                            <ngx-mat-intl-tel-input [preferredCountries]="['us', 'gb']" [enablePlaceholder]="true"
+                                [enableSearch]="true" name="phone">
+                            </ngx-mat-intl-tel-input>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Location</mat-label>
+                            <input matInput placeholder="location">
+                        </mat-form-field>
                     </div>
-                    <div fxLayout="row" fxLayoutGap="10px">
-                        <div fxLayout="column">
-                            <span>First name</span>
-                            <input class="input-field" placeholder="first name">
-                        </div>
-                        <div fxLayout="column">
-                            <span>Last name</span>
-                            <input class="input-field" placeholder="last name">
+                    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Function</mat-label>
+                            <input matInput placeholder="function">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Designation</mat-label>
+                            <input matInput placeholder="designation">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
+                        <div fxLayoutAlign="center center">
+                            <button mat-raised-button type="submit" color="primary">Create Account</button>
                         </div>
                     </div>
                 </form>
-            </div>
-            <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
-                <div fxLayoutAlign="center center">
-                    <button mat-raised-button color="primary">Create Account</button>
-                </div>
             </div>
         </div>
     </div>

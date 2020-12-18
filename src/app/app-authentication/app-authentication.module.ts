@@ -12,6 +12,7 @@ import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.modu
 import { BizcoverTitleModule } from '../shared-modules/bizcover-title/bizcover-title.module';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 
 const routes: Routes = [
   {
@@ -70,7 +71,8 @@ const routes: Routes = [
     FormsMaterialModule,
     TopToolbarModule,
     BizcoverTitleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxMatIntlTelInputModule
   ],
 })
 export class AppAuthenticationModule { }
