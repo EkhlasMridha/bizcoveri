@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/layouts/side-nav/config/navigation.model';
 import { coerceBooleanProperty } from "@angular/cdk/coercion/";
 import { Router } from '@angular/router';
+import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 
 @Component({
   selector: 'biz-toolbar',
@@ -37,9 +38,14 @@ export class BizToolbarComponent implements OnInit {
   private _hasBackground: boolean = false;
   private _hasShadow: boolean = false;
 
-  constructor (private router: Router) { }
+  selectedNav: string = null;
+
+  constructor (private router: Router, private navTracer: NavTracerService) { }
 
   ngOnInit(): void {
+    this.navTracer.routeReceiver.subscribe(res => {
+      this.selectedNav = res[0].path;
+    });
   }
 
   navigateTo(route: string) {
