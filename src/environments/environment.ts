@@ -8,7 +8,7 @@ export const environment = {
 
   apiHost: 'http://localhost:6147/v1/',
   RefreshError: 'REFRESH_EXPIRE',
-  ctColor: "#565E78"
+  ctColor: "#242424"
 };
 
 /*

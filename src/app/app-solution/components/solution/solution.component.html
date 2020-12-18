@@ -1,1 +1,55 @@
-<p>solution works!</p>
+<div class="page-theme" fxLayout="column">
+    <div>
+        <biz-toolbar [barColor]="color" [firstNavigation]="firstNavList" [navigationList]="secondNavList" hasLogo
+            hasBackground hasShadow></biz-toolbar>
+    </div>
+    <div class="full-height gradient-background" fxLayoutAlign="start center" fxLayout="column">
+        <div class="landing-container full-width" fxLayoutAlign="start center" fxLayout="column">
+            <span class="page-title color-white">How does the platform work?</span>
+            <div fxLayout="row" fxLayoutGap="10px" class="full-width" style="margin-top: 20px;">
+                <div class="full-width">
+                    <mat-card fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center">
+                        <div>
+                            <button mat-raised-button color="primary">Start Project</button>
+                        </div>
+                        <div>
+                            <button mat-stroked-button color="accent" fxLayout="row" fxLayoutAlign="center center">
+                                <mat-icon>file_copy</mat-icon>
+                                <span>Enter Project details</span>
+                            </button>
+                        </div>
+                        <span class="primary-color align-center">SELECT APPROPRIATE VENDOR</span>
+                        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                            <button mat-raised-button fxLayout="row" fxLayoutAlign="center center"
+                                *ngFor="let vendor of vendorList">
+                                <mat-icon>person</mat-icon>
+                                <span>{{vendor}}</span>
+                            </button>
+                        </div>
+                        <span class="primary-color align-center">RECEIVE MULTIPLE PROPOSAL & SELECT THE BEST ONE</span>
+                        <div fxLayout="row" fxLayoutGap="10px">
+                            <button mat-raised-button *ngFor="let proposal of proposalList"
+                                [color]="proposal.type=='primary'?'warn':'accent'" fxLayoutAlign="center center"
+                                fxLayout="row">
+                                <mat-icon>assignment_turned_in</mat-icon>
+                                <span>{{proposal.name}}</span>
+                            </button>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="vertical-line primary-color"></div>
+                <div fxLayout="column" class="full-width" fxLayoutGap="45px">
+                    <div *ngFor="let tutorial of tutorialList" fxLayout="row" fxLayoutAlign="center center">
+                        <div fxFlex="20" class="primary-color" fxLayoutAlign="end end">
+                            <div class="arrow-content">&#x27A5;</div>
+                        </div>
+                        <div fxFlex="80" fxLayout="column">
+                            <span class="tutorial-title align-center primary-color">{{tutorial.title}}</span>
+                            <span class="detail align-center color-white">{{tutorial.subTitle}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
