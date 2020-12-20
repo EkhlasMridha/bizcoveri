@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
 import { DomainService } from 'src/app/shared-services/utilities/domain.service';
+import { CoreService } from 'src/app/core/services/core.service';
 
 @Component({
   selector: 'app-sigin',
@@ -26,15 +27,14 @@ export class SiginComponent implements OnInit {
   };
 
   constructor (
-    private formBuilder: FormBuilder,
-    private formService: FormService,
+    private coreService: CoreService,
     private authService: AuthService,
   ) {
   }
 
   ngOnInit(): void {
     this.loginForm = this.createForm();
-    this.formService.handleFormError(
+    this.coreService.formService.handleFormError(
       this.loginForm,
       this.errorObserver$,
       this.errorTypeGenerator
@@ -51,7 +51,7 @@ export class SiginComponent implements OnInit {
   }
 
   createForm() {
-    return this.formBuilder.group({
+    return this.coreService.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -59,7 +59,7 @@ export class SiginComponent implements OnInit {
 
   onSubmit() {
     if (!this.loginForm.valid) {
-      this.formService.checkFormStatus(this.loginForm);
+      this.coreService.formService.checkFormStatus(this.loginForm);
       return;
     }
     const result = Object.assign({}, this.loginForm.value);

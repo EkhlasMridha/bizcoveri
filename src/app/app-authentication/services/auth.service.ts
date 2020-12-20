@@ -5,28 +5,24 @@ import {
   tap,
   retry,
   catchError,
-  retryWhen,
-  take,
-  concatMap,
-  delay,
 } from 'rxjs/operators';
 import {
   TokenService,
   TokenModel,
 } from 'src/app/shared-services/utilities/token.service';
-import { throwError, of } from 'rxjs';
-import { ErrorHandlerService } from 'src/app/shared-services/utilities/error-handler.service';
+import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { CoreService } from 'src/app/core/services/core.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(
+  constructor (
     private http: HttpClient,
-    private tokenService: TokenService,
+    private coreService: CoreService,
     private router: Router
-  ) {}
+  ) { }
 
   signUp(payload: SignUpModel) {
     return this.http.post('identity/signup', payload).pipe(
@@ -44,7 +40,7 @@ export class AuthService {
         return throwError(err);
       }),
       tap((res) => {
-        this.tokenService.storeToken(res);
+        this.coreService.tokenService.storeToken(res);
         this.router.navigate(['']);
       })
     );

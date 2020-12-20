@@ -14,11 +14,8 @@
                         <mat-label>Work Email</mat-label>
                         <input matInput placeholder="work email">
                     </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="password">
-                    </mat-form-field>
-                    <div fxLayout="row" fxLayoutGap="10px" class="full-width">
+
+                    <div fxLayout="row" fxLayoutGap="10px">
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>First name</mat-label>
                             <input matInput placeholder="first name">
@@ -28,6 +25,7 @@
                             <input matInput placeholder="last name">
                         </mat-form-field>
                     </div>
+
                     <div class="full-width" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>Contact</mat-label>
@@ -40,6 +38,7 @@
                             <input matInput placeholder="location">
                         </mat-form-field>
                     </div>
+
                     <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>Function</mat-label>
@@ -50,9 +49,20 @@
                             <input matInput placeholder="designation">
                         </mat-form-field>
                     </div>
-                    <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="password">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput placeholder="confirm password">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 15px;">
                         <div fxLayoutAlign="center center">
-                            <button mat-raised-button type="submit" color="primary">Create Account</button>
+                            <button mat-raised-button type="submit" color="primary" (click)="onSubmit()">Create
+                                Account</button>
                         </div>
                     </div>
                 </form>

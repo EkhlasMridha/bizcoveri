@@ -13,7 +13,7 @@ export interface TokenModel {
 export class TokenService {
   private readonly accessToken: string = 'accessToken';
   private readonly refreshToken: string = 'refreshToken';
-  constructor(private jwtService: JwtHelperService, private http: HttpClient) {}
+  constructor (private jwtService: JwtHelperService, private http: HttpClient) { }
 
   storeToken(token: TokenModel) {
     localStorage.setItem(this.accessToken, token.accessToken);
