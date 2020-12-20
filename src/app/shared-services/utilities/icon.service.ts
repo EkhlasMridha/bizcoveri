@@ -27,8 +27,4 @@ export class IconService {
       );
     });
   }
-
-  printTest(name: string) {
-    console.log(name);
-  }
 }
