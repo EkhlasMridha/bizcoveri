@@ -7,7 +7,6 @@ import {
   catchError,
 } from 'rxjs/operators';
 import {
-  TokenService,
   TokenModel,
 } from 'src/app/shared-services/utilities/token.service';
 import { throwError } from 'rxjs';
