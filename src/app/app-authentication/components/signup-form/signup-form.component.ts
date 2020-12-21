@@ -5,6 +5,8 @@ import { CoreService } from 'src/app/core/services/core.service';
 import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
+import { SignUpModel } from '../../models/signup.model';
+import { AuthService } from '../../services/auth.service';
 import { ValidationService } from '../../services/validation.service';
 
 @Component({
@@ -32,7 +34,8 @@ export class SignupFormComponent implements OnInit {
 
   constructor (private coreService: CoreService,
     private formBuilder: FormBuilder,
-    private validationService: ValidationService) { }
+    private validationService: ValidationService,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     this.signupForm = this.createForm();
@@ -56,7 +59,7 @@ export class SignupFormComponent implements OnInit {
       {
         validators: [
           this.validationService.MustMatch("password", "confirmPassword"),
-          this.validationService.MustMatch("password", "confirmPassword")
+          this.validationService.shoudDisable("password", "confirmPassword")
         ]
       }
     );
@@ -68,7 +71,12 @@ export class SignupFormComponent implements OnInit {
       return;
     }
 
-    const result = Object.assign({}, this.signupForm.value);
+    const result: SignUpModel = Object.assign({}, this.signupForm.value);
+    result.roles = [{ "name": "ADMIN" }];
+    result.usertype = "CLIENT";
     console.log(result);
+    this.authService.signUp(result).subscribe(res => {
+      console.log(res);
+    });
   }
 }

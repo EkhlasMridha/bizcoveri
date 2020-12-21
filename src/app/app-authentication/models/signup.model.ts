@@ -1,7 +1,10 @@
 export interface SignUpModel {
-  firstName: string;
-  lastName: string;
-  userName: string;
+  firstname: string;
+  lastname: string;
+  username: string;
   email: string;
-  passwordHash: string;
+  password: string;
+  phone: string;
+  roles: any[];
+  usertype: string;
 }
