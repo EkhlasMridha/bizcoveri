@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  AppName: 'Root-Line',
+  AppName: 'Bizcoveri',
 
   apiHost: 'http://34.123.122.72:8080/v1/',
   RefreshError: 'REFRESH_EXPIRE',
