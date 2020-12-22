@@ -15,10 +15,10 @@ export class HomeComponent implements OnInit {
     private ref: ViewContainerRef
   ) {
     this.iconService.loadIcons(['like']);
-    this.testService.getData().subscribe((res) => {
-      console.log('result');
-      console.log(res);
-    });
+    // this.testService.getData().subscribe((res) => {
+    //   console.log('result');
+    //   console.log(res);
+    // });
   }
 
   ngOnInit(): void { }
