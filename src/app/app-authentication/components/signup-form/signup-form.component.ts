@@ -25,8 +25,8 @@ export class SignupFormComponent implements OnInit {
   errorObserver = {
     username: null,
     email: null,
-    firstname: null,
-    lastname: null,
+    firstName: null,
+    lastName: null,
     phone: null,
     password: null,
     confirmPassword: null,
