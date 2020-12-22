@@ -28,13 +28,14 @@ export class ApiInterceptorService implements HttpInterceptor {
       url: DomainService.domains.apiHost + req.url,
     });
     console.log('api');
-    this.coreService.startLoader();
     ++this.counter;
+    setTimeout(() => {
+      this.coreService.startLoader();
+    }, 1000);
     return next.handle(request).pipe(
       finalize(() => {
         --this.counter;
         if (this.counter == 0) {
-          delay(1000);
           this.coreService.stopLoader();
         }
       })

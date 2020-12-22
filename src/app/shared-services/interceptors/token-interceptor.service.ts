@@ -11,6 +11,7 @@ import { TokenService, TokenModel } from '../utilities/token.service';
 import { switchMap, filter, take, catchError } from 'rxjs/operators';
 import { DomainService } from '../utilities/domain.service';
 import { Router } from '@angular/router';
+import { CoreService } from 'src/app/core/services/core.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,22 +21,23 @@ export class TokenInterceptorService implements HttpInterceptor {
   private RefreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(
     null
   );
-  constructor (private tokenService: TokenService, private router: Router) { }
+  constructor (private coreService: CoreService, private router: Router) { }
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (this.tokenService.getToken()) {
-      req = this.addToken(req, this.tokenService.getToken());
+    if (this.coreService.tokenService.getToken()) {
+      req = this.addToken(req, this.coreService.tokenService.getToken());
     }
 
     return next.handle(req).pipe(
       catchError((res) => {
-        if (res instanceof HttpErrorResponse && res.status == 401) {
+        this.coreService.stopLoader();
+        if (res instanceof HttpErrorResponse && res.status == 401 && this.coreService.tokenService.isTokenExpired()) {
           // if (res.error == DomainService.domains.RefreshError) {
-          this.tokenService.removeToken();
-          this.router.navigate(['signin']);
+          this.coreService.tokenService.removeToken();
+          this.router.navigate(['login']);
           return null;
           // }
           // return this.handleUnauthorizeError(req, next);
@@ -58,29 +60,29 @@ export class TokenInterceptorService implements HttpInterceptor {
     return request;
   }
 
-  private handleUnauthorizeError(request: HttpRequest<any>, next: HttpHandler) {
-    if (!this.isRefreshing) {
-      this.isRefreshing = true;
-      this.RefreshTokenSubject.next(null);
+  // private handleUnauthorizeError(request: HttpRequest<any>, next: HttpHandler) {
+  //   if (!this.isRefreshing) {
+  //     this.isRefreshing = true;
+  //     this.RefreshTokenSubject.next(null);
 
-      return this.tokenService.refreshAccessToken().pipe(
-        switchMap((token: TokenModel) => {
-          this.isRefreshing = false;
-          console.log('refresh');
-          console.log(token);
-          this.tokenService.storeToken(token);
-          this.RefreshTokenSubject.next(token.accessToken);
-          return next.handle(this.addToken(request, token));
-        })
-      );
-    } else {
-      return this.RefreshTokenSubject.pipe(
-        filter((token) => token !== null),
-        take(1),
-        switchMap((token) => {
-          return next.handle(this.addToken(request, token));
-        })
-      );
-    }
-  }
+  //     return this.tokenService.refreshAccessToken().pipe(
+  //       switchMap((token: TokenModel) => {
+  //         this.isRefreshing = false;
+  //         console.log('refresh');
+  //         console.log(token);
+  //         this.tokenService.storeToken(token);
+  //         this.RefreshTokenSubject.next(token.accessToken);
+  //         return next.handle(this.addToken(request, token));
+  //       })
+  //     );
+  //   } else {
+  //     return this.RefreshTokenSubject.pipe(
+  //       filter((token) => token !== null),
+  //       take(1),
+  //       switchMap((token) => {
+  //         return next.handle(this.addToken(request, token));
+  //       })
+  //     );
+  //   }
+  // }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { debounceTime, map } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 
@@ -10,10 +10,11 @@ export class ValidationService {
   constructor (private http: HttpClient) { }
 
   isUserNameAvailable(username: string) {
-    return this.http.get(`identity/username/${username}`).pipe(
+    let payload = { userName: username };
+    return this.http.post(`auth/checkusername`, payload).pipe(
       debounceTime(500),
-      map((nameExists: boolean) => {
-        if (nameExists) {
+      map((res: any) => {
+        if (res.status == "unavailable") {
           return {
             isExists: true,
           };
@@ -24,10 +25,12 @@ export class ValidationService {
   }
 
   isEmailExists(email: string) {
-    return this.http.get(`identity/email/${email}`).pipe(
+    let payload = { userEmail: email };
+    return this.http.post(`auth/checkuseremail`, payload).pipe(
       debounceTime(500),
-      map((emailExists: boolean) => {
-        if (emailExists) {
+      map((res: any) => {
+        if (res.status == "unavailable") {
+          console.log("res got");
           return {
             isExists: true,
           };

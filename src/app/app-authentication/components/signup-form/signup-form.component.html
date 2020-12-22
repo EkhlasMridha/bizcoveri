@@ -75,7 +75,7 @@
                 </div>
                 <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 5px;">
                     <div fxLayoutAlign="center center">
-                        <button mat-raised-button type="submit" color="primary">
+                        <button mat-raised-button type="submit" color="primary" [disabled]="isLoading$ | async">
                             Create Account
                         </button>
                     </div>
