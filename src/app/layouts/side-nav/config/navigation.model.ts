@@ -1,4 +1,4 @@
-export interface NavigationModel{
+export interface SideNavigationModel {
     name: string;
     route: string;
     matIcon?: string;

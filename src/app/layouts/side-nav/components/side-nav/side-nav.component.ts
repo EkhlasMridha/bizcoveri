@@ -3,8 +3,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { CoreService } from 'src/app/core/services/core.service';
+import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
-import { NavigationModel } from '../../config/navigation.model';
+import { SideNavigationModel } from '../../config/navigation.model';
 
 @Component({
   selector: 'app-side-nav',
@@ -13,7 +15,7 @@ import { NavigationModel } from '../../config/navigation.model';
   encapsulation: ViewEncapsulation.None
 })
 export class SideNavComponent implements OnInit {
-
+  appName: string = DomainService.domains.AppName;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -22,27 +24,54 @@ export class SideNavComponent implements OnInit {
 
   activatedRoute: string = '';
 
-  navigations: NavigationModel[] = [
+  navigations: SideNavigationModel[] = [
+    {
+      name: "Notifications",
+      route: "#",
+      matIcon: "notifications"
+    },
     {
       name: "Dashboard",
       route: "dashboard",
-      matIcon: "home"
+      matIcon: "dashboard"
     },
     {
-      name: "Navigation 2",
-      route: "home",
-      matIcon: "home"
+      name: "Company Details",
+      route: "#",
+      matIcon: "list_alt"
     },
     {
-      name: "Navigation 2",
-      route: "home",
-      matIcon: "home"
+      name: "Pricing",
+      route: "#",
+      localIcon: "rupee"
+    },
+    {
+      name: "Account Settings",
+      route: "#",
+      matIcon: "settings_applications"
+    },
+    {
+      name: "Meetings",
+      route: "#",
+      matIcon: "event_note"
+    },
+    {
+      name: "Solution",
+      route: "#",
+      localIcon: "solution"
+    },
+    {
+      name: "Help",
+      route: "#",
+      matIcon: "help"
     }
   ];
 
-  constructor (private breakpointObserver: BreakpointObserver, private navTracer: NavTracerService) { }
+  constructor (private breakpointObserver: BreakpointObserver, private coreService: CoreService) {
+    this.coreService.iconService.loadIcons(["rupee", "solution"]);
+  }
   ngOnInit(): void {
-    this.navTracer.routeReceiver.subscribe(res => {
+    this.coreService.navTracerService.routeReceiver.subscribe(res => {
       this.activatedRoute = res[0].path;
     });
   }

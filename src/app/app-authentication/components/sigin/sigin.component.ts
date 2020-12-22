@@ -69,10 +69,8 @@ export class SiginComponent implements OnInit {
     }
     const result: SigninModel = Object.assign({}, this.loginForm.value);
     let credential = new SignInDto(result);
-    console.log(credential);
 
-    this.authService.signin(credential).subscribe((res) => {
-      console.log(res);
-    });
+
+    this.authService.signin(credential).subscribe((res) => { });
   }
 }

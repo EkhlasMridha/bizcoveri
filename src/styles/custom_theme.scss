@@ -58,6 +58,10 @@ $accent-color:map-get($custom-theme, accent );
   background-color: mat-color($accent-color,default);
 }
 
+.accent-background-override{
+  background-color: mat-color($accent-color,default) !important;
+}
+
 .primary-background-override {
   background-color: mat-color($primary-color, default) !important;
 }
