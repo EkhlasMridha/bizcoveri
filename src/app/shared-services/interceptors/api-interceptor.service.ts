@@ -6,10 +6,10 @@ import {
   HttpEvent,
   HttpResponse,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { DomainService } from '../utilities/domain.service';
 import { CoreService } from 'src/app/core/services/core.service';
-import { delay, finalize, tap } from 'rxjs/operators';
+import { finalize, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -31,10 +31,12 @@ export class ApiInterceptorService implements HttpInterceptor {
     this.startLoader();
 
     this.coreService.logMessage(`==> Request payload [${request.url}] <==`, request.body);
+
     return next.handle(request).pipe(
       tap(res => {
         if (res instanceof HttpResponse) {
           this.coreService.logMessage(`==> Response data [${res.url}] <==`, res.body);
+          this.stopLoader();
         }
       }),
       finalize(() => {
@@ -44,16 +46,10 @@ export class ApiInterceptorService implements HttpInterceptor {
   }
 
   private startLoader() {
-    ++this.counter;
-    setTimeout(() => {
-      this.coreService.startLoader();
-    }, 1000);
+    this.coreService.startLoader();
   }
 
   private stopLoader() {
-    --this.counter;
-    if (this.counter == 0) {
-      this.coreService.stopLoader();
-    }
+    this.coreService.stopLoader();
   }
 }
