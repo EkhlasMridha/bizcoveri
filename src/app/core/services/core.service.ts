@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
+import { RootlineProgressService } from 'src/app/shared-services/utilities/rootline-progress.service';
 import { TokenService } from 'src/app/shared-services/utilities/token.service';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class CoreService {
   private _formService: FormService;
   private _tokenService: TokenService;
   private _navTracerService: NavTracerService;
+  private _rootlineProgress: RootlineProgressService;
 
   public get iconService(): IconService {
     if (!this._iconService) {
@@ -43,5 +45,16 @@ export class CoreService {
     return this._tokenService;
   }
 
+  public get rootlineProgress() {
+    if (!this._rootlineProgress) {
+      this._rootlineProgress = this.injector.get(RootlineProgressService);
+    }
+    return this._rootlineProgress;
+  }
+
   constructor (private injector: Injector) { }
+
+  public rootlineProgressListener() {
+    return this.rootlineProgress.loaderListener;
+  }
 }
