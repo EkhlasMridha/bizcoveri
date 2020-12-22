@@ -95,10 +95,6 @@ export class SignupFormComponent implements OnInit {
     result.usertype = value.toUpperCase();
     let data = new SignUpDto(result);
 
-    console.log(data);
-
-    this.authService.signUp(data).subscribe(res => {
-      console.log(res);
-    });
+    this.authService.signUp(data).subscribe(res => { });
   }
 }
