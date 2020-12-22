@@ -1,40 +1,35 @@
-<div class="page-theme" fxLayout="row">
-  <div fxFlex.xs="0" fxFlex="40" class="side-image login-image" fxLayoutAlign="center start">
+<authpage-wrapper>
+  <div sideImage fxFlex.xs="0" fxFlex="40" class="side-image login-image" fxLayoutAlign="center start">
     <span class="side-title">Welcome</span>
   </div>
-  <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
-    <div>
-      <biz-toolbar [barColor]="color" [navigationList]="navigationList" hasBackground></biz-toolbar>
-    </div>
-    <div fxLayout="column" fxLayoutAlign="start center">
-      <bizcoveri></bizcoveri>
-      <div class="full-width">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" class="auth-form">
-          <div fxLayout="column" fxLayoutGap="5px">
-            <mat-form-field appearance="outline">
-              <mat-label>Username</mat-label>
-              <input matInput formControlName="username" placeholder="username">
-              <mat-error>{{errorObserver$.username}}</mat-error>
-            </mat-form-field>
-          </div>
-          <div fxLayout="column" fxLayoutGap="5px">
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput formControlName="password" type="password" placeholder="password">
-              <mat-error>{{errorObserver$.password}}</mat-error>
-            </mat-form-field>
-          </div>
-          <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
-            <span class="accent-color cursor-pointer" routerLink="/forgot-password">Forgot Password?</span>
-            <button mat-raised-button type="submit" color="accent">Login</button>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center"
-            style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
-            <span>Create an Account</span>
-            <button class="gray-background" type="button" mat-raised-button routerLink="/signup">Sign Up</button>
-          </div>
-        </form>
-      </div>
+  <div authBody fxLayout="column" fxLayoutAlign="start center">
+    <bizcoveri></bizcoveri>
+    <div class="full-width">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" class="auth-form">
+        <div fxLayout="column" fxLayoutGap="5px">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="username">
+            <mat-error>{{errorObserver$.username}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayoutGap="5px">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" placeholder="password">
+            <mat-error>{{errorObserver$.password}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
+          <span class="accent-color cursor-pointer" routerLink="/forgot-password">Forgot Password?</span>
+          <button mat-raised-button type="submit" color="accent">Login</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center"
+          style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
+          <span>Create an Account</span>
+          <button class="gray-background" type="button" mat-raised-button routerLink="/signup">Sign Up</button>
+        </div>
+      </form>
     </div>
   </div>
-</div>
+</authpage-wrapper>

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 import { CoreModule } from '../core/core.module';
 import { SignUpDto } from './dto/signup.dto';
+import { AuthpageWrapperComponent } from './components/authpage-wrapper/authpage-wrapper.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,7 @@ const routes: Routes = [
     ResetPasswordComponent,
     ForgotPasswordComponent,
     SignupFormComponent,
+    AuthpageWrapperComponent,
   ],
   imports: [
     CommonModule,
