@@ -1,4 +1,4 @@
-<mat-toolbar #matToolbar color="primary" fxLayout="row">
+<mat-toolbar #matToolbar fxLayout="row">
     <mat-toolbar-row>
         <div *ngIf="showMenuButton" fxLayout="row" fxLayoutAlign="start center">
             <button mat-icon-button (click)="openDrawer($event)">
@@ -9,8 +9,8 @@
         <div class="spacer"></div>
         <div class="nav-items">
             <div class="item" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" (click)="signoutUser()">
-                <span>Signout</span>
-                <mat-icon svgIcon="signout" class="color-icon"></mat-icon>
+                <span class="color-white">Signout</span>
+                <mat-icon svgIcon="signout" class="color-white"></mat-icon>
             </div>
         </div>
     </mat-toolbar-row>

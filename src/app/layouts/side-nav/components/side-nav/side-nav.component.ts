@@ -3,6 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
 import { NavigationModel } from '../../config/navigation.model';
 
@@ -13,7 +14,7 @@ import { NavigationModel } from '../../config/navigation.model';
   encapsulation: ViewEncapsulation.None
 })
 export class SideNavComponent implements OnInit {
-
+  appName: string = DomainService.domains.AppName;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
