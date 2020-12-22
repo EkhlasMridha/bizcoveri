@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
-import { NavigationModel } from '../../config/navigation.model';
+import { SideNavigationModel } from '../../config/navigation.model';
 
 @Component({
   selector: 'app-side-nav',
@@ -23,22 +23,12 @@ export class SideNavComponent implements OnInit {
 
   activatedRoute: string = '';
 
-  navigations: NavigationModel[] = [
+  navigations: SideNavigationModel[] = [
     {
       name: "Dashboard",
       route: "dashboard",
-      matIcon: "home"
+      matIcon: "dashboard"
     },
-    {
-      name: "Navigation 2",
-      route: "home",
-      matIcon: "home"
-    },
-    {
-      name: "Navigation 2",
-      route: "home",
-      matIcon: "home"
-    }
   ];
 
   constructor (private breakpointObserver: BreakpointObserver, private navTracer: NavTracerService) { }
