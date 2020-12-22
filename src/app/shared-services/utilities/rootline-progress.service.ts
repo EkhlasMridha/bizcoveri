@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RootlineProgressService {
   private isLoading: boolean;
-  public loaderListener: BehaviorSubject<any> = new BehaviorSubject(false);
+  public loaderListener: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   get loading(): boolean {
     return this.isLoading;

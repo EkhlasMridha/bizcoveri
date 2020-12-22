@@ -11,6 +11,7 @@ import { DomainService } from 'src/app/shared-services/utilities/domain.service'
 import { CoreService } from 'src/app/core/services/core.service';
 import { SignInDto } from '../../dto/signin.dto';
 import { SigninModel } from '../../dto/signin.dto';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sigin',
@@ -21,6 +22,7 @@ export class SiginComponent implements OnInit {
   loginForm: FormGroup;
   color: string = DomainService.domains.ctColor;
   navigationList: NavigationModel[] = authPageToolbarNav;
+  isLoading$: Observable<boolean>;
 
   errorObserver$ = {
     username: '',
@@ -41,6 +43,7 @@ export class SiginComponent implements OnInit {
       this.errorObserver$,
       this.errorTypeGenerator
     );
+    this.isLoading$ = this.coreService.rootlineProgressListener();
   }
 
   errorTypeGenerator(type: string, owner: string) {
