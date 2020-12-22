@@ -38,7 +38,8 @@ const routes: Routes = [
     component: SignupFormComponent,
     data: {
       breadCrumb: "Signup Info"
-    }
+    },
+    canActivate: [AuthGuardService],
   },
   {
     path: 'reset-password',

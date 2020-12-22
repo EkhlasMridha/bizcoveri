@@ -42,8 +42,8 @@ export class AuthService {
         return throwError(err);
       }),
       tap((res) => {
-        // this.coreService.tokenService.storeToken(res);
-        // this.router.navigate(['']);
+        this.coreService.tokenService.storeToken(res);
+        this.router.navigate(['']);
       })
     );
   }

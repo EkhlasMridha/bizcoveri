@@ -17,24 +17,24 @@ export class TokenService {
 
   storeToken(token: TokenModel) {
     localStorage.setItem(this.accessToken, token.accessToken);
-    localStorage.setItem(this.refreshToken, token.refreshToken);
+    // localStorage.setItem(this.refreshToken, token.refreshToken);
   }
 
   removeToken() {
     localStorage.removeItem(this.accessToken);
-    localStorage.removeItem(this.refreshToken);
+    // localStorage.removeItem(this.refreshToken);
   }
 
   getToken(): TokenModel {
     let access = localStorage.getItem(this.accessToken);
-    let refresh = localStorage.getItem(this.refreshToken);
-    if (!(access && refresh)) {
+    // let refresh = localStorage.getItem(this.refreshToken);
+    if (!(access)) {
       return null;
     }
 
     let token: TokenModel = {
       accessToken: access,
-      refreshToken: refresh,
+      refreshToken: "refresh",
     };
 
     return token;

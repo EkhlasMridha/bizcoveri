@@ -20,7 +20,7 @@ export class TokenInterceptorService implements HttpInterceptor {
   private RefreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(
     null
   );
-  constructor(private tokenService: TokenService, private router: Router) {}
+  constructor (private tokenService: TokenService, private router: Router) { }
 
   intercept(
     req: HttpRequest<any>,
@@ -33,12 +33,12 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((res) => {
         if (res instanceof HttpErrorResponse && res.status == 401) {
-          if (res.error == DomainService.domains.RefreshError) {
-            this.tokenService.removeToken();
-            this.router.navigate(['signin']);
-            return null;
-          }
-          return this.handleUnauthorizeError(req, next);
+          // if (res.error == DomainService.domains.RefreshError) {
+          this.tokenService.removeToken();
+          this.router.navigate(['signin']);
+          return null;
+          // }
+          // return this.handleUnauthorizeError(req, next);
         }
         return throwError(res);
       })
