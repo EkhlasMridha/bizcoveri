@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NavigationModel } from 'src/app/layouts/side-nav/config/navigation.model';
+import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { coerceBooleanProperty } from "@angular/cdk/coercion/";
 import { Router } from '@angular/router';
 import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';

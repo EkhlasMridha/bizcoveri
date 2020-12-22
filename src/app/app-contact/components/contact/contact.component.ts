@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationModel } from 'src/app/layouts/side-nav/config/navigation.model';
+import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authpageNavigation, customToolbarNavigation } from 'src/app/shared-modules/navigations/customtoolbar.nav';
 import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 
