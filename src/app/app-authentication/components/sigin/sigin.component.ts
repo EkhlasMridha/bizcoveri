@@ -9,6 +9,9 @@ import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
 import { DomainService } from 'src/app/shared-services/utilities/domain.service';
 import { CoreService } from 'src/app/core/services/core.service';
+import { SignInDto } from '../../dto/signin.dto';
+import { SigninModel } from '../../dto/signin.dto';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sigin',
@@ -19,9 +22,10 @@ export class SiginComponent implements OnInit {
   loginForm: FormGroup;
   color: string = DomainService.domains.ctColor;
   navigationList: NavigationModel[] = authPageToolbarNav;
+  isLoading$: Observable<boolean>;
 
   errorObserver$ = {
-    email: '',
+    username: '',
     password: '',
   };
 
@@ -39,11 +43,12 @@ export class SiginComponent implements OnInit {
       this.errorObserver$,
       this.errorTypeGenerator
     );
+    this.isLoading$ = this.coreService.rootlineProgressListener();
   }
 
   errorTypeGenerator(type: string, owner: string) {
     switch (owner) {
-      case 'email':
+      case 'username':
         return 'User name is required';
       case 'password':
         return 'Password is required';
@@ -52,7 +57,7 @@ export class SiginComponent implements OnInit {
 
   createForm() {
     return this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -62,11 +67,12 @@ export class SiginComponent implements OnInit {
       this.coreService.formService.checkFormStatus(this.loginForm);
       return;
     }
-    const result = Object.assign({}, this.loginForm.value);
-    console.log(result);
+    const result: SigninModel = Object.assign({}, this.loginForm.value);
+    let credential = new SignInDto(result);
+    console.log(credential);
 
-    // this.authService.signin(result).subscribe((res) => {
-    //   console.log(res);
-    // });
+    this.authService.signin(credential).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

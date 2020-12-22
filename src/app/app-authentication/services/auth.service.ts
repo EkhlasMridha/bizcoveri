@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { SignUpModel } from '../models/signup.model';
 import {
   tap,
   retry,
@@ -12,6 +11,7 @@ import {
 import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/core/services/core.service';
+import { SignUpDto } from '../dto/signup.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -23,17 +23,20 @@ export class AuthService {
     private router: Router
   ) { }
 
-  signUp(payload: SignUpModel) {
+  signUp(payload: SignUpDto) {
     return this.http.post('auth/signup', payload).pipe(
       catchError((err) => {
         return throwError(err);
+      }),
+      tap((res) => {
+        this.router.navigate(["login"]);
       })
     );
   }
 
   signin(payload: any) {
-    return this.http.post<TokenModel>('identity/login', payload).pipe(
-      retry(3),
+    return this.http.post<TokenModel>('auth/login', payload).pipe(
+      retry(2),
       catchError((err) => {
         return throwError(err);
       }),

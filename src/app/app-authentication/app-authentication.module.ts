@@ -14,13 +14,15 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 import { CoreModule } from '../core/core.module';
+import { AuthpageWrapperComponent } from './components/authpage-wrapper/authpage-wrapper.component';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const routes: Routes = [
   {
-    path: 'signin',
+    path: 'login',
     component: SiginComponent,
     data: {
-      breadCrumb: 'SignIn',
+      breadCrumb: 'LogIn',
     },
     canActivate: [AuthGuardService],
   },
@@ -37,7 +39,8 @@ const routes: Routes = [
     component: SignupFormComponent,
     data: {
       breadCrumb: "Signup Info"
-    }
+    },
+    canActivate: [AuthGuardService],
   },
   {
     path: 'reset-password',
@@ -64,6 +67,7 @@ const routes: Routes = [
     ResetPasswordComponent,
     ForgotPasswordComponent,
     SignupFormComponent,
+    AuthpageWrapperComponent,
   ],
   imports: [
     CommonModule,
@@ -74,7 +78,8 @@ const routes: Routes = [
     BizcoverTitleModule,
     MatFormFieldModule,
     NgxMatIntlTelInputModule,
-    CoreModule
-  ],
+    CoreModule,
+    MatProgressSpinnerModule
+  ]
 })
 export class AppAuthenticationModule { }

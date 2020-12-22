@@ -9,6 +9,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { interceptorProvider } from '../shared-services/interceptors/interceptor.provider';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
+import { RootlineProgressbarModule } from '../app-tools/rootline-progressbar/rootline-progressbar.module';
 
 export function initializer(domainService: DomainService) {
   return () => {
@@ -29,7 +30,7 @@ export function initializer(domainService: DomainService) {
     BrowserModule,
     RootRoutingModule,
     BrowserAnimationsModule,
-    AppLoaderModule,
+    RootlineProgressbarModule,
     ToastrModule.forRoot(),
   ],
   providers: [
