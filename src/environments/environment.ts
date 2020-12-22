@@ -7,6 +7,7 @@ export const environment = {
   AppName: 'Root-Line',
 
   apiHost: 'http://34.123.122.72:8080/v1/',
+  //apiHost: 'http://localhost:8080/v1/',
   RefreshError: 'REFRESH_EXPIRE',
   ctColor: "#242424"
 };

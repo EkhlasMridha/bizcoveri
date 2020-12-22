@@ -22,8 +22,8 @@ export class SignupFormComponent implements OnInit {
   errorObserver = {
     username: null,
     email: null,
-    firstname: null,
-    lastname: null,
+    firstName: null,
+    lastName: null,
     phone: null,
     password: null,
     confirmPassword: null,
@@ -47,8 +47,8 @@ export class SignupFormComponent implements OnInit {
     return this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      firstname: ['', Validators.compose([Validators.minLength(3)])],
-      lastname: ['', Validators.compose([Validators.minLength(3)])],
+      firstName: ['', Validators.compose([Validators.minLength(3)])],
+      lastName: ['', Validators.compose([Validators.minLength(3)])],
       phone: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],

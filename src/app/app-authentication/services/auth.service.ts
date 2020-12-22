@@ -25,6 +25,7 @@ export class AuthService {
   ) { }
 
   signUp(payload: SignUpModel) {
+    console.log('payload before post =====>>> '+payload);
     return this.http.post('auth/signup', payload).pipe(
       catchError((err) => {
         return throwError(err);
