@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { CoreService } from 'src/app/core/services/core.service';
@@ -37,6 +38,7 @@ export class SignupFormComponent implements OnInit {
 
   constructor (private coreService: CoreService,
     private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
     private validationService: ValidationService,
     private authService: AuthService) { }
 
@@ -89,9 +91,12 @@ export class SignupFormComponent implements OnInit {
 
     const result: SignUpModel = Object.assign({}, this.signupForm.value);
     result.roles = [{ "name": "ADMIN" }];
-    result.usertype = "CLIENT";
+    let value: string = this.route.snapshot.queryParams.type;
+    result.usertype = value.toUpperCase();
     let data = new SignUpDto(result);
+
     console.log(data);
+
     this.authService.signUp(data).subscribe(res => {
       console.log(res);
     });
