@@ -13,7 +13,8 @@
                 [ngClass]="{'primary-background-override color-white-override': activatedRoute==nav.route}"
                 id="{{nav.route}}" [routerLink]="nav.route">
                 <div class="full-width color-white" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start end">
-                    <mat-icon>{{nav.matIcon}}</mat-icon>
+                    <mat-icon *ngIf="nav.matIcon">{{nav.matIcon}}</mat-icon>
+                    <mat-icon *ngIf="nav.localIcon" [svgIcon]="nav.localIcon"></mat-icon>
                     <span class="nav-text">{{nav.name}}</span>
                 </div>
             </mat-list-item>
