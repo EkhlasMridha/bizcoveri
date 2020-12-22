@@ -22,7 +22,9 @@
         </div>
         <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
           <span class="accent-color cursor-pointer" routerLink="/forgot-password">Forgot Password?</span>
-          <button mat-raised-button type="submit" color="accent">Login</button>
+          <div *ngIf="!(isLoading$ | async);else spinner">
+            <button mat-raised-button type="submit" color="accent">Login</button>
+          </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center"
           style="border-top: 1px solid #c2c2c2;padding-top: 15px;">
@@ -33,3 +35,9 @@
     </div>
   </div>
 </authpage-wrapper>
+
+<ng-template #spinner>
+  <div>
+    <mat-spinner diameter="28" strokeWidth="4"></mat-spinner>
+  </div>
+</ng-template>

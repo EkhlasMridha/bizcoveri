@@ -14,8 +14,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 import { CoreModule } from '../core/core.module';
-import { SignUpDto } from './dto/signup.dto';
 import { AuthpageWrapperComponent } from './components/authpage-wrapper/authpage-wrapper.component';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const routes: Routes = [
   {
@@ -78,7 +78,8 @@ const routes: Routes = [
     BizcoverTitleModule,
     MatFormFieldModule,
     NgxMatIntlTelInputModule,
-    CoreModule
+    CoreModule,
+    MatProgressSpinnerModule
   ]
 })
 export class AppAuthenticationModule { }

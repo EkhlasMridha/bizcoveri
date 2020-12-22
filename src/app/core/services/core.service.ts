@@ -57,4 +57,12 @@ export class CoreService {
   public rootlineProgressListener() {
     return this.rootlineProgress.loaderListener;
   }
+
+  public startLoader() {
+    this.rootlineProgress.startAppLoader();
+  }
+
+  public stopLoader() {
+    this.rootlineProgress.stopAppLoader();
+  }
 }
