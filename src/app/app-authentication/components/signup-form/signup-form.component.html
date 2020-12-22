@@ -27,12 +27,12 @@
                     <div fxLayout="row" fxLayoutGap="10px">
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>First name</mat-label>
-                            <input matInput formControlName="firstname" placeholder="first name">
+                            <input matInput formControlName="firstname" placeholder="first name" required>
                             <mat-error>{{errorObserver.firstname | async}}</mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>Last name</mat-label>
-                            <input matInput formControlName="lastname" placeholder="last name">
+                            <input matInput formControlName="lastname" placeholder="last name" required>
                             <mat-error>{{errorObserver.lastname | async}}</mat-error>
                         </mat-form-field>
                     </div>

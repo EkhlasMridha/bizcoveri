@@ -14,13 +14,14 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 import { CoreModule } from '../core/core.module';
+import { SignUpDto } from './dto/signup.dto';
 
 const routes: Routes = [
   {
-    path: 'signin',
+    path: 'login',
     component: SiginComponent,
     data: {
-      breadCrumb: 'SignIn',
+      breadCrumb: 'LogIn',
     },
     canActivate: [AuthGuardService],
   },
@@ -75,6 +76,6 @@ const routes: Routes = [
     MatFormFieldModule,
     NgxMatIntlTelInputModule,
     CoreModule
-  ],
+  ]
 })
 export class AppAuthenticationModule { }
