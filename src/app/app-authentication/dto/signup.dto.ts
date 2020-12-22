@@ -9,8 +9,8 @@ export class SignUpDto {
     usertype: string;
 
     constructor (signUpModel: SignUpModel) {
-        this.firstName = signUpModel.firstname;
-        this.lastName = signUpModel.lastname;
+        this.firstName = signUpModel.firstName;
+        this.lastName = signUpModel.lastName;
         this.username = signUpModel.username;
         this.password = signUpModel.password;
         this.phone = signUpModel.phone;
@@ -21,8 +21,8 @@ export class SignUpDto {
 }
 
 export interface SignUpModel {
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
     username: string;
     email: string;
     password: string;
