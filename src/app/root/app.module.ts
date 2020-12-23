@@ -9,6 +9,7 @@ import { interceptorProvider } from '../shared-services/interceptors/interceptor
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { RootlineProgressbarModule } from "@modules/rootline-progressbar/rootline-progressbar.module";
+import { CoreModule } from "@core/core.module";
 
 export function initializer(domainService: DomainService) {
   return () => {
@@ -31,6 +32,7 @@ export function initializer(domainService: DomainService) {
     BrowserAnimationsModule,
     RootlineProgressbarModule,
     ToastrModule.forRoot(),
+    CoreModule
   ],
   providers: [
     JwtHelperService,

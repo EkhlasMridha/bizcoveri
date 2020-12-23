@@ -23,6 +23,9 @@
       "@modules/*": [
         "src/app/shared-modules/*"
       ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
       "@core/core-service": [
         "src/app/core/services/core.service.ts"
       ],
