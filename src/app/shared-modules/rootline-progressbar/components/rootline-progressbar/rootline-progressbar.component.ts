@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { CoreService } from 'src/app/core/services/core.service';
-import { RootlineProgressService } from 'src/app/shared-services/utilities/rootline-progress.service';
 
 @Component({
   selector: 'rootline-progressbar',

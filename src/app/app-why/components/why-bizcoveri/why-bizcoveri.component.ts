@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
+import { CoreService } from "@core/core-service";
 import { authpageNavigation, customToolbarNavigation } from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
@@ -28,12 +27,12 @@ export class WhyBizcoveriComponent implements OnInit {
       type: 'secondary'
     }
   ];
-  constructor (private navTracer: NavTracerService, private iconService: IconService) {
-    this.iconService.loadIcons(['quality-person', 'collaboration', 'compliance', 'execution', 'globe', 'file']);
+  constructor (private coreService: CoreService) {
+    this.coreService.iconService.loadIcons(['quality-person', 'collaboration', 'compliance', 'execution', 'globe', 'file']);
   }
 
   ngOnInit(): void {
-    this.subscription = this.navTracer.routeReceiver.subscribe(res => {
+    this.subscription = this.coreService.navTracerService.routeReceiver.subscribe(res => {
       this.selectedRoute = res[1].path;
     });
   }

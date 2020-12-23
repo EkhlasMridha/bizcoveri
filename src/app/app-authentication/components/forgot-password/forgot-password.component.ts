@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authPageToolbarNav } from 'src/app/shared-modules/navigations/customtoolbar.nav';
 import { DomainService } from '@core/env-domain';
-import { FormService } from 'src/app/shared-services/utilities/form.service';
+import { CoreService } from '@core/core-service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -21,14 +21,13 @@ export class ForgotPasswordComponent implements OnInit {
   };
   constructor (
     private formBuilder: FormBuilder,
-    private formService: FormService,
-    private authService: AuthService
+    private coreService: CoreService,
   ) {
     this.forgotForm = this.createForm();
   }
 
   ngOnInit(): void {
-    this.formService.handleFormError(
+    this.coreService.formService.handleFormError(
       this.forgotForm,
       this.errorGenerator$,
       this.generateError
@@ -56,7 +55,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit() {
     if (!this.forgotForm.valid) {
-      this.formService.checkFormStatus(this.forgotForm);
+      this.coreService.formService.checkFormStatus(this.forgotForm);
       return;
     }
 

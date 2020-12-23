@@ -1,11 +1,11 @@
 import { Injectable, Injector } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormService } from 'src/app/shared-services/utilities/form.service';
-import { HttpLoggerService } from 'src/app/shared-services/utilities/http-logger.service';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
-import { RootlineProgressService } from 'src/app/shared-services/utilities/rootline-progress.service';
-import { TokenService } from 'src/app/shared-services/utilities/token.service';
+import { FormGroup } from '@angular/forms';
+import { FormService } from './form.service';
+import { HttpLoggerService } from './http-logger.service';
+import { IconService } from './icon.service';
+import { NavTracerService } from './nav-tracer.service';
+import { RootlineProgressService } from './rootline-progress.service';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root',
