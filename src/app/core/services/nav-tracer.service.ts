@@ -5,9 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class NavTracerService {
   private static readonly BREAD_CRUMB = 'breadCrumb';
   private routeBroadcaster: BehaviorSubject<UrlSegment[]> = new BehaviorSubject<UrlSegment[]>(null);

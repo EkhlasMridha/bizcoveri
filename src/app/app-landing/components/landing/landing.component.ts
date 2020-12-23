@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { authpageNavigation, customToolbarNavigation } from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
@@ -11,7 +10,7 @@ import { authpageNavigation, customToolbarNavigation } from "../../../shared-mod
 export class LandingComponent implements OnInit {
   navList: NavigationModel[] = authpageNavigation;
   navigations: NavigationModel[] = customToolbarNavigation;
-  constructor (private icnoService: IconService) { }
+  constructor () { }
 
   ngOnInit(): void {
   }

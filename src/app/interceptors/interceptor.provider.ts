@@ -8,7 +8,7 @@ interface Providers {
   multi: boolean;
 }
 
-export const interceptorProvider: Providers[] = [
+export const InterceptorProvider: Providers[] = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: ApiInterceptorService,

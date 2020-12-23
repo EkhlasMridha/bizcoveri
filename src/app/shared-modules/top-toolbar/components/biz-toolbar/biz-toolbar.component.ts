@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { coerceBooleanProperty } from "@angular/cdk/coercion/";
 import { Router } from '@angular/router';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
+import { CoreService } from '@core/core-service';
 
 @Component({
   selector: 'biz-toolbar',
@@ -40,10 +40,10 @@ export class BizToolbarComponent implements OnInit {
 
   selectedNav: string = null;
 
-  constructor (private router: Router, private navTracer: NavTracerService) { }
+  constructor (private router: Router, private coreService: CoreService) { }
 
   ngOnInit(): void {
-    this.navTracer.routeReceiver.subscribe(res => {
+    this.coreService.navTracerService.routeReceiver.subscribe(res => {
       this.selectedNav = res[0].path;
     });
   }

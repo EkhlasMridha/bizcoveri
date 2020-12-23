@@ -10,6 +10,7 @@ import * as nav from "../../root-routing/app.routes";
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { BizcoverTitleModule } from "@modules/bizcover-title/bizcover-title.module";
 
 const routes: Routes = [
   { path: "", component: SideNavComponent, children: nav.getBusinessRoutes() }
@@ -25,6 +26,7 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
+    BizcoverTitleModule,
     RouterModule.forChild(routes)
   ]
 })

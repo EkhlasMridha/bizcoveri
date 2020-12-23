@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { ServiceTypeModel } from 'src/app/contracts/servicetype.model';
 import { authpageNavigation, customToolbarNavigation } from 'src/app/shared-modules/navigations/customtoolbar.nav';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
+import { CoreService } from '@core/core-service';
 import { TutorialModel } from '../../models/tutorial.model';
 
 @Component({
@@ -85,8 +85,8 @@ export class SolutionComponent implements OnInit {
       title: "Feedback"
     }
   ];
-  constructor (private iconService: IconService) {
-    this.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
+  constructor (private coreService: CoreService) {
+    this.coreService.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
   }
 
   ngOnInit(): void {

@@ -3,9 +3,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { CoreService } from 'src/app/core/services/core.service';
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
+import { CoreService } from '@core/core-service';
+import { DomainService } from '@core/env-domain';
 import { SideNavigationModel } from '../../config/navigation.model';
 
 @Component({

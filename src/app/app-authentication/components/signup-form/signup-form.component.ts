@@ -3,9 +3,8 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { CoreService } from 'src/app/core/services/core.service';
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
-import { FormService } from 'src/app/shared-services/utilities/form.service';
+import { CoreService } from '@core/core-service';
+import { DomainService } from '@core/env-domain';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
 import { SignUpDto } from '../../dto/signup.dto';
 import { SignUpModel } from '../../dto/signup.dto';

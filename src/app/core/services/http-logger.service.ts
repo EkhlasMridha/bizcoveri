@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { DomainService } from './domain.service';
+import { DomainService } from '@core/env-domain';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HttpLoggerService {
 
   constructor () { }

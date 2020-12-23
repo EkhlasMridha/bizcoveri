@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BizcoverTitleModule } from "@modules/bizcover-title/bizcover-title.module";
 
 @NgModule({
   declarations: [ToolbarComponent],
@@ -15,8 +16,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BizcoverTitleModule
   ],
-  exports:[ToolbarComponent,MatToolbarModule]
+  exports: [ToolbarComponent, MatToolbarModule]
 })
 export class ToolbarModule { }

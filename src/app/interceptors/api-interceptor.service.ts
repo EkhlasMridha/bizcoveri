@@ -7,8 +7,8 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { DomainService } from '../utilities/domain.service';
-import { CoreService } from 'src/app/core/services/core.service';
+import { DomainService } from '@core/env-domain';
+import { CoreService } from '@core/core-service';
 import { finalize, tap } from 'rxjs/operators';
 
 @Injectable({

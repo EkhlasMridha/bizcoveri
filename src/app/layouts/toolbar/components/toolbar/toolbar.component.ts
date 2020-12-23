@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { CoreService } from 'src/app/core/services/core.service';
-import { UserManagerService } from 'src/app/shared-services/user-manager.service';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
+import { CoreService } from '@core/core-service';;
 
 @Component({
   selector: 'app-toolbar',
@@ -15,9 +13,8 @@ export class ToolbarComponent implements OnInit {
   constructor (
     private coreService: CoreService,
     private router: Router,
-    private iconService: IconService
   ) {
-    this.iconService.loadIcons(['signout']);
+    this.coreService.iconService.loadIcons(['signout']);
   }
 
   ngOnInit(): void { }

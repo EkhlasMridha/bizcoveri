@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CoreService } from './services/core.service';
-import { IconService } from '../shared-services/utilities/icon.service';
-import { TokenService } from '../shared-services/utilities/token.service';
-import { NavTracerService } from '../shared-services/utilities/nav-tracer.service';
-import { FormService } from '../shared-services/utilities/form.service';
+import { FormService } from './services/form.service';
+import { HttpLoggerService } from './services/http-logger.service';
+import { NavTracerService } from './services/nav-tracer.service';
+import { RootlineProgressService } from './services/rootline-progress.service';
+import { TokenService } from './services/token.service';
+import { IconService } from './services/icon.service';
 
 
 
@@ -13,5 +14,13 @@ import { FormService } from '../shared-services/utilities/form.service';
   imports: [
     CommonModule
   ],
+  providers: [
+    FormService,
+    HttpLoggerService,
+    NavTracerService,
+    RootlineProgressService,
+    TokenService,
+    IconService,
+  ]
 })
 export class CoreModule { }

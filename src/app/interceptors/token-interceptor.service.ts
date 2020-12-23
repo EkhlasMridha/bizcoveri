@@ -7,11 +7,11 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
-import { TokenService, TokenModel } from '../utilities/token.service';
+import { TokenModel } from '@core/services/token.service';
 import { switchMap, filter, take, catchError } from 'rxjs/operators';
-import { DomainService } from '../utilities/domain.service';
+import { DomainService } from '@core/env-domain';
 import { Router } from '@angular/router';
-import { CoreService } from 'src/app/core/services/core.service';
+import { CoreService } from '@core/core-service';
 
 @Injectable({
   providedIn: 'root',

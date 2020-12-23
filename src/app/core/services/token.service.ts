@@ -7,9 +7,7 @@ export interface TokenModel {
   refreshToken: string;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TokenService {
   private readonly accessToken: string = 'accessToken';
   private readonly refreshToken: string = 'refreshToken';

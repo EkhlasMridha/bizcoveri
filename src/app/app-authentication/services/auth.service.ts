@@ -5,12 +5,10 @@ import {
   retry,
   catchError,
 } from 'rxjs/operators';
-import {
-  TokenModel,
-} from 'src/app/shared-services/utilities/token.service';
+import { TokenModel } from '@core/services/token.service';
 import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { CoreService } from 'src/app/core/services/core.service';
+import { CoreService } from '@core/core-service';
 import { SignUpDto } from '../dto/signup.dto';
 
 @Injectable({

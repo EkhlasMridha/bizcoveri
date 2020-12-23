@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
 import { TesService } from '../../services/tes.service';
 
 @Component({
@@ -10,11 +9,9 @@ import { TesService } from '../../services/tes.service';
 export class HomeComponent implements OnInit {
   modalRef: any;
   constructor (
-    private iconService: IconService,
     private testService: TesService,
     private ref: ViewContainerRef
   ) {
-    this.iconService.loadIcons(['like']);
     // this.testService.getData().subscribe((res) => {
     //   console.log('result');
     //   console.log(res);

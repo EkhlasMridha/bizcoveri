@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
+import { DomainService } from '@core/env-domain';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
 
 @Component({
