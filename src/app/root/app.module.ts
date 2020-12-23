@@ -5,7 +5,7 @@ import { AppComponent } from './components/root-component/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DomainService } from '@core/env-domain';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
-import { interceptorProvider } from '../shared-services/interceptors/interceptor.provider';
+import { InterceptorProvider } from '@http-interceptor/interceptor.provider';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { RootlineProgressbarModule } from "@modules/rootline-progressbar/rootline-progressbar.module";
@@ -37,7 +37,7 @@ export function initializer(domainService: DomainService) {
   providers: [
     JwtHelperService,
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    interceptorProvider,
+    InterceptorProvider,
     {
       provide: APP_INITIALIZER,
       useFactory: initializer,

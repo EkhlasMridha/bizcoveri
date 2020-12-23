@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
-import { AuthGuardService } from '../shared-services/route-guards/auth-guard.service';
+import { AuthGuardService } from '@route-guard/auth-guard';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';

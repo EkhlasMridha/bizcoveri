@@ -31,6 +31,12 @@
       ],
       "@core/env-domain": [
         "src/app/core/services/domain.service.ts"
+      ],
+      "@route-guard/auth-guard": [
+        "src/app/route-guards/auth-guard.service.ts"
+      ],
+      "@http-interceptor/*": [
+        "src/app/interceptors/*"
       ]
     }
   }
