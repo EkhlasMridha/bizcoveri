@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { Router } from '@angular/router';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
+import { DomainService } from '@core/env-domain';
 
 @Component({
   selector: 'app-signup',

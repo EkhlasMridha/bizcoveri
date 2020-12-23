@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/core/services/core.service';
-import { UserManagerService } from 'src/app/shared-services/user-manager.service';
 import { IconService } from 'src/app/shared-services/utilities/icon.service';
 
 @Component({

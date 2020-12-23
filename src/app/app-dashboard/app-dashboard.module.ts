@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
-import { SharedMaterialModule } from '../shared-modules/shared-materials/shared-material/shared-material.module';
+import { SharedMaterialModule } from "@material/shared-material.module";
 
 const routes: Routes = [
   {
