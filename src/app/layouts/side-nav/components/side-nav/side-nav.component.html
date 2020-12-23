@@ -3,7 +3,7 @@
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
         <mat-toolbar color="accent" fxLayoutAlign="space-between center">
-            <span>{{appName}}</span>
+            <bizcoveri class="bizcoveri-title" isWhite="true"></bizcoveri>
             <button mat-icon-button (click)="openDrawer(drawer)">
                 <mat-icon class="back-icon">arrow_back</mat-icon>
             </button>
