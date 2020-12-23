@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
-import { SharedMaterialModule } from '../shared-modules/shared-materials/shared-material/shared-material.module';
-import { FormsMaterialModule } from '../shared-modules/shared-materials/forms-material/forms-material.module';
 import { AuthGuardService } from '../shared-services/route-guards/auth-guard.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
@@ -16,6 +14,8 @@ import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
 import { CoreModule } from '../core/core.module';
 import { AuthpageWrapperComponent } from './components/authpage-wrapper/authpage-wrapper.component';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { FormsMaterialModule } from "@material/forms-material.module";
+import { SharedMaterialModule } from "@material/shared-material.module";
 
 const routes: Routes = [
   {

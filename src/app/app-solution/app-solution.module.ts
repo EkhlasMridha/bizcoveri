@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SolutionComponent } from './components/solution/solution.component';
 import { RouterModule, Routes } from '@angular/router';
-import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SharedMaterialModule } from '../shared-modules/shared-materials/shared-material/shared-material.module';
+import { SharedMaterialModule } from "@material/shared-material.module";
+import { TopToolbarModule } from "@modules/top-toolbar/top-toolbar.module";
 
 const routes: Routes = [
   {

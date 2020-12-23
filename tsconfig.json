@@ -15,6 +15,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@material/*": [
+        "src/app/shared-materials/*"
+      ],
+      "@modules/*": [
+        "src/app/shared-modules/*"
+      ],
+      "@core/core-service": [
+        "src/app/core/services/core.service.ts"
+      ],
+      "@core/env-domain": [
+        "src/app/core/services/domain.service.ts"
+      ]
+    }
   }
 }

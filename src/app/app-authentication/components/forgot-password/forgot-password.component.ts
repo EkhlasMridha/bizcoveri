@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authPageToolbarNav } from 'src/app/shared-modules/navigations/customtoolbar.nav';
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
+import { DomainService } from '@core/env-domain';
 import { FormService } from 'src/app/shared-services/utilities/form.service';
 import { AuthService } from '../../services/auth.service';
 

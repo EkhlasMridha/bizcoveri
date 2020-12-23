@@ -3,9 +3,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { DomainService } from '@core/env-domain';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HttpLoggerService {
 
   constructor () { }

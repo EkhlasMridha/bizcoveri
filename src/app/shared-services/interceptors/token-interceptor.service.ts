@@ -9,7 +9,7 @@ import {
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { TokenService, TokenModel } from '../utilities/token.service';
 import { switchMap, filter, take, catchError } from 'rxjs/operators';
-import { DomainService } from '../utilities/domain.service';
+import { DomainService } from '@core/env-domain';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/core/services/core.service';
 
