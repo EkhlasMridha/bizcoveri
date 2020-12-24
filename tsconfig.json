@@ -37,6 +37,9 @@
       ],
       "@http-interceptor/*": [
         "src/app/interceptors/*"
+      ],
+      "@contracts/*": [
+        "src/app/contracts/*"
       ]
     }
   }

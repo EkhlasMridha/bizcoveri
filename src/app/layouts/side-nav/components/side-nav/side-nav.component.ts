@@ -6,6 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { CoreService } from '@core/core-service';
 import { DomainService } from '@core/env-domain';
 import { SideNavigationModel } from '../../config/navigation.model';
+import { Navigations } from "../../config/navigation-list.nav";
 
 @Component({
   selector: 'app-side-nav',
@@ -22,52 +23,14 @@ export class SideNavComponent implements OnInit {
     );
 
   activatedRoute: string = '';
+  userStatus: string;
+  userType: string;
 
-  navigations: SideNavigationModel[] = [
-    {
-      name: "Notifications",
-      route: "#",
-      matIcon: "notifications"
-    },
-    {
-      name: "Dashboard",
-      route: "dashboard",
-      matIcon: "dashboard"
-    },
-    {
-      name: "Company Details",
-      route: "#",
-      matIcon: "list_alt"
-    },
-    {
-      name: "Pricing",
-      route: "#",
-      localIcon: "rupee"
-    },
-    {
-      name: "Account Settings",
-      route: "#",
-      matIcon: "settings_applications"
-    },
-    {
-      name: "Meetings",
-      route: "#",
-      matIcon: "event_note"
-    },
-    {
-      name: "Solution",
-      route: "#",
-      localIcon: "solution"
-    },
-    {
-      name: "Help",
-      route: "#",
-      matIcon: "help"
-    }
-  ];
+  navigationList: SideNavigationModel[] = Navigations;
 
   constructor (private breakpointObserver: BreakpointObserver, private coreService: CoreService) {
     this.coreService.iconService.loadIcons(["rupee", "solution"]);
+    this.prepareNavigations();
   }
   ngOnInit(): void {
     this.coreService.navTracerService.routeReceiver.subscribe(res => {
@@ -77,5 +40,29 @@ export class SideNavComponent implements OnInit {
 
   openDrawer(drawer: MatDrawer) {
     drawer.toggle();
+  }
+
+  prepareNavigations() {
+    this.userStatus = localStorage.getItem("status");
+    this.userType = localStorage.getItem("userType");
+    this.navigationList = this.validateNavigations(this.navigationList);
+  }
+
+  validateNavigations(navigations: SideNavigationModel[]): SideNavigationModel[] {
+    let filteredNav = navigations.filter(nav => {
+      if (this.userType.toUpperCase() == nav.role.toUpperCase() || nav.role.toUpperCase() == "ANONYMOUS") {
+
+        if (!nav.completedProfile) {
+          return nav;
+        } else {
+          if (this.userStatus == '1') {
+            return nav;
+          }
+        }
+
+      }
+    });
+
+    return filteredNav;
   }
 }

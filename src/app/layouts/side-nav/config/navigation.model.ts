@@ -3,4 +3,7 @@ export interface SideNavigationModel {
     route: string;
     matIcon?: string;
     localIcon?: string;
+    role: "CLIENT" | "VENDOR" | "ANONYMOUS";
+    isAvailabel: boolean;
+    completedProfile: boolean;
 }

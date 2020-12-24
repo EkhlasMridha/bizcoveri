@@ -4,12 +4,15 @@ import {
   tap,
   retry,
   catchError,
+  switchMap,
 } from 'rxjs/operators';
 import { TokenModel } from '@core/services/token.service';
 import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreService } from '@core/core-service';
 import { SignUpDto } from '../dto/signup.dto';
+import { LogInResponseModel } from '@contracts/login-response.model';
+import { UserCheckModel } from '../models/user-check.model';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +23,15 @@ export class AuthService {
     private coreService: CoreService,
     private router: Router
   ) { }
+
+  private signin(payload: any) {
+    return this.http.post<LogInResponseModel>('auth/login', payload).pipe(
+      retry(2),
+      tap((res) => {
+        this.coreService.tokenService.storeToken(res);
+      }),
+    );
+  }
 
   signUp(payload: SignUpDto) {
     return this.http.post('auth/signup', payload).pipe(
@@ -32,17 +44,28 @@ export class AuthService {
     );
   }
 
-  signin(payload: any) {
-    return this.http.post<TokenModel>('auth/login', payload).pipe(
-      retry(2),
-      catchError((err) => {
-        return throwError(err);
+  login(payload: any) {
+    return this.signin(payload).pipe(
+      switchMap(res => {
+        if (res.userType == "CLIENT") {
+          return this.checkUser(`client/checkclientforuseremail/${res.userEmail}`);
+        } else {
+          return this.checkUser(`vendor/checkvendorforuseremail/${res.userEmail}`);
+        }
       }),
-      tap((res) => {
-        this.coreService.tokenService.storeToken(res);
-        this.router.navigate(['']);
+      tap(res => {
+        if (res.Status == "1") {
+          localStorage.setItem("message", res.Message);
+          localStorage.setItem("name", res.Name);
+          localStorage.setItem("status", res.Status);
+          this.router.navigate([""]);
+        }
       })
     );
+  }
+
+  checkUser(url: string) {
+    return this.http.get<UserCheckModel>(url);
   }
 
   resetRequest(userIdentity: string) {
