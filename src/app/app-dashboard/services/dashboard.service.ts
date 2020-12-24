@@ -9,10 +9,10 @@ export class DashboardService {
   constructor (private coreService: CoreService) { }
 
   getClientProjects(id: string) {
-    return this.coreService.httpService.getList<any>(`project/clientid/${id}`);
+    return this.coreService.httpService.get<any>(`project/clientid/${id}`);
   }
 
   getAllProjects() {
-    return this.coreService.httpService.getList<any>("project/all");
+    return this.coreService.httpService.get<any>("project/all");
   }
 }

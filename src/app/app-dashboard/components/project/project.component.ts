@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { ColumnConfig, ProjectCategory } from '../../configs/category.project';
 
 export interface PeriodicElement {
   name: string;
@@ -21,12 +22,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class ProjectComponent implements OnInit {
-  @Input() stageName: string;
-  displayedColumns: string[] = ['name', 'weight', 'symbol', 'position', 'action'];
+  @Input() project: ProjectCategory;
+  displayedColumns: string[] = [];
+  displayedColumns2: string[] = ['name', 'weight', 'symbol', 'position'];
   dataSource = ELEMENT_DATA;
   constructor () { }
 
   ngOnInit(): void {
+    console.log(this.project.tableConf);
+    this.displayedColumns = this.initializeColumns(this.project.tableConf);
   }
 
+  initializeColumns(columns: Partial<ColumnConfig>[]) {
+    let columnList: string[] = [];
+    columns.forEach(col => {
+      columnList.push(col.cellId);
+    });
+    columnList.push('action');
+    console.log(columnList);
+    return columnList;
+  }
 }

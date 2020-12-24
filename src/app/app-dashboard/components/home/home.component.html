@@ -5,9 +5,9 @@
   </div>
   <div class="horizontal-line accent-color"></div>
   <mat-card class="mat-elevation-z4">
-    <mat-card-content style="margin-top: 20px;">
-      <ng-container>
-        <project stageName="Projects available for bidding"></project>
+    <mat-card-content style="margin-top: 20px;" *ngIf="projectCategories" fxLayout="column" fxLayoutGap="20px">
+      <ng-container *ngFor="let category of projectCategories">
+        <project *ngIf="category.project" [project]="category"></project>
       </ng-container>
 
     </mat-card-content>
