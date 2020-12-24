@@ -1,13 +1,13 @@
 <div class="pages" fxLayout="column" fxLayoutGap="20px">
-  <div fxLayoutAlign="space-between center" *ngIf="userType == 'CLIENT'">
+  <div fxLayoutAlign="space-between center">
     <span class="accent-color page-title">Summery of all your live and executive projects</span>
-    <button mat-raised-button color="primary">Create Project</button>
+    <button mat-raised-button color="primary" *ngIf="userType == 'CLIENT'">Create Project</button>
   </div>
   <div class="horizontal-line accent-color"></div>
   <mat-card class="mat-elevation-z4">
     <mat-card-content style="margin-top: 20px;">
       <ng-container>
-        <project></project>
+        <project stageName="Projects available for bidding"></project>
       </ng-container>
 
     </mat-card-content>

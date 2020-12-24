@@ -15,6 +15,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dashboardService.getClientProjects(this.id).subscribe(res => { });
+    this.initializeDashboard();
+  }
+
+  initializeDashboard() {
+    if (this.userType == "CLIENT") {
+      this.dashboardService.getClientProjects(this.id).subscribe(res => { });
+    } else {
+      this.dashboardService.getAllProjects().subscribe(res => { });
+    }
   }
 }

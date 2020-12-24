@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 export interface PeriodicElement {
   name: string;
@@ -21,11 +21,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class ProjectComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  @Input() stageName: string;
+  displayedColumns: string[] = ['name', 'weight', 'symbol', 'position', 'action'];
   dataSource = ELEMENT_DATA;
-  constructor () {
-
-  }
+  constructor () { }
 
   ngOnInit(): void {
   }
