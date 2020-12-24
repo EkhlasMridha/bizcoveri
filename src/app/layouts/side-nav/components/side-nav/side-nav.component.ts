@@ -7,6 +7,7 @@ import { CoreService } from '@core/core-service';
 import { DomainService } from '@core/env-domain';
 import { SideNavigationModel } from '../../config/navigation.model';
 import { Navigations } from "../../config/navigation-list.nav";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -45,6 +46,10 @@ export class SideNavComponent implements OnInit {
   prepareNavigations() {
     this.userStatus = localStorage.getItem("status");
     this.userType = localStorage.getItem("userType");
+    if (this.userStatus == null || this.userType == null) {
+      this.coreService.tokenService.removeToken();
+      window.location.reload();
+    }
     this.navigationList = this.validateNavigations(this.navigationList);
   }
 

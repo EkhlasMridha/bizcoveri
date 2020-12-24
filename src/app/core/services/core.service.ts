@@ -2,6 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormService } from './form.service';
 import { HttpLoggerService } from './http-logger.service';
+import { HttpService } from './http.service';
 import { IconService } from './icon.service';
 import { NavTracerService } from './nav-tracer.service';
 import { RootlineProgressService } from './rootline-progress.service';
@@ -18,6 +19,7 @@ export class CoreService {
   private _navTracerService: NavTracerService;
   private _rootlineProgress: RootlineProgressService;
   private _httpLogger: HttpLoggerService;
+  private _httpService: HttpService;
 
   public get iconService(): IconService {
     if (!this._iconService) {
@@ -59,6 +61,13 @@ export class CoreService {
       this._httpLogger = this.injector.get(HttpLoggerService);
     }
     return this._httpLogger;
+  }
+
+  public get httpService() {
+    if (!this._httpService) {
+      this._httpService = this.injector.get(HttpService);
+    }
+    return this._httpService;
   }
 
   constructor (private injector: Injector) { }

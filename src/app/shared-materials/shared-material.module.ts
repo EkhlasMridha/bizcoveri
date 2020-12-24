@@ -14,14 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
-    HttpClientModule,
   ],
   exports: [
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
-    HttpClientModule,
   ],
 })
-export class SharedMaterialModule {}
+export class SharedMaterialModule { }

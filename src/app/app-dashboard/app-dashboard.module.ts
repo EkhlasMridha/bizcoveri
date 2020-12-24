@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedMaterialModule } from "@material/shared-material.module";
+import { ProjectComponent } from './components/project/project.component';
+import { MatTableModule } from '@angular/material/table';
 
 const routes: Routes = [
   {
@@ -15,10 +17,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, ProjectComponent],
   imports: [
     CommonModule,
     SharedMaterialModule,
+    MatTableModule,
     RouterModule.forChild(routes),
   ],
 })

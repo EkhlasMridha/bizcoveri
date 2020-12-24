@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  modalRef: any;
-  constructor () { }
+  userType: string;
+  id: string;
+  constructor (private dashboardService: DashboardService) {
+    this.userType = localStorage.getItem("userType").toUpperCase();
+    this.id = localStorage.getItem("message");
+  }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.dashboardService.getClientProjects(this.id).subscribe(res => { });
+  }
 }
