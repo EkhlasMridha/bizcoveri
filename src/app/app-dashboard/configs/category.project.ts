@@ -148,7 +148,7 @@ export const ClientProjectCategory: ProjectCategory[] = [
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Project Stage",
                 cellId: "position"
             }
         ]
@@ -171,7 +171,7 @@ export const ClientProjectCategory: ProjectCategory[] = [
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Project Status",
                 cellId: "position"
             }
         ]
@@ -190,11 +190,11 @@ export const ClientProjectCategory: ProjectCategory[] = [
                 cellId: "symbol"
             },
             {
-                header: "Project Manager",
+                header: "Service Provider",
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Project Manager",
                 cellId: "position"
             }
         ]
