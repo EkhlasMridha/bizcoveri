@@ -1,8 +1,11 @@
-<section fxLayout="row" fxLayoutAlign="space-between center">
-    <div fxLayout="column" fxLayoutGap="15px">
-        <button mat-raised-button class="example-step" [class.example-active]="selectedIndex === i"
-            *ngFor="let step of steps; let i = index" (click)="selectStepByIndex(i)">
-        </button>
-    </div>
+<section fxLayout="row" fxLayoutAlign="space-between start">
+    <header class="rt-step" fxFlex="25" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+        <ng-container *ngFor="let step of steps; let i = index">
+            <div [class.example-active]="selectedIndex === i" (click)="selectStepByIndex(i)">
+                <ng-container [ngTemplateOutlet]="step.stepLabel.template"></ng-container>
+            </div>
+            <div class="vertical-line" *ngIf="i!=steps.length-1"></div>
+        </ng-container>
+    </header>
     <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
 </section>
