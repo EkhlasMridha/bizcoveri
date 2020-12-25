@@ -2,7 +2,6 @@
     <div fxLayout="column" fxLayoutGap="15px">
         <button mat-raised-button class="example-step" [class.example-active]="selectedIndex === i"
             *ngFor="let step of steps; let i = index" (click)="selectStepByIndex(i)">
-
         </button>
     </div>
     <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
