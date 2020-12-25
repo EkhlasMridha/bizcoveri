@@ -4,35 +4,32 @@ import { HttpClient } from '@angular/common/http';
 
 export interface TokenModel {
   accessToken: string;
-  refreshToken: string;
+  userType: string;
 }
 
 @Injectable()
 export class TokenService {
   private readonly accessToken: string = 'accessToken';
-  private readonly refreshToken: string = 'refreshToken';
+  private readonly userType: string = "userType";
   constructor (private jwtService: JwtHelperService, private http: HttpClient) { }
 
-  storeToken(token: TokenModel) {
+  storeToken(token: Partial<TokenModel>) {
     localStorage.setItem(this.accessToken, token.accessToken);
-    // localStorage.setItem(this.refreshToken, token.refreshToken);
+    localStorage.setItem(this.userType, token.userType);
   }
 
   removeToken() {
-    localStorage.removeItem(this.accessToken);
-    // localStorage.removeItem(this.refreshToken);
+    localStorage.clear();
   }
 
-  getToken(): TokenModel {
+  getToken(): Partial<TokenModel> {
     let access = localStorage.getItem(this.accessToken);
-    // let refresh = localStorage.getItem(this.refreshToken);
     if (!(access)) {
       return null;
     }
 
-    let token: TokenModel = {
+    let token: Partial<TokenModel> = {
       accessToken: access,
-      refreshToken: "refresh",
     };
 
     return token;

@@ -1,4 +1,4 @@
-const authRoutes: string[] = ['/dashboard'];
+const authRoutes: string[] = ['/dashboard', '/dashboard/create-project'];
 
 export function isAuhtRoute(url: string) {
   let refinedRoute = getRifinedRoute(url);

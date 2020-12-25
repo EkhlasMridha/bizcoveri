@@ -9,7 +9,7 @@
             </button>
         </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item *ngFor="let nav of navigations"
+            <mat-list-item *ngFor="let nav of navigationList"
                 [ngClass]="{'primary-background-override color-white-override': activatedRoute==nav.route}"
                 id="{{nav.route}}" [routerLink]="nav.route">
                 <div class="full-width color-white" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start end">

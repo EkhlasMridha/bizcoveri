@@ -56,3 +56,13 @@ app-side-nav{
       font-size: 2rem !important;
     }
   }
+
+  .parent-description{
+    display:flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    .child-description{
+      width: 100%;
+      height: 100%;
+    }
+  }

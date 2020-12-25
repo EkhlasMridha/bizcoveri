@@ -71,6 +71,6 @@ export class SiginComponent implements OnInit {
     let credential = new SignInDto(result);
 
 
-    this.authService.signin(credential).subscribe((res) => { });
+    this.authService.login(credential).subscribe(res => { });
   }
 }

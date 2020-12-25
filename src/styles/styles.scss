@@ -37,9 +37,9 @@ body {
   color: white;
 }
 
-button{
-  border-radius: 8px !important;
-}
+// button{
+//   border-radius: 8px !important;
+// }
 
 .toolbar-color{
   background-color: #565E78;
@@ -76,4 +76,14 @@ mat-card{
   max-width: 450px;
   padding: 10px;
   margin-top: 10px;
+}
+
+.page-title{
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 26px;
+}
+
+.horizontal-line{
+  border-top: 1px solid;
 }

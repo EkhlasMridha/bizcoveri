@@ -6,10 +6,9 @@ import {
   HttpEvent,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable, throwError, BehaviorSubject } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { TokenModel } from '@core/services/token.service';
-import { switchMap, filter, take, catchError } from 'rxjs/operators';
-import { DomainService } from '@core/env-domain';
+import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { CoreService } from '@core/core-service';
 
@@ -17,10 +16,7 @@ import { CoreService } from '@core/core-service';
   providedIn: 'root',
 })
 export class TokenInterceptorService implements HttpInterceptor {
-  private isRefreshing: boolean = false;
-  private RefreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(
-    null
-  );
+
   constructor (private coreService: CoreService, private router: Router) { }
 
   intercept(
@@ -35,12 +31,9 @@ export class TokenInterceptorService implements HttpInterceptor {
       catchError((res) => {
         this.coreService.stopLoader();
         if (res instanceof HttpErrorResponse && res.status == 401 && this.coreService.tokenService.isTokenExpired()) {
-          // if (res.error == DomainService.domains.RefreshError) {
           this.coreService.tokenService.removeToken();
           this.router.navigate(['login']);
           return null;
-          // }
-          // return this.handleUnauthorizeError(req, next);
         }
         return throwError(res);
       })
@@ -49,7 +42,7 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   private addToken(
     request: HttpRequest<any>,
-    token: TokenModel
+    token: Partial<TokenModel>
   ): HttpRequest<any> {
     request = request.clone({
       setHeaders: {
@@ -59,30 +52,4 @@ export class TokenInterceptorService implements HttpInterceptor {
 
     return request;
   }
-
-  // private handleUnauthorizeError(request: HttpRequest<any>, next: HttpHandler) {
-  //   if (!this.isRefreshing) {
-  //     this.isRefreshing = true;
-  //     this.RefreshTokenSubject.next(null);
-
-  //     return this.tokenService.refreshAccessToken().pipe(
-  //       switchMap((token: TokenModel) => {
-  //         this.isRefreshing = false;
-  //         console.log('refresh');
-  //         console.log(token);
-  //         this.tokenService.storeToken(token);
-  //         this.RefreshTokenSubject.next(token.accessToken);
-  //         return next.handle(this.addToken(request, token));
-  //       })
-  //     );
-  //   } else {
-  //     return this.RefreshTokenSubject.pipe(
-  //       filter((token) => token !== null),
-  //       take(1),
-  //       switchMap((token) => {
-  //         return next.handle(this.addToken(request, token));
-  //       })
-  //     );
-  //   }
-  // }
 }

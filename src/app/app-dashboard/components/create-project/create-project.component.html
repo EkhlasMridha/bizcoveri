@@ -1,0 +1,75 @@
+<div class="container">
+    <rt-stepper>
+        <cdk-step>
+            <ng-template cdkStepLabel>
+                <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <button mat-mini-fab color="accent">
+                        <mat-icon>description</mat-icon>
+                    </button>
+                    <div fxLayout="column">
+                        <span class="stepper-title">Project Overview</span>
+                        <span class="stepper-sub">Describe the project and select a category</span>
+                    </div>
+                </div>
+            </ng-template>
+            <project-overview></project-overview>
+        </cdk-step>
+        <cdk-step>
+            <ng-template cdkStepLabel>
+                <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <button mat-mini-fab color="accent">
+                        <mat-icon>language</mat-icon>
+                    </button>
+                    <div fxLayout="column">
+                        <span class="stepper-title">Project Logistics</span>
+                        <span class="stepper-sub">Provide project timelines and administration
+                            details</span>
+                    </div>
+                </div>
+            </ng-template>
+            <project-logistics></project-logistics>
+        </cdk-step>
+        <cdk-step>
+            <ng-template cdkStepLabel>
+                <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <button mat-mini-fab color="accent">
+                        <mat-icon>ballot</mat-icon>
+                    </button>
+                    <div fxLayout="column">
+                        <span class="stepper-title">Evaluation Process</span>
+                        <span class="stepper-sub">Describe additional project requirement</span>
+                    </div>
+                </div>
+            </ng-template>
+            <evaluation-process></evaluation-process>
+        </cdk-step>
+        <cdk-step>
+            <ng-template cdkStepLabel>
+                <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <button mat-mini-fab color="accent">
+                        <mat-icon>people_outline</mat-icon>
+                    </button>
+                    <div fxLayout="column">
+                        <span class="stepper-title">Team Members</span>
+                        <span class="stepper-sub">Add your team members for seamless execution</span>
+                    </div>
+                </div>
+            </ng-template>
+            <team-members></team-members>
+        </cdk-step>
+        <cdk-step>
+            <ng-template cdkStepLabel>
+                <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <button mat-mini-fab color="accent">
+                        <mat-icon>rate_review</mat-icon>
+                    </button>
+                    <div fxLayout="column">
+                        <span class="stepper-title">Review</span>
+                        <span class="stepper-sub">Review the project details before submitting</span>
+                    </div>
+                </div>
+            </ng-template>
+            <review></review>
+        </cdk-step>
+    </rt-stepper>
+</div>

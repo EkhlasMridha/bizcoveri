@@ -6,13 +6,16 @@ import { NavTracerService } from './services/nav-tracer.service';
 import { RootlineProgressService } from './services/rootline-progress.service';
 import { TokenService } from './services/token.service';
 import { IconService } from './services/icon.service';
+import { HttpService } from './services/http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     FormService,
@@ -21,6 +24,8 @@ import { IconService } from './services/icon.service';
     RootlineProgressService,
     TokenService,
     IconService,
-  ]
+    HttpService
+  ],
+  exports: [HttpClientModule]
 })
 export class CoreModule { }

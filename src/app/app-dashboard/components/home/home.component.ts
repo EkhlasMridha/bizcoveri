@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { TesService } from '../../services/tes.service';
+import { Component, OnInit } from '@angular/core';
+import { ClientProjectCategory, ProjectCategory, VendorProjectCategory } from '../../configs/category.project';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-home',
@@ -7,45 +8,74 @@ import { TesService } from '../../services/tes.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  modalRef: any;
-  constructor (
-    private testService: TesService,
-    private ref: ViewContainerRef
-  ) {
-    // this.testService.getData().subscribe((res) => {
-    //   console.log('result');
-    //   console.log(res);
-    // });
+  userType: string;
+  id: string;
+  projectCategories: ProjectCategory[];
+  private projects: any[] = [];
+  constructor (private dashboardService: DashboardService) {
+    this.userType = localStorage.getItem("userType").toUpperCase();
+    this.id = localStorage.getItem("message");
   }
 
-  ngOnInit(): void { }
-
-  runCommand() {
-    // this.confirmationService.openConfirmationModal({
-    //   headerText: 'How are you guys?',
-    //   description:
-    //     'This is a test generic modal system for all possible cases.',
-    //   primaryButtonName: 'Yes',
-    //   secondaryButtonName: 'No',
-    //   localIcon: 'like',
-    //   type: 'success',
-    //   primaryEvent: this.primaryButton,
-    //   secondaryEvent: this.secondaryButton,
-    // });
+  ngOnInit(): void {
+    this.initializeDashboard();
   }
 
-  primaryButton() {
-    console.log('Customized callback');
+  initializeDashboard() {
+    if (this.userType == "CLIENT") {
+      this.dashboardService.getClientProjects(this.id).subscribe(res => {
+        this.projects = res.property;
+        this.projectCategories = this.categorizeProjects(this.mapProjectsWithLifeCycle(this.projects));
+      });
+    } else {
+      this.dashboardService.getAllProjects().subscribe(res => {
+        this.projects = res.property;
+        this.projectCategories = this.categorizeProjects(this.mapProjectsWithLifeCycle(this.projects));
+        // console.log(this.projectCategories);
+      });
+    }
   }
 
-  secondaryButton() {
-    console.log('Customized callback 2');
+  mapProjectsWithLifeCycle(projects: any[]): Map<string, ProjectCategory> {
+    let projectCategories: ProjectCategory[] = this.getUserProjectCategory();
+    let map: Map<string, ProjectCategory> = new Map();
+    projectCategories.forEach(category => {
+      map.set(category.lifeCycleStage, category);
+    });
+
+    projects.map(project => {
+
+      if (project.lifecycleStage) {
+        let data = map.get(project.lifecycleStage);
+        if (data) {
+          data.project = project;
+          map.set(project.lifecycleStage, data);
+        }
+      }
+    });
+
+    return map;
   }
 
-  runLoader() {
-    // this.confirmationService.openConfirmationModal({
-    //   isLoader: true,
-    //   color: 'warn',
-    // });
+  categorizeProjects(map: Map<string, ProjectCategory>): ProjectCategory[] {
+    let projectCategories: ProjectCategory[] = this.getUserProjectCategory();
+
+    let data: ProjectCategory[] = projectCategories.filter(category => {
+      let project = map.get(category.lifeCycleStage).project;
+      if (project) {
+        category.project = project;
+        return category;
+      }
+    });
+
+    return data;
+  }
+
+  getUserProjectCategory() {
+    if (this.userType == "CLIENT") {
+      return ClientProjectCategory;
+    } else {
+      return VendorProjectCategory;
+    }
   }
 }
