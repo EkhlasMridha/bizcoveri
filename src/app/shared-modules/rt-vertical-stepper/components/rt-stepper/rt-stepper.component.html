@@ -1,4 +1,4 @@
-<section fxLayout="row" fxLayoutAlign="space-between start">
+<section fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
     <header class="rt-step" fxFlex="25" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
         <ng-container *ngFor="let step of steps; let i = index">
             <div [class.example-active]="selectedIndex === i" (click)="selectStepByIndex(i)">
