@@ -1,0 +1,6 @@
+<div fxLayout="column" fxLayoutAlign="start center" class="service-button">
+    <mat-icon *ngIf="service.matIcon" class="icon">person</mat-icon>
+    <mat-icon *ngIf="service.localIcon" svgIcon="service.localIcon"></mat-icon>
+    <span class="button-title">{{service.title}}</span>
+    <span class="button-sub">{{service.subTitle}}</span>
+</div>

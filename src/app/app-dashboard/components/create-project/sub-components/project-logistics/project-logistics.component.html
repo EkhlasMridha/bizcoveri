@@ -1,1 +1,10 @@
-<p>project-logistics works!</p>
+<div class="container">
+    <mat-card class="full-width">
+        <div fxLayout="column" fxLayoutGap="10px">
+            <span>How do you want to manage the project</span>
+            <section fxLayout="row" fxLayoutGap="20px" class="buttons-service">
+                <service-button *ngFor="let project of manageProject" [service]="project"></service-button>
+            </section>
+        </div>
+    </mat-card>
+</div>

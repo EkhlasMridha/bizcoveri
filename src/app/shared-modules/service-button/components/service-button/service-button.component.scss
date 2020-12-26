@@ -1,0 +1,31 @@
+.service-button{
+    border: 1px solid #52658a;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 250px;
+    cursor: pointer;
+    width: 170px;
+    height: 150px;
+    &:hover{
+      background-color: #f3f3f3;
+    }
+    mat-icon{
+      font-size: 60px;
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  .button-title{
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+  }
+
+  .button-sub{
+      margin-top: 10px;
+      font-size: 11px;
+      line-height: 13px;
+      color: #b9b9b9;
+      text-align: center;
+  }
