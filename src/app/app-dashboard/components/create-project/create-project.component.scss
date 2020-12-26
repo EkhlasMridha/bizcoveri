@@ -1,5 +1,7 @@
 .container{
     padding: 20px;
+    display: flex;
+    flex:1 0 auto;
 }
 
 .stepper-title{
@@ -12,5 +14,6 @@
 }
 
 project-overview{
-    width: 100%;
+    display: flex;
+    flex:1 0 auto;
 }
