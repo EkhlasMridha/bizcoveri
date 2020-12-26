@@ -1,1 +1,39 @@
-<p>evaluation-process works!</p>
+<div class="container">
+    <mat-card class="full-width">
+        <div style="margin-bottom: 10px;" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+            <button mat-icon-button color="primary">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <span class="main-title-step primary-color">Back</span>
+        </div>
+        <form fxLayout="column" fxLayoutGap="20px">
+            <section fxLayout="column" fxLayoutGap="5px">
+                <span class="title-step accent-color">Service Partner Proximity</span>
+                <mat-radio-group aria-label="Select an option" fxLayoutGap="15px">
+                    <mat-radio-button value="1">No preference</mat-radio-button>
+                    <mat-radio-button value="2">Closer</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <section fxLayout="column" fxLayoutGap="5px">
+                <span class="title-step accent-color">Firm Size</span>
+                <mat-radio-group aria-label="Select an option" fxLayoutGap="15px">
+                    <mat-radio-button value="1">No preference</mat-radio-button>
+                    <mat-radio-button value="2">Small</mat-radio-button>
+                    <mat-radio-button value="3">Large</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <section fxLayout="column" fxLayoutGap="5px">
+                <span class="title-step accent-color">Desirable Project Execution Location</span>
+                <mat-radio-group aria-label="Select an option" fxLayoutGap="15px">
+                    <mat-radio-button value="1">Remote</mat-radio-button>
+                    <mat-radio-button value="2">Partly Onsite</mat-radio-button>
+                    <mat-radio-button value="3">Completely Onsite</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
