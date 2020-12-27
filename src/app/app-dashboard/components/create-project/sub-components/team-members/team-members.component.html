@@ -10,14 +10,16 @@
             <span class="title-step accent-color">ADD TEAM MEMBER</span>
             <div fxLayout="column" fxLayoutAlign="start start">
                 <form fxLayout="column" class="full-width">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Name</mat-label>
-                        <input matInput placeholder="member name">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="example@mail.com">
-                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="member name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="example@mail.com">
+                        </mat-form-field>
+                    </div>
                     <mat-form-field appearance="outline">
                         <mat-label>Contact No.</mat-label>
                         <input matInput placeholder="contact number">
@@ -26,14 +28,16 @@
                         <mat-label>Function</mat-label>
                         <input matInput placeholder="enter function">
                     </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Designation</mat-label>
-                        <input matInput placeholder="enter designation">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Project role</mat-label>
-                        <input matInput placeholder="project member/admin">
-                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Designation</mat-label>
+                            <input matInput placeholder="enter designation">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Project role</mat-label>
+                            <input matInput placeholder="project member/admin">
+                        </mat-form-field>
+                    </div>
                     <div>
                         <button mat-raised-button color="accent">Add Member</button>
                     </div>
