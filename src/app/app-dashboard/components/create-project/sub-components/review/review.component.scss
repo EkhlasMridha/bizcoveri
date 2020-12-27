@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex: 1 0 100%;
+}
+
+input{
+    border: 1px solid #52658a;
+    padding: 10px;
+}
+
+input:focus{
+    outline: 1px solid #fc8e29;
+}

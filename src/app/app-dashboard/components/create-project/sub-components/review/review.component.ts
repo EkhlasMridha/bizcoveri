@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
-
+  editCompany: boolean;
   constructor () { }
 
   ngOnInit(): void {

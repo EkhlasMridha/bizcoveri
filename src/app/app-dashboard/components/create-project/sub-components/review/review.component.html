@@ -1,1 +1,88 @@
-<p>review works!</p>
+<div class="container">
+    <mat-card class="full-width">
+        <form fxLayout="column" fxLayoutGap="25px">
+            <section fxLayout="column">
+                <span class="title-step accent-color">Company Info</span>
+                <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between center">
+                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <span>Company name:</span>
+                        <input placeholder="company name">
+                    </section>
+                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <span>Company URL</span>
+                        <input placeholder="company url">
+                    </section>
+                </div>
+            </section>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <span class="title-step accent-color">Project Overview</span>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Category</span>
+                    <input fxFlex="60" placeholder="project category" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Description</span>
+                    <input fxFlex="60" placeholder="project description" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Scope</span>
+                    <input fxFlex="60" placeholder="project scope" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Deliverables</span>
+                    <input fxFlex="60" placeholder="project deliverables" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Additional Details</span>
+                    <input fxFlex="60" placeholder="project additional details" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Documents</span>
+                    <div fxFlex="60" class="full-width">
+                        <button mat-stroked-button color="accent" class="gray-background">
+                            <mat-icon>description</mat-icon>
+                            <span>View</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <span class="title-step accent-color">Project Logistics</span>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Management</span>
+                    <input fxFlex="60" placeholder="project management" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Start Date</span>
+                    <input fxFlex="60" placeholder="project start date" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Duration</span>
+                    <input fxFlex="60" placeholder="project duration" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Budget</span>
+                    <input fxFlex="60" placeholder="project budget" class="full-width">
+                </section>
+            </div>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <span class="title-step accent-color">Additional Preference Criteria</span>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Service Partner Proximity</span>
+                    <input fxFlex="60" placeholder="service partner proximity" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Firm Size</span>
+                    <input fxFlex="60" placeholder="firm size" class="full-width">
+                </section>
+                <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                    <span>Project Execution Location</span>
+                    <input fxFlex="60" placeholder="project execution location" class="full-width">
+                </section>
+            </div>
+            <div fxLayout="column">
+                <span class="title-step accent-color">Project Team</span>
+            </div>
+        </form>
+    </mat-card>
+</div>
