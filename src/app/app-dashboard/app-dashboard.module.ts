@@ -16,6 +16,8 @@ import { ReviewComponent } from './components/create-project/sub-components/revi
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from "@angular/material/radio";
 import { TextFieldModule } from "@angular/cdk/text-field";
+import { ServiceButtonModule } from '@modules/service-button/service-button.module';
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 const routes: Routes = [
   {
@@ -45,6 +47,8 @@ const routes: Routes = [
     MatSelectModule,
     MatRadioModule,
     TextFieldModule,
+    ServiceButtonModule,
+    MatCheckboxModule,
     RouterModule.forChild(routes),
   ],
 })

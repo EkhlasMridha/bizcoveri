@@ -1,5 +1,5 @@
 export interface ServiceTypeModel {
-    localIcon: string;
+    localIcon?: string;
     matIcon?: string;
     title: string;
     subTitle: string;

@@ -23,7 +23,26 @@
             <mat-form-field appearance="outline" style="margin-top: 20px;">
                 <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="6" cdkAutosizeMaxRows="8"></textarea>
             </mat-form-field>
-            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end" style="margin-top: 20px;">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <input #docInput hidden multiple="false" type="file">
+                    <span class="accent-color">Project document upload (Optional)</span>
+                    <button mat-stroked-button color="accent" (click)="onDocumentUpload()" class="gray-background">
+                        <mat-icon>attach_file</mat-icon>
+                        <span>Click to upload</span>
+                    </button>
+                </div>
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <span class="accent-color">Project video description (Optional)</span>
+                    <input #videoInput hidden multiple='false' type="file">
+                    <button mat-stroked-button color="accent" type="button" (click)="onVideoUpload()"
+                        class="gray-background">
+                        <mat-icon>videocam</mat-icon>
+                        <span>Click to upload</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end" style="margin-top: 25px;">
                 <button mat-raised-button class="gray-background">Save</button>
                 <button mat-raised-button color="accent">Next</button>
             </div>

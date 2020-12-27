@@ -1,5 +1,7 @@
 .container{
     padding: 20px;
+    display: flex;
+    flex:1 0 auto;
 }
 
 .stepper-title{
@@ -11,6 +13,11 @@
     font-size: 14px;
 }
 
-project-overview{
-    width: 100%;
+project-overview,
+project-logistics,
+evaluation-process,
+team-members,
+review{
+    display: flex;
+    flex:1 0 auto;
 }
