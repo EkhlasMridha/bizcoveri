@@ -2,20 +2,30 @@
     <mat-card class="full-width">
         <form fxLayout="column" fxLayoutGap="25px">
             <section fxLayout="column">
-                <span class="title-step accent-color">Company Info</span>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                    <span class="title-step accent-color">Company Info</span>
+                    <button mat-icon-button class="project-edit-button" fxLayoutAlign="center center">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
                 <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between center">
-                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
-                        <span>Company name:</span>
+                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                        <span>Company name</span>
                         <input placeholder="company name">
                     </section>
-                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end center">
                         <span>Company URL</span>
                         <input placeholder="company url">
                     </section>
                 </div>
             </section>
             <div fxLayout="column" fxLayoutGap="10px">
-                <span class="title-step accent-color">Project Overview</span>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                    <span class="title-step accent-color">Project Overview</span>
+                    <button mat-icon-button class="project-edit-button" fxLayoutAlign="center center">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
                 <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
                     <span>Project Category</span>
                     <input fxFlex="60" placeholder="project category" class="full-width">
@@ -47,7 +57,12 @@
                 </section>
             </div>
             <div fxLayout="column" fxLayoutGap="10px">
-                <span class="title-step accent-color">Project Logistics</span>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                    <span class="title-step accent-color">Project Logistics</span>
+                    <button mat-icon-button class="project-edit-button" fxLayoutAlign="center center">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
                 <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
                     <span>Project Management</span>
                     <input fxFlex="60" placeholder="project management" class="full-width">
@@ -66,7 +81,12 @@
                 </section>
             </div>
             <div fxLayout="column" fxLayoutGap="10px">
-                <span class="title-step accent-color">Additional Preference Criteria</span>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                    <span class="title-step accent-color">Additional Preference Criteria</span>
+                    <button mat-icon-button class="project-edit-button" fxLayoutAlign="center center">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
                 <section fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
                     <span>Service Partner Proximity</span>
                     <input fxFlex="60" placeholder="service partner proximity" class="full-width">

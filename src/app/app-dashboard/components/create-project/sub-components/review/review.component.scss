@@ -11,3 +11,14 @@ input{
 input:focus{
     outline: 1px solid #fc8e29;
 }
+
+.project-edit-button{
+    height: 24px;
+    width: 24px;
+    mat-icon{
+        font-size: 14px;
+        height: 18px;
+        width: 18px;
+        padding-bottom: 8px;
+    }
+}
