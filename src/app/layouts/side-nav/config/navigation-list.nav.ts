@@ -19,7 +19,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Company Details",
-        route: "#",
+        route: "company-details",
         matIcon: "list_alt",
         role: "ANONYMOUS",
         isAvailabel: true,

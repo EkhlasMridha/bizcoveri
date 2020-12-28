@@ -18,6 +18,13 @@ const routes: Routes = [
     },
     canActivateChild: [AuthGuardService],
   },
+  {
+    path: "company-details",
+    loadChildren: () => import("../app-company/app-company.module").then(m => m.AppCompanyModule),
+    data: {
+      breadCrumb: "Company"
+    }
+  }
 ];
 
 export function getBusinessRoutes() {
