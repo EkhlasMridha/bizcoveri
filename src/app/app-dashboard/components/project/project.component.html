@@ -8,7 +8,7 @@
 
             <!-- Name Column -->
             <ng-container *ngFor="let col of project.tableConf" [matColumnDef]="col.cellId">
-                <th mat-header-cell *matHeaderCellDef> {{col.header}} </th>
+                <th mat-header-cell *matHeaderCellDef> <span *ngIf="!col.button">{{col.header}} </span></th>
                 <td mat-cell *matCellDef="let element">
                     <span *ngIf="!col.button">{{element[col.cellId]}}</span>
                     <div class="full-width" fxLayoutAlign="end end" *ngIf="col.button">
