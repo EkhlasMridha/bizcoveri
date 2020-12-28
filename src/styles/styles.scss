@@ -108,3 +108,14 @@ mat-card{
   font-size: 18px;
   font-weight: 600;
 }
+
+.text-edit-button{
+  height: 24px;
+  width: 24px;
+  mat-icon{
+      font-size: 14px;
+      height: 18px;
+      width: 18px;
+      padding-bottom: 8px;
+  }
+}

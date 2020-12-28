@@ -1,0 +1,145 @@
+<div class="pages">
+    <mat-card fxLayout="column">
+        <section fxLayout="column">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <span class="title-step accent-color">Basic Information</span>
+                <button mat-icon-button class="text-edit-button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                <div fxLayout="column">
+                    <span>Company Name</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput placeholder="company name">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                    <span>Company URL</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Company URL</mat-label>
+                        <input matInput placeholder="www.abc.com">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                    <span>Company Logo</span>
+                    <button mat-stroked-button>
+                        <mat-icon>photo</mat-icon>
+                        <span>Logo</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column">
+                    <span>Linkedin URL</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Linkedin</mat-label>
+                        <input matInput placeholder="linkedin url">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                    <span>Facebook URL</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Facebook</mat-label>
+                        <input matInput placeholder="facebook url">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <span>Address</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="address">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column">
+                    <span>City</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="city">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                    <span>State</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>State</mat-label>
+                        <input matInput placeholder="state">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                    <span>PIN</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>PIN</mat-label>
+                        <input matInput placeholder="****">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <span class="title-step accent-color">Company Details</span>
+                <button mat-icon-button class="text-edit-button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <span>Company establishment date</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Company establishment date</mat-label>
+                        <input matInput placeholder="date">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <span>Size of company</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Size of company</mat-label>
+                        <input matInput placeholder="size of company">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <span>Industry</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Industry</mat-label>
+                        <input matInput placeholder="industry">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <span>Company Reveneue Range</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Reveneue range</mat-label>
+                        <input matInput placeholder="reveneue">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <span>Key competitors</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Competitors</mat-label>
+                        <input matInput placeholder="competitors">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <section fxLayout="row">
+                    <span>About</span>
+                </section>
+                <mat-form-field appearance="outline">
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                        placeholder="about"></textarea>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <span class="title-step accent-color">Team Members and Roles</span>
+                <button mat-icon-button class="text-edit-button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="primary">Submit</button>
+            </div>
+        </section>
+    </mat-card>
+</div>
