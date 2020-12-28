@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateProjectComponent implements OnInit {
   isLinear = true;
+  clientFinal: number = 4;
   constructor (private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
