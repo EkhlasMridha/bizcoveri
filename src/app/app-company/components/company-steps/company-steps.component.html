@@ -1,4 +1,4 @@
-<rt-stepper initialStep="3">
+<rt-stepper initialStep="2">
     <cdk-step>
         <ng-template cdkStepLabel>
             <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
@@ -26,6 +26,48 @@
             </div>
         </ng-template>
         <step-company-details></step-company-details>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>assignment_ind</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Partner profiles</span>
+                    <span class="stepper-sub">Partners and their profiles</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-partner-profile></step-partner-profile>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>business_center</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Services & industries</span>
+                    <span class="stepper-sub">Services provided and industries served</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-service></step-service>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>data_usage</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Project experience</span>
+                    <span class="stepper-sub">Projects executed and client testimonials</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-project></step-project>
     </cdk-step>
     <cdk-step>
         <ng-template cdkStepLabel>

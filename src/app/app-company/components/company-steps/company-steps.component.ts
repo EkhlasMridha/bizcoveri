@@ -7,12 +7,20 @@ import { CoreService } from '@core/services/core.service';
   styleUrls: ['./company-steps.component.scss']
 })
 export class CompanyStepsComponent implements OnInit {
-
+  userType: string;
   constructor (private coreService: CoreService) {
     this.coreService.iconService.loadIcons(["team"]);
+    this.userType = localStorage.getItem("userType");
   }
 
   ngOnInit(): void {
   }
 
+  isVendor(): boolean {
+    if (this.userType == 'VENDOR') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

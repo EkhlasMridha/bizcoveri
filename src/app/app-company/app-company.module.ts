@@ -13,6 +13,9 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatSelectModule } from '@angular/material/select';
 import { StepTeamMembersComponent } from './components/step-team-members/step-team-members.component';
 import { StepReviewComponent } from './components/step-review/step-review.component';
+import { StepPartnerProfileComponent } from './components/step-partner-profile/step-partner-profile.component';
+import { StepServiceComponent } from './components/step-service/step-service.component';
+import { StepProjectComponent } from './components/step-project/step-project.component';
 
 const routes: Routes = [
   {
@@ -25,7 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, CompanyStepsComponent, StepBasicInfoComponent, StepCompanyDetailsComponent, StepTeamMembersComponent, StepReviewComponent],
+  declarations: [HomeComponent, CompanyStepsComponent, StepBasicInfoComponent, StepCompanyDetailsComponent, StepTeamMembersComponent, StepReviewComponent, StepPartnerProfileComponent, StepServiceComponent, StepProjectComponent],
   imports: [
     CommonModule,
     SharedMaterialModule,
