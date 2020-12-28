@@ -27,7 +27,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Pricing",
-        route: "#",
+        route: "pricing",
         localIcon: "rupee",
         role: "CLIENT",
         isAvailabel: true,
@@ -51,7 +51,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Solution",
-        route: "#",
+        route: "solution",
         localIcon: "solution",
         role: "ANONYMOUS",
         isAvailabel: true,

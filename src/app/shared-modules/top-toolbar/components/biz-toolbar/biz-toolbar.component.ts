@@ -39,6 +39,7 @@ export class BizToolbarComponent implements OnInit {
   private _hasShadow: boolean = false;
 
   selectedNav: string = null;
+  isLoggedIn: boolean;
 
   constructor (private router: Router, private coreService: CoreService) { }
 
@@ -46,6 +47,7 @@ export class BizToolbarComponent implements OnInit {
     this.coreService.navTracerService.routeReceiver.subscribe(res => {
       this.selectedNav = res[0].path;
     });
+    this.isLoggedIn = this.coreService.tokenService.hasToken();
   }
 
   navigateTo(route: string) {

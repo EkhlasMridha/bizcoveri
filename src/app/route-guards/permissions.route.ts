@@ -1,4 +1,9 @@
-const authRoutes: string[] = ['/dashboard', '/dashboard/create-project', '/company-details'];
+const authRoutes: string[] = [
+  '/dashboard',
+  '/dashboard/create-project',
+  '/company-details',
+  '/pricing'
+];
 
 export function isAuhtRoute(url: string) {
   let refinedRoute = getRifinedRoute(url);

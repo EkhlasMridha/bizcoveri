@@ -24,6 +24,13 @@ const routes: Routes = [
     data: {
       breadCrumb: "Company"
     }
+  },
+  {
+    path: 'pricing',
+    loadChildren: () => import("../app-pricing/app-pricing.module").then(m => m.AppPricingModule),
+    data: {
+      breadCrumb: "Pricing"
+    }
   }
 ];
 
