@@ -1,7 +1,7 @@
 <section fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
     <header class="rt-step" fxFlex="25" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
         <ng-container *ngFor="let step of steps; let i = index">
-            <div [class.example-active]="selectedIndex === i" (click)="selectStepByIndex(i)">
+            <div [class.step-active]="selectedIndex === i" (click)="selectStepByIndex(i)">
                 <ng-container [ngTemplateOutlet]="step.stepLabel.template"></ng-container>
             </div>
             <div class="vertical-line" *ngIf="i!=steps.length-1"></div>

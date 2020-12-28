@@ -16,5 +16,8 @@ export class RtStepperComponent extends CdkStepper {
   }
   selectStepByIndex(index: number): void {
     this.selectedIndex = index;
+    console.log(this._steps.forEach(step => {
+      console.log(step);
+    }));
   }
 }

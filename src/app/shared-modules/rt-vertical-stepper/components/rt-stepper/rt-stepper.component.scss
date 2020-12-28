@@ -12,3 +12,10 @@ section{
     height: 40px;
     margin-left: 20px;
 }
+
+.step-active{
+    background: linear-gradient(90deg, rgba(8,35,88,1) 0%, rgba(58,11,74,1) 100%);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
