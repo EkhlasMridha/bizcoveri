@@ -54,11 +54,13 @@ export class AuthService {
         }
       }),
       tap(res => {
+        localStorage.setItem("message", res.Message);
+        localStorage.setItem("name", res.Name);
+        localStorage.setItem("status", res.Status);
         if (res.Status == "1") {
-          localStorage.setItem("message", res.Message);
-          localStorage.setItem("name", res.Name);
-          localStorage.setItem("status", res.Status);
           this.router.navigate([""]);
+        } else if (res.Status == "0") {
+          this.router.navigate(["company-details"]);
         }
       })
     );
