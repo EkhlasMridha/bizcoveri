@@ -40,7 +40,7 @@
       ],
       "@contracts/*": [
         "src/app/contracts/*"
-      ]
+      ],
     }
   }
 }

@@ -1,0 +1,47 @@
+<div class="pages">
+    <mat-card fxLayout="column">
+        <span class="title-step accent-color">Add Team Member</span>
+        <form fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="email@email.com">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contact No.</mat-label>
+                        <input matInput placeholder="contact">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Function</mat-label>
+                        <input matInput placeholder="function">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Designation</mat-label>
+                        <input matInput placeholder="designation">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="upload-avatar">
+                        <img src="../../../../assets/images/avatar.png" alt="avatar">
+                    </div>
+                    <input hidden type="file" multiple="false">
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button class="gray-background">Add Member</button>
+            </div>
+        </form>
+        <div fxLayout="column" style="margin-top: 15px;">
+            <span class="title-step accent-color">List of Team Members</span>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end" style="margin-top: 15px;">
+            <button mat-raised-button class="gray-background">Save</button>
+            <button mat-raised-button color="accent">Next</button>
+        </div>
+    </mat-card>
+</div>
