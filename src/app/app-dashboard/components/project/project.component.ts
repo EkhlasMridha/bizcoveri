@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ProjectComponent implements OnInit {
   @Input() project: ProjectCategory;
   displayedColumns: string[] = [];
-  displayedColumns2: string[] = ['name', 'weight', 'symbol', 'position'];
+  displayedColumns2: string[] = ['name', 'weight', 'symbol', 'position', 'action'];
   dataSource = ELEMENT_DATA;
   constructor () { }
 
@@ -38,7 +38,7 @@ export class ProjectComponent implements OnInit {
     columns.forEach(col => {
       columnList.push(col.cellId);
     });
-    columnList.push('action');
+    // columnList.push('action');
     console.log(columnList);
     return columnList;
   }

@@ -3,12 +3,15 @@ export interface ProjectCategory {
     user: "CLIENT" | "VENDOR";
     lifeCycleStage: "saved" | "bidding" | "execution" | "completed";
     project?: any;
+    bidding?: boolean;
     tableConf: Partial<ColumnConfig>[];
 }
 
 export interface ColumnConfig {
-    header: string;
-    cellId: string;
+    header?: string;
+    cellId?: string;
+    button?: boolean;
+    isHighlight?: boolean;
 }
 
 export const VendorProjectCategory: ProjectCategory[] = [
@@ -16,6 +19,7 @@ export const VendorProjectCategory: ProjectCategory[] = [
         name: "Projects available for bidding",
         user: "VENDOR",
         lifeCycleStage: "saved",
+        bidding: true,
         tableConf: [
             {
                 header: "Project Title",
@@ -26,12 +30,18 @@ export const VendorProjectCategory: ProjectCategory[] = [
                 cellId: "symbol"
             },
             {
-                header: "Project Manager",
+                header: "Industry",
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Fee Amount",
                 cellId: "position"
+            },
+            {
+                header: "Pay Fee",
+                cellId: "action",
+                isHighlight: true,
+                button: true
             }
         ]
     },
@@ -53,36 +63,18 @@ export const VendorProjectCategory: ProjectCategory[] = [
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Project Stage",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     },
     {
-        name: "Projects in execution stage",
-        user: "VENDOR",
-        lifeCycleStage: "execution",
-        tableConf: [
-            {
-                header: "Project Title",
-                cellId: "name"
-            },
-            {
-                header: "Category",
-                cellId: "symbol"
-            },
-            {
-                header: "Project Manager",
-                cellId: "weight"
-            },
-            {
-                header: "RFP Status",
-                cellId: "position"
-            }
-        ]
-    },
-    {
-        name: "Historical projects",
+        name: "Won Projects",
         user: "VENDOR",
         lifeCycleStage: "completed",
         tableConf: [
@@ -95,12 +87,17 @@ export const VendorProjectCategory: ProjectCategory[] = [
                 cellId: "symbol"
             },
             {
-                header: "Project Manager",
+                header: "Company Name",
                 cellId: "weight"
             },
             {
-                header: "RFP Status",
+                header: "Project Manager",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     }
@@ -127,6 +124,11 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "RFP Status",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     },
@@ -150,6 +152,11 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "Project Stage",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     },
@@ -173,6 +180,11 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "Project Status",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     },
@@ -196,6 +208,11 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "Project Manager",
                 cellId: "position"
+            },
+            {
+                header: "View",
+                cellId: "action",
+                button: true
             }
         ]
     }
