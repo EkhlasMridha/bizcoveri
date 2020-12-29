@@ -1,1 +1,30 @@
-<p>step-service works!</p>
+<div class="pages">
+    <mat-card fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayout="column" class="full-width">
+                <span>Service Category</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Service category</mat-label>
+                    <mat-select>
+                        <mat-option>Option1</mat-option>
+                        <mat-option>Option 2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" class="full-width">
+                <span>Service Provided</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Service provided</mat-label>
+                    <mat-select>
+                        <mat-option>Option1</mat-option>
+                        <mat-option>Option 2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="column">
+            <span>Please rate yourself on each of the services offered</span>
+            <rating></rating>
+        </div>
+    </mat-card>
+</div>

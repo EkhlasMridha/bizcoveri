@@ -16,6 +16,7 @@ import { StepReviewComponent } from './components/step-review/step-review.compon
 import { StepPartnerProfileComponent } from './components/step-partner-profile/step-partner-profile.component';
 import { StepServiceComponent } from './components/step-service/step-service.component';
 import { StepProjectComponent } from './components/step-project/step-project.component';
+import { RatingBarModule } from '@modules/rating-bar/rating-bar.module';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    RatingBarModule,
     RouterModule.forChild(routes)
   ]
 })
