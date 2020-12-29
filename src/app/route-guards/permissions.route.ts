@@ -4,7 +4,8 @@ const authRoutes: string[] = [
   '/company-details',
   '/pricing',
   '/account-settings',
-  '/help'
+  '/help',
+  '/notifications'
 ];
 
 export function isAuhtRoute(url: string) {

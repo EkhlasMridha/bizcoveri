@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ClientProjectCategory, ProjectCategory, VendorProjectCategory } from '../../configs/category.project';
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -12,6 +13,8 @@ export class HomeComponent implements OnInit {
   id: string;
   projectCategories: ProjectCategory[];
   private projects: any[] = [];
+  subscription: Subscription;
+
   constructor (private dashboardService: DashboardService) {
     this.userType = localStorage.getItem("userType").toUpperCase();
     this.id = localStorage.getItem("message");
@@ -23,12 +26,12 @@ export class HomeComponent implements OnInit {
 
   initializeDashboard() {
     if (this.userType == "CLIENT") {
-      this.dashboardService.getClientProjects(this.id).subscribe(res => {
+      this.subscription = this.dashboardService.getClientProjects(this.id).subscribe(res => {
         this.projects = res.property;
         this.projectCategories = this.categorizeProjects(this.mapProjectsWithLifeCycle(this.projects));
       });
     } else {
-      this.dashboardService.getAllProjects().subscribe(res => {
+      this.subscription = this.dashboardService.getAllProjects().subscribe(res => {
         this.projects = res.property;
         this.projectCategories = this.categorizeProjects(this.mapProjectsWithLifeCycle(this.projects));
         // console.log(this.projectCategories);
@@ -77,5 +80,11 @@ export class HomeComponent implements OnInit {
     } else {
       return VendorProjectCategory;
     }
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
   }
 }

@@ -3,7 +3,7 @@ import { SideNavigationModel } from "./navigation.model";
 export var Navigations: SideNavigationModel[] = [
     {
         name: "Notifications",
-        route: "#",
+        route: "notifications",
         matIcon: "notifications",
         role: "ANONYMOUS",
         isAvailabel: true,

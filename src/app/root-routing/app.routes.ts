@@ -45,6 +45,13 @@ const routes: Routes = [
     data: {
       breadCrumb: "Help"
     }
+  },
+  {
+    path: "notifications",
+    loadChildren: () => import("../app-notifications/app-notifications.module").then(m => m.AppNotificationsModule),
+    data: {
+      breadCrumb: "Notifications"
+    }
   }
 ];
 
