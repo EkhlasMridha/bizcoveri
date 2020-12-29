@@ -19,6 +19,9 @@ export class StepServiceComponent implements OnInit {
       category: [],
       service: [],
       rating: [-1],
+      industries: [],
+      rating2: [-1],
+      business: []
     });
   }
 
