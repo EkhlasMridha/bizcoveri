@@ -130,13 +130,13 @@
                         placeholder="about"></textarea>
                 </mat-form-field>
             </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="row" fxLayoutAlign="start center" *ngIf="isVendor()">
                 <span class="title-step accent-color">Partner Profiles</span>
                 <button mat-icon-button class="text-edit-button">
                     <mat-icon>edit</mat-icon>
                 </button>
             </div>
-            <div fxLayout="row">
+            <div fxLayout="row" *ngIf="isVendor()">
                 <div>
                     <div class="upload-avatar">
                         <img src="../../../../assets/images/avatar.png" alt="avatar">
