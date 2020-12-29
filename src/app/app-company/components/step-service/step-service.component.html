@@ -1,30 +1,35 @@
 <div class="pages">
     <mat-card fxLayout="column">
-        <div fxLayout="row" fxLayoutGap="10px">
-            <div fxLayout="column" class="full-width">
-                <span>Service Category</span>
-                <mat-form-field appearance="outline">
-                    <mat-label>Service category</mat-label>
-                    <mat-select>
-                        <mat-option>Option1</mat-option>
-                        <mat-option>Option 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
+        <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <span>Service Category</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Service category</mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option>Option1</mat-option>
+                            <mat-option>Option 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <span>Service Provided</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Service provided</mat-label>
+                        <mat-select formControlName="service">
+                            <mat-option>Option1</mat-option>
+                            <mat-option>Option 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
             </div>
-            <div fxLayout="column" class="full-width">
-                <span>Service Provided</span>
-                <mat-form-field appearance="outline">
-                    <mat-label>Service provided</mat-label>
-                    <mat-select>
-                        <mat-option>Option1</mat-option>
-                        <mat-option>Option 2</mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <div fxLayout="column">
+                <span>Please rate yourself on each of the services offered</span>
+                <rating formControlName="rating"></rating>
             </div>
-        </div>
-        <div fxLayout="column">
-            <span>Please rate yourself on each of the services offered</span>
-            <rating></rating>
-        </div>
+            <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
     </mat-card>
 </div>

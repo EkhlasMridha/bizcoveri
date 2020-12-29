@@ -1,14 +1,23 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CoreService } from '@core/services/core.service';
 
 @Component({
   selector: 'rating',
   templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.scss']
+  styleUrls: ['./rating.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: RatingComponent,
+      multi: true
+    }
+  ]
 })
-export class RatingComponent implements OnInit {
-  private _rating: number = 3;
+export class RatingComponent implements ControlValueAccessor {
+  private _rating: number = -1;
   private _ratingStore: number = this._rating;
+
   @Input()
   get rating(): number {
     return this._rating;
@@ -16,14 +25,28 @@ export class RatingComponent implements OnInit {
   set rating(value: number) {
     this._rating = value;
   }
+
   totalStar: number = 5;
+  disabled: boolean = false;
 
   constructor (private coreService: CoreService) {
     this.coreService.iconService.loadIcons(["star"]);
   }
 
-  ngOnInit(): void {
+  onChange: (value: number) => void;
+  onTouched: () => void;
 
+  writeValue(rating: number): void {
+    this.setRating(rating);
+  }
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
   }
 
   getStarArray(s: number) {
@@ -39,7 +62,16 @@ export class RatingComponent implements OnInit {
   }
 
   setRating(rating: number) {
+    if (this.disabled) {
+      return;
+    }
+
     this.rating = rating;
     this._ratingStore = rating;
+    if (this.onChange == undefined) {
+      return;
+    }
+    this.onChange(rating);
+    this.onTouched();
   }
 }
