@@ -59,7 +59,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Help",
-        route: "#",
+        route: "help",
         matIcon: "help",
         role: "ANONYMOUS",
         isAvailabel: true,

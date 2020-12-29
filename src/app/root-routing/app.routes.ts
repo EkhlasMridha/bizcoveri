@@ -38,6 +38,13 @@ const routes: Routes = [
     data: {
       breadCrumb: "Account settings"
     }
+  },
+  {
+    path: "help",
+    loadChildren: () => import("../app-help/app-help.module").then(m => m.AppHelpModule),
+    data: {
+      breadCrumb: "Help"
+    }
   }
 ];
 
