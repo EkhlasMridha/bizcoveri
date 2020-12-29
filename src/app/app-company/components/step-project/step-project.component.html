@@ -1,1 +1,63 @@
-<p>step-project works!</p>
+<div class="pages">
+    <mat-card fxLayout="column">
+        <span class="title-step accent-color">Showcase Projects Executed</span>
+        <div fxLayout="row" fxLayoutGap="10px" style="margin-top: 10px;">
+            <div fxLayout="column" class="full-width">
+                <span>Project Title</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project title</mat-label>
+                    <input matInput placeholder="title">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" class="full-width">
+                <span>Project Function</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project function</mat-label>
+                    <input matInput placeholder="function">
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="column">
+            <span>Project Description</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="4"
+                    placeholder="enter description"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="preview gray-color">
+            <div style="color: black;">
+                <span>1. Project preview</span>
+            </div>
+        </div>
+        <span class="title-step accent-color" style="margin-top: 15px;">Showcase your clients</span>
+        <div fxLayout="column" style="margin-top: 10px;">
+            <span>Client Name</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Client name</mat-label>
+                <input matInput placeholder="name">
+            </mat-form-field>
+        </div>
+        <div fxLayout="column">
+            <span>Industry of client</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Industry of client</mat-label>
+                <input matInput placeholder="industry">
+            </mat-form-field>
+        </div>
+        <div fxLayout="column">
+            <span>Services availed</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Services availed</mat-label>
+                <input matInput placeholder="availed">
+            </mat-form-field>
+        </div>
+        <div>
+            <span>Preview</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+            <button mat-raised-button class="gray-background">Save</button>
+            <button mat-raised-button color="accent">Next</button>
+        </div>
+    </mat-card>
+</div>
