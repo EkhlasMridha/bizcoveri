@@ -43,7 +43,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Meetings",
-        route: "#",
+        route: "meetings",
         matIcon: "event_note",
         role: "CLIENT",
         isAvailabel: true,

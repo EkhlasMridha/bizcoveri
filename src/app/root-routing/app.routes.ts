@@ -40,6 +40,13 @@ const routes: Routes = [
     }
   },
   {
+    path: "meetings",
+    loadChildren: () => import("../app-meeting/app-meeting.module").then(m => m.AppMeetingModule),
+    data: {
+      breadCrumb: "Meetings"
+    }
+  },
+  {
     path: "help",
     loadChildren: () => import("../app-help/app-help.module").then(m => m.AppHelpModule),
     data: {
