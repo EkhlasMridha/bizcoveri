@@ -11,7 +11,6 @@ import { BizcoverTitleModule } from '../shared-modules/bizcover-title/bizcover-t
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatIntlTelInputModule } from "ngx-mat-intl-tel-input";
-import { CoreModule } from '../core/core.module';
 import { AuthpageWrapperComponent } from './components/authpage-wrapper/authpage-wrapper.component';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { FormsMaterialModule } from "@material/forms-material.module";
@@ -78,7 +77,6 @@ const routes: Routes = [
     BizcoverTitleModule,
     MatFormFieldModule,
     NgxMatIntlTelInputModule,
-    CoreModule,
     MatProgressSpinnerModule
   ]
 })

@@ -29,7 +29,6 @@ export class ProjectComponent implements OnInit {
   constructor () { }
 
   ngOnInit(): void {
-    console.log(this.project.tableConf);
     this.displayedColumns = this.initializeColumns(this.project.tableConf);
   }
 
@@ -38,8 +37,6 @@ export class ProjectComponent implements OnInit {
     columns.forEach(col => {
       columnList.push(col.cellId);
     });
-    // columnList.push('action');
-    console.log(columnList);
     return columnList;
   }
 }
