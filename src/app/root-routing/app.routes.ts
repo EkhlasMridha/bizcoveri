@@ -31,6 +31,13 @@ const routes: Routes = [
     data: {
       breadCrumb: "Pricing"
     }
+  },
+  {
+    path: "account-settings",
+    loadChildren: () => import("../app-account/app-account.module").then(m => m.AppAccountModule),
+    data: {
+      breadCrumb: "Account settings"
+    }
   }
 ];
 

@@ -35,7 +35,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Account Settings",
-        route: "#",
+        route: "account-settings",
         matIcon: "settings_applications",
         role: "ANONYMOUS",
         isAvailabel: true,
