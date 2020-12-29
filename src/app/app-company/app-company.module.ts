@@ -29,7 +29,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, CompanyStepsComponent, StepBasicInfoComponent, StepCompanyDetailsComponent, StepTeamMembersComponent, StepReviewComponent, StepPartnerProfileComponent, StepServiceComponent, StepProjectComponent],
+  declarations: [
+    HomeComponent,
+    CompanyStepsComponent,
+    StepBasicInfoComponent,
+    StepCompanyDetailsComponent,
+    StepTeamMembersComponent,
+    StepReviewComponent,
+    StepPartnerProfileComponent,
+    StepServiceComponent,
+    StepProjectComponent
+  ],
   imports: [
     CommonModule,
     SharedMaterialModule,
