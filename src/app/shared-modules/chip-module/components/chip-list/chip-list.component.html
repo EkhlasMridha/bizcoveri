@@ -1,0 +1,5 @@
+<div class="full-width">
+    <mat-chip-list aria-label="Fish selection">
+        <mat-chip [color]="chip.status" selected *ngFor="let chip of chipList">{{chip.title}}</mat-chip>
+    </mat-chip-list>
+</div>

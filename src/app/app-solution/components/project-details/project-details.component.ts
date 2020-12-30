@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChipsModel } from '../../models/chips.model';
+import { ChipModel } from '@modules/chip-module/models/chip.model';
 
 @Component({
   selector: 'app-project-details',
@@ -7,26 +7,26 @@ import { ChipsModel } from '../../models/chips.model';
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit {
-  chipList: ChipsModel[] = [
+  chips: ChipModel[] = [
     {
       title: "RFP Submitted",
-      type: "accent"
+      status: "accent"
     },
     {
       title: "Request proposal",
-      type: "accent"
+      status: "accent"
     },
     {
       title: "Proposal Receipt",
-      type: "accent"
+      status: "accent"
     },
     {
       title: "Select Service Provider",
-      type: "accent"
+      status: "accent"
     },
     {
       title: "Execute Agreement",
-      type: "primary"
+      status: "primary"
     },
   ];
   constructor () { }

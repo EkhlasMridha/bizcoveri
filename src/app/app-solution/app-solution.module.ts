@@ -6,11 +6,11 @@ import { SharedMaterialModule } from "@material/shared-material.module";
 import { TopToolbarModule } from "@modules/top-toolbar/top-toolbar.module";
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
-import { MatChipsModule } from "@angular/material/chips";
 import { FormsMaterialModule } from '@material/forms-material.module';
 import { AuthGuardService } from '@route-guard/auth-guard';
 import { ProjectRolesComponent } from './components/project-roles/project-roles.component';
 import { ChildToolbarComponent } from './components/child-toolbar/child-toolbar.component';
+import { ChipModuleModule } from '@modules/chip-module/chip-module.module';
 
 const projectChild: Routes = [
   {
@@ -61,7 +61,7 @@ const routes: Routes = [
     TopToolbarModule,
     SharedMaterialModule,
     FormsMaterialModule,
-    MatChipsModule
+    ChipModuleModule
   ]
 })
 export class AppSolutionModule { }
