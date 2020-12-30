@@ -51,7 +51,7 @@ export var Navigations: SideNavigationModel[] = [
     },
     {
         name: "Solution",
-        route: "solution",
+        route: "biz-solution",
         localIcon: "solution",
         role: "ANONYMOUS",
         isAvailabel: true,

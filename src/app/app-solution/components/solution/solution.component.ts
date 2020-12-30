@@ -13,6 +13,7 @@ export class SolutionComponent implements OnInit {
   color: string = "#242424";
   firstNavList: NavigationModel[] = authpageNavigation;
   secondNavList: NavigationModel[] = customToolbarNavigation;
+  isLoggedIn: boolean = false;
 
   vendorList: any = ["Vendor 1", "Vendor 2", "Vendor 3", "Vendor 4"];
   proposalList: any[] = [
@@ -78,6 +79,7 @@ export class SolutionComponent implements OnInit {
   ];
   constructor (private coreService: CoreService) {
     this.coreService.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
+    this.isLoggedIn = this.coreService.tokenService.hasToken();
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 <div class="page-theme" fxLayout="column">
-    <biz-toolbar [barColor]="color" [firstNavigation]="firstNavList" [navigationList]="secondNavList" hasLogo
-        hasBackground hasShadow></biz-toolbar>
+    <biz-toolbar *ngIf="!isLoggedIn" [barColor]="color" [firstNavigation]="firstNavList"
+        [navigationList]="secondNavList" hasLogo hasBackground hasShadow></biz-toolbar>
     <div class="gradient-background custom-container" fxLayoutAlign="start center" fxLayout="column">
         <div class="landing-container" fxLayoutAlign="start center" fxLayout="column">
             <span class="page-title color-white">How does the platform work?</span>

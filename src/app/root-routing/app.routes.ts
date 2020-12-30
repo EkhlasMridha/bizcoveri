@@ -59,7 +59,11 @@ const routes: Routes = [
     data: {
       breadCrumb: "Notifications"
     }
-  }
+  },
+  {
+    path: 'biz-solution',
+    loadChildren: () => import("../app-solution/app-solution.module").then(m => m.AppSolutionModule)
+  },
 ];
 
 export function getBusinessRoutes() {
