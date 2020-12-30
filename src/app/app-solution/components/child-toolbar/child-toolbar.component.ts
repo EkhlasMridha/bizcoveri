@@ -22,7 +22,7 @@ export class ChildToolbarComponent implements OnInit {
     },
     {
       name: "Service Partner Selection",
-      route: "#",
+      route: "service-partner",
       type: "secondary"
     },
     {

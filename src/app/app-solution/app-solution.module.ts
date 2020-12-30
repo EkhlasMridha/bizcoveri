@@ -11,6 +11,8 @@ import { AuthGuardService } from '@route-guard/auth-guard';
 import { ProjectRolesComponent } from './components/project-roles/project-roles.component';
 import { ChildToolbarComponent } from './components/child-toolbar/child-toolbar.component';
 import { ChipModuleModule } from '@modules/chip-module/chip-module.module';
+import { ServicePartnerComponent } from './components/service-partner/service-partner.component';
+import { BizCardModule } from '@modules/biz-card/biz-card.module';
 
 const projectChild: Routes = [
   {
@@ -30,6 +32,13 @@ const projectChild: Routes = [
     component: ProjectRolesComponent,
     data: {
       breadCrumb: "Project Roles & Users"
+    }
+  },
+  {
+    path: "service-partner",
+    component: ServicePartnerComponent,
+    data: {
+      breadCrumb: "Service Partner"
     }
   }
 ];
@@ -54,14 +63,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     TopToolbarModule,
     SharedMaterialModule,
     FormsMaterialModule,
-    ChipModuleModule
+    ChipModuleModule,
+    BizCardModule
   ]
 })
 export class AppSolutionModule { }

@@ -1,0 +1,13 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <chip-list [chipList]="chips"></chip-list>
+        </div>
+    </div>
+    <div class="page-container" fxLayout="row wrap">
+        <ng-container *ngFor="let card of cardList">
+            <biz-card [cardData]="card"></biz-card>
+        </ng-container>
+    </div>
+</div>
