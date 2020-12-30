@@ -10,11 +10,14 @@ import { CoreService } from '@core/core-service';;
 export class ToolbarComponent implements OnInit {
   @Input() showMenuButton: boolean;
   @Output() menuButton: EventEmitter<MouseEvent> = new EventEmitter();
+
+  userName: string;
   constructor (
     private coreService: CoreService,
     private router: Router,
   ) {
     this.coreService.iconService.loadIcons(['signout']);
+    this.userName = localStorage.getItem("name");
   }
 
   ngOnInit(): void { }

@@ -50,19 +50,19 @@
                             <button mat-raised-button color="primary">Execute Agreement</button>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="full-width">
                     <div fxLayout="column" fxLayoutGap="15px">
                         <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
                         <div fxLayout="row" fxLayoutGap="20px">
-                            <div *ngFor="let workflow of workflowList" class="circle-element cursor-pointer"
-                                fxLayoutAlign="center center" fxLayout="column">
+                            <div *ngFor="let workflow of workflowList" [routerLink]="workflow.route"
+                                class="circle-element cursor-pointer" fxLayoutAlign="center center" fxLayout="column">
                                 <mat-icon [svgIcon]="workflow.localIcon" color="accent"></mat-icon>
                                 <span class="accent-color align-center"
                                     style="font-weight: 600;">{{workflow.title}}</span>
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="full-width">
                     <div fxLayout="column" fxLayoutGap="15px">
                         <span class="primary-color align-center">CLOSE PROJECT</span>
                         <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">

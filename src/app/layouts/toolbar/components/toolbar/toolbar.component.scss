@@ -17,6 +17,7 @@
 mat-toolbar{
   box-shadow: 0px 0px 1px 1px #242424;
   background-color: #565E78;
+  overflow: hidden;
 }
 
 .bizcoveri-title{
@@ -24,4 +25,21 @@ mat-toolbar{
     font-size: 1.5rem !important;
   }
 }
-  
+
+
+.person{
+  mat-icon{
+    height: 25px;
+    width: 25px;
+    font-size: 25px;
+  }
+  .username{
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.divider{
+  border-left: 1px solid #ffffff;
+  height: 25px;
+}

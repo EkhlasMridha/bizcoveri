@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { ServiceTypeModel } from 'src/app/contracts/servicetype.model';
 import { authpageNavigation, customToolbarNavigation } from 'src/app/shared-modules/navigations/customtoolbar.nav';
 import { CoreService } from '@core/core-service';
 import { TutorialModel } from '../../models/tutorial.model';
@@ -53,36 +52,28 @@ export class SolutionComponent implements OnInit {
     }
   ];
 
-  workflowList: Partial<ServiceTypeModel>[] = [
+  workflowList: Partial<TutorialModel>[] = [
     {
       localIcon: "meeting",
-      title: "Schedule Meeting"
+      title: "Schedule Meeting",
+      route: "/meetings"
     },
     {
       localIcon: "qa",
-      title: "Q & A"
+      title: "Q & A",
+      route: "/qa"
     },
     {
       localIcon: "team",
-      title: "Manage Teams"
-    },
-    {
-      localIcon: "progress",
-      title: "Track Progress"
+      title: "Manage Teams",
+      route: "/manage-team"
     }
   ];
-  closeProjectList: Partial<ServiceTypeModel>[] = [
-    {
-      localIcon: "deliver",
-      title: "Project Deliverables"
-    },
-    {
-      localIcon: "payments",
-      title: "Payments"
-    },
+  closeProjectList: Partial<TutorialModel>[] = [
     {
       localIcon: "feedback",
-      title: "Feedback"
+      title: "Feedback",
+      route: "feedback"
     }
   ];
   constructor (private coreService: CoreService) {
