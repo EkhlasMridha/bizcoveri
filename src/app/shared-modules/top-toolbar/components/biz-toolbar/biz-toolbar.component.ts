@@ -10,6 +10,7 @@ import { CoreService } from '@core/core-service';
   styleUrls: ['./biz-toolbar.component.scss']
 })
 export class BizToolbarComponent implements OnInit {
+  @Input() navLevel: number = 0;
   @Input() firstNavigation: NavigationModel[] = [];
   @Input() navigationList: NavigationModel[] = [];
   @Input() barColor: string = null;
@@ -45,7 +46,7 @@ export class BizToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.coreService.navTracerService.routeReceiver.subscribe(res => {
-      this.selectedNav = res[0].path;
+      this.selectedNav = res[this.navLevel].path;
     });
     this.isLoggedIn = this.coreService.tokenService.hasToken();
   }

@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedMaterialModule } from "@material/shared-material.module";
 import { TopToolbarModule } from "@modules/top-toolbar/top-toolbar.module";
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 
 const routes: Routes = [
   {
@@ -16,11 +17,25 @@ const routes: Routes = [
     }
   },
   {
-    path: 'description',
+    path: 'project',
     component: ProjectDescriptionComponent,
     data: {
-      breadCrumb: "Description"
-    }
+      breadCrumb: "Project"
+    },
+    children: [
+      {
+        path: '',
+        redirectTo: 'detail',
+        pathMatch: "full"
+      },
+      {
+        path: 'detail',
+        component: ProjectDetailsComponent,
+        data: {
+          breadCrumb: "Project detail"
+        }
+      }
+    ]
   }
 ];
 

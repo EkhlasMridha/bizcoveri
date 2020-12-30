@@ -8,7 +8,8 @@ const authRoutes: string[] = [
   '/notifications',
   '/meetings',
   '/biz-solution',
-  '/biz-solution/description'
+  '/biz-solution/project/',
+  '/biz-solution/project/detail',
 ];
 
 export function isAuhtRoute(url: string) {
