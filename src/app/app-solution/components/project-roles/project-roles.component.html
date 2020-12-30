@@ -1,0 +1,10 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip [color]="chip.type" selected *ngFor="let chip of chipList">{{chip.title}}</mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+</div>

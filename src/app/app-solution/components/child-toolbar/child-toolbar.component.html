@@ -1,0 +1,7 @@
+<div class="biz-childbar">
+    <ng-container *ngFor="let nav of navList">
+        <button mat-flat-button color="primary" *ngIf="selectedNav==nav.route"
+            [routerLink]="nav.route">{{nav.name}}</button>
+        <button mat-button *ngIf="selectedNav!=nav.route" [routerLink]="nav.route">{{nav.name}}</button>
+    </ng-container>
+</div>

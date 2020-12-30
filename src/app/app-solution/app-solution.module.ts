@@ -9,6 +9,30 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 import { MatChipsModule } from "@angular/material/chips";
 import { FormsMaterialModule } from '@material/forms-material.module';
 import { AuthGuardService } from '@route-guard/auth-guard';
+import { ProjectRolesComponent } from './components/project-roles/project-roles.component';
+import { ChildToolbarComponent } from './components/child-toolbar/child-toolbar.component';
+
+const projectChild: Routes = [
+  {
+    path: '',
+    redirectTo: 'detail',
+    pathMatch: "full"
+  },
+  {
+    path: 'detail',
+    component: ProjectDetailsComponent,
+    data: {
+      breadCrumb: "Project detail"
+    }
+  },
+  {
+    path: "project-roles",
+    component: ProjectRolesComponent,
+    data: {
+      breadCrumb: "Project Roles & Users"
+    }
+  }
+];
 
 const routes: Routes = [
   {
@@ -25,25 +49,12 @@ const routes: Routes = [
       breadCrumb: "Project"
     },
     canActivateChild: [AuthGuardService],
-    children: [
-      {
-        path: '',
-        redirectTo: 'detail',
-        pathMatch: "full"
-      },
-      {
-        path: 'detail',
-        component: ProjectDetailsComponent,
-        data: {
-          breadCrumb: "Project detail"
-        }
-      }
-    ]
+    children: projectChild
   }
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
