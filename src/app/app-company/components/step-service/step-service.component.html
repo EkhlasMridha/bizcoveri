@@ -1,0 +1,69 @@
+<div class="pages">
+    <mat-card fxLayout="column">
+        <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <span>Service Category</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Service category</mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option>Option1</mat-option>
+                            <mat-option>Option 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <span>Service Provided</span>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Service provided</mat-label>
+                        <mat-select formControlName="service">
+                            <mat-option>Option1</mat-option>
+                            <mat-option>Option 2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <span class="primary-color">Please rate yourself on each of the services offered</span>
+                <div class="rating-section" fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                        <span class="service-name accent-color">Service rating</span>
+                        <rating formControlName="rating"></rating>
+                    </div>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <span>Industries Served</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Industries served</mat-label>
+                    <mat-select formControlName="industries">
+                        <mat-option>Option1</mat-option>
+                        <mat-option>Option2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span class="primary-color">Please rate experience level in each of the industries served</span>
+                <div class="rating-section" fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                        <span class="service-name accent-color">Experience rating</span>
+                        <rating formControlName="rating2"></rating>
+                    </div>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <span>Size of Business Served</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Size of Business Served</mat-label>
+                    <mat-select formControlName="business">
+                        <mat-option>Option1</mat-option>
+                        <mat-option>Option2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end end" fxLayoutGap="10px">
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

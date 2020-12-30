@@ -1,0 +1,51 @@
+<div class="pages">
+    <mat-card fxLayout="column">
+        <span class="title-step accent-color">Add Partners</span>
+        <form fxLayout="column">
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="name">
+                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="@mail.com">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Contact</mat-label>
+                            <input matInput placeholder="contact">
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Function/Department</mat-label>
+                        <input matInput placeholder="enter function/department">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Short Intro</mat-label>
+                        <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                            placeholder="Intro"></textarea>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Linkedin URL</mat-label>
+                        <input matInput placeholder="linkedin url">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="upload-avatar">
+                        <img src="../../../../assets/images/avatar.png" alt="avatar">
+                    </div>
+                    <input hidden type="file" multiple="false">
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button class="gray-background">Add Member</button>
+            </div>
+        </form>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end" style="margin-top: 15px;">
+            <button mat-raised-button class="gray-background">Save</button>
+            <button mat-raised-button color="accent">Next</button>
+        </div>
+    </mat-card>
+</div>

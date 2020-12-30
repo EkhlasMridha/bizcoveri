@@ -1,0 +1,100 @@
+<rt-stepper initialStep="1">
+    <cdk-step>
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>description</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Basic Information</span>
+                    <span class="stepper-sub">Name, address and internet profiles</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-basic-info></step-basic-info>
+    </cdk-step>
+    <cdk-step>
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>business</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Company details</span>
+                    <span class="stepper-sub">Description, people and location</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-company-details></step-company-details>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>assignment_ind</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Partner profiles</span>
+                    <span class="stepper-sub">Partners and their profiles</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-partner-profile></step-partner-profile>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>business_center</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Services & industries</span>
+                    <span class="stepper-sub">Services provided and industries served</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-service></step-service>
+    </cdk-step>
+    <cdk-step *ngIf="isVendor()">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>data_usage</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Project experience</span>
+                    <span class="stepper-sub">Projects executed and client testimonials</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-project></step-project>
+    </cdk-step>
+    <cdk-step>
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon svgIcon="team"></mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Team members</span>
+                    <span class="stepper-sub">Add all your team members dor seamless execution</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-team-members></step-team-members>
+    </cdk-step>
+    <cdk-step>
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon>rate_review</mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">Review</span>
+                    <span class="stepper-sub">Review the project details before submitting</span>
+                </div>
+            </div>
+        </ng-template>
+        <step-review></step-review>
+    </cdk-step>
+</rt-stepper>

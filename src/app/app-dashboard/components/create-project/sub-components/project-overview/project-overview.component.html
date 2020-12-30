@@ -1,0 +1,51 @@
+<div class="container">
+    <mat-card class="full-width">
+        <form fxLayout="column">
+            <mat-form-field appearance="outline">
+                <mat-label>Project category</mat-label>
+                <mat-select>
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Project Title</mat-label>
+                <input matInput placeholder="project title">
+            </mat-form-field>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <span class="accent-color">Project Description</span>
+                <mat-radio-group aria-label="Select an option" fxLayoutGap="15px">
+                    <mat-radio-button value="1">Bizcoveri template</mat-radio-button>
+                    <mat-radio-button value="2">Create your own</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <mat-form-field appearance="outline" style="margin-top: 20px;">
+                <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="6" cdkAutosizeMaxRows="8"></textarea>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <input #docInput hidden multiple="false" type="file">
+                    <span class="accent-color">Project document upload (Optional)</span>
+                    <button mat-stroked-button color="accent" (click)="onDocumentUpload()" class="gray-background">
+                        <mat-icon>attach_file</mat-icon>
+                        <span>Click to upload</span>
+                    </button>
+                </div>
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <span class="accent-color">Project video description (Optional)</span>
+                    <input #videoInput hidden multiple='false' type="file">
+                    <button mat-stroked-button color="accent" type="button" (click)="onVideoUpload()"
+                        class="gray-background">
+                        <mat-icon>videocam</mat-icon>
+                        <span>Click to upload</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end" style="margin-top: 25px;">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

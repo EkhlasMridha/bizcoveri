@@ -1,0 +1,61 @@
+<div class="pages">
+    <mat-card>
+        <form fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Company</mat-label>
+                    <input matInput placeholder="company name">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Web URL</mat-label>
+                    <input matInput placeholder="www.abc.com">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>LinkediN url</mat-label>
+                    <input matInput placeholder="linkedin">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Facebook url</mat-label>
+                    <input matInput placeholder="facebook">
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Address Line 1</mat-label>
+                <input matInput placeholder="address 1">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Address line 2</mat-label>
+                <input matInput placeholder="address 2">
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="city">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="state">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Pin</mat-label>
+                    <input matInput placeholder="****">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxLayoutGap="5px">
+                <span>Company logo</span>
+                <div>
+                    <button mat-stroked-button class="gray-background">
+                        <mat-icon>photo</mat-icon>
+                        <span>Upload</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end" style="margin-top: 15px;">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

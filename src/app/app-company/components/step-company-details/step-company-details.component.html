@@ -1,0 +1,83 @@
+<div class="pages">
+    <mat-card>
+        <form fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column">
+                    <section fxLayout="row">
+                        <span>Company Establishment date</span>
+                    </section>
+                    <mat-form-field color="accent" appearance="outline">
+                        <mat-label>Select date</mat-label>
+                        <input matInput [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <section fxLayout="row">
+                        <span>Size of company</span>
+                    </section>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Size of company</mat-label>
+                        <mat-select>
+                            <mat-option value="option1">Option 1</mat-option>
+                            <mat-option value="option3">Option 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <section fxLayout="row">
+                    <span>Company reveneue range</span>
+                    <span class="gray-color" style="font-size: 12px;">(Only for Bizcoveri usage)</span>
+                </section>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Reveniew range</mat-label>
+                        <mat-select>
+                            <mat-option value="option1">Option 1</mat-option>
+                            <mat-option value="option3">Option 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <section fxLayout="row">
+                    <span>About</span>
+                    <span class="gray-color" style="font-size: 12px;">(Short intro about your company)</span>
+                </section>
+                <mat-form-field appearance="outline">
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                        placeholder="intro"></textarea>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column" class="full-width">
+                    <section fxLayout="row">
+                        <span>Industry</span>
+                    </section>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Industry</mat-label>
+                        <mat-select>
+                            <mat-option value="option1">Option 1</mat-option>
+                            <mat-option value="option3">Option 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" class="full-width">
+                    <section fxLayout="row">
+                        <span>Key Competitors</span>
+                    </section>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Competitors</mat-label>
+                        <input matInput placeholder="key competitors">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="accent">Next</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
