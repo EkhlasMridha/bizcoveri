@@ -62,7 +62,7 @@ export class SolutionComponent implements OnInit {
     {
       localIcon: "qa",
       title: "Q & A",
-      route: "project"
+      route: "project/qa"
     },
     {
       localIcon: "team",

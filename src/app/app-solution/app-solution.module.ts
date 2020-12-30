@@ -13,6 +13,7 @@ import { ChildToolbarComponent } from './components/child-toolbar/child-toolbar.
 import { ChipModuleModule } from '@modules/chip-module/chip-module.module';
 import { ServicePartnerComponent } from './components/service-partner/service-partner.component';
 import { BizCardModule } from '@modules/biz-card/biz-card.module';
+import { QuesAnsComponent } from './components/ques-ans/ques-ans.component';
 
 const projectChild: Routes = [
   {
@@ -40,6 +41,13 @@ const projectChild: Routes = [
     data: {
       breadCrumb: "Service Partner"
     }
+  },
+  {
+    path: "qa",
+    component: QuesAnsComponent,
+    data: {
+      breadCrumb: "Q & A"
+    }
   }
 ];
 
@@ -63,7 +71,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

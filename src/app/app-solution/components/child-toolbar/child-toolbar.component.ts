@@ -27,7 +27,7 @@ export class ChildToolbarComponent implements OnInit {
     },
     {
       name: "Q & A",
-      route: "#",
+      route: "qa",
       type: "secondary"
     },
     {
@@ -45,8 +45,7 @@ export class ChildToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.coreService.navTracerService.routeReceiver.subscribe(res => {
-      this.selectedNav = res[2].path;
-      console.log(this.selectedNav);
+      this.selectedNav = res[2] ? res[2].path : res[0].path;
     });
   }
 
