@@ -1,11 +1,21 @@
 .page-theme {
-    width: 100%;
     display: flex;
     height: auto;
+    flex: 1 0 auto;
+  }
+
+  .custom-container{
+    display: block;
+    position: relative;
   }
 
   .landing-container{
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .page-title{
@@ -50,6 +60,10 @@
   padding: 10px;
   overflow: hidden;
   box-shadow: 1px 1px 2px 2px #cecece;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .parent-description{

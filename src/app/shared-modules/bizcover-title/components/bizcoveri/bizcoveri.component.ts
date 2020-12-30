@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'bizcoveri',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bizcoveri.component.scss']
 })
 export class BizcoveriComponent implements OnInit {
-
+  @Input() isWhite: boolean = false;
   constructor () { }
 
   ngOnInit(): void {

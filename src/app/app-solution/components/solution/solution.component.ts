@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
-import { ServiceTypeModel } from 'src/app/contracts/servicetype.model';
 import { authpageNavigation, customToolbarNavigation } from 'src/app/shared-modules/navigations/customtoolbar.nav';
-import { IconService } from 'src/app/shared-services/utilities/icon.service';
+import { CoreService } from '@core/core-service';
 import { TutorialModel } from '../../models/tutorial.model';
 
 @Component({
@@ -14,6 +13,7 @@ export class SolutionComponent implements OnInit {
   color: string = "#242424";
   firstNavList: NavigationModel[] = authpageNavigation;
   secondNavList: NavigationModel[] = customToolbarNavigation;
+  isLoggedIn: boolean = false;
 
   vendorList: any = ["Vendor 1", "Vendor 2", "Vendor 3", "Vendor 4"];
   proposalList: any[] = [
@@ -53,40 +53,33 @@ export class SolutionComponent implements OnInit {
     }
   ];
 
-  workflowList: Partial<ServiceTypeModel>[] = [
+  workflowList: Partial<TutorialModel>[] = [
     {
       localIcon: "meeting",
-      title: "Schedule Meeting"
+      title: "Schedule Meeting",
+      route: "/meetings"
     },
     {
       localIcon: "qa",
-      title: "Q & A"
+      title: "Q & A",
+      route: "/qa"
     },
     {
       localIcon: "team",
-      title: "Manage Teams"
-    },
-    {
-      localIcon: "progress",
-      title: "Track Progress"
+      title: "Manage Teams",
+      route: "/manage-team"
     }
   ];
-  closeProjectList: Partial<ServiceTypeModel>[] = [
-    {
-      localIcon: "deliver",
-      title: "Project Deliverables"
-    },
-    {
-      localIcon: "payments",
-      title: "Payments"
-    },
+  closeProjectList: Partial<TutorialModel>[] = [
     {
       localIcon: "feedback",
-      title: "Feedback"
+      title: "Feedback",
+      route: "feedback"
     }
   ];
-  constructor (private iconService: IconService) {
-    this.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
+  constructor (private coreService: CoreService) {
+    this.coreService.iconService.loadIcons(['progress', 'qa', 'team', 'meeting', 'feedback', 'deliver', 'payments']);
+    this.isLoggedIn = this.coreService.tokenService.hasToken();
   }
 
   ngOnInit(): void {

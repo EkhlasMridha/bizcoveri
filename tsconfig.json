@@ -15,6 +15,32 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@material/*": [
+        "src/app/shared-materials/*"
+      ],
+      "@modules/*": [
+        "src/app/shared-modules/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@core/core-service": [
+        "src/app/core/services/core.service.ts"
+      ],
+      "@core/env-domain": [
+        "src/app/core/services/domain.service.ts"
+      ],
+      "@route-guard/auth-guard": [
+        "src/app/route-guards/auth-guard.service.ts"
+      ],
+      "@http-interceptor/*": [
+        "src/app/interceptors/*"
+      ],
+      "@contracts/*": [
+        "src/app/contracts/*"
+      ],
+    }
   }
 }

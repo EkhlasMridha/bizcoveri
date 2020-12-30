@@ -3,12 +3,13 @@ import { NgModule, APP_INITIALIZER, PLATFORM_ID } from '@angular/core';
 import { RootRoutingModule } from '../root-routing/RT-route-system/root-routing.module';
 import { AppComponent } from './components/root-component/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DomainService } from '../shared-services/utilities/domain.service';
-import { AppLoaderModule } from '../app-tools/app-loader/app-loader.module';
+import { DomainService } from '@core/env-domain';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
-import { interceptorProvider } from '../shared-services/interceptors/interceptor.provider';
+import { InterceptorProvider } from '@http-interceptor/interceptor.provider';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
+import { RootlineProgressbarModule } from "@modules/rootline-progressbar/rootline-progressbar.module";
+import { CoreModule } from "@core/core.module";
 
 export function initializer(domainService: DomainService) {
   return () => {
@@ -29,13 +30,14 @@ export function initializer(domainService: DomainService) {
     BrowserModule,
     RootRoutingModule,
     BrowserAnimationsModule,
-    AppLoaderModule,
+    RootlineProgressbarModule,
     ToastrModule.forRoot(),
+    CoreModule
   ],
   providers: [
     JwtHelperService,
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    interceptorProvider,
+    InterceptorProvider,
     {
       provide: APP_INITIALIZER,
       useFactory: initializer,

@@ -8,7 +8,7 @@ export const authpageNavigation: NavigationModel[] = [
     },
     {
         name: "Login",
-        route: "signin",
+        route: "login",
         type: "secondary"
     }
 ];

@@ -1,0 +1,25 @@
+rt-stepper{
+    display: flex;
+    flex: 1 0 auto;
+}
+
+section{
+    width: 100%;
+}
+
+.vertical-line{
+    border-left: 1px solid #b3b3b3;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.step-active{
+    background: linear-gradient(90deg, rgba(8,35,88,1) 0%, rgba(58,11,74,1) 100%) !important;
+    color: white;
+    border-radius: 4px;
+}
+
+.normal-step{
+    background: transparent;
+    padding: 5px;
+}

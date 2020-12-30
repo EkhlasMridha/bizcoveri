@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Routes } from '@angular/router';
-import { FormService } from 'src/app/shared-services/utilities/form.service';
+import { CoreService } from '@core/core-service';
 import { ResetPassWord } from '../../models/reset-password.model';
 import { AuthService } from '../../services/auth.service';
 
@@ -17,16 +17,16 @@ export class ResetPasswordComponent implements OnInit {
     passwordHash: null,
     confirmPassword: null,
   };
-  constructor(
+  constructor (
     private formBuilder: FormBuilder,
-    private formService: FormService,
     private routes: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private coreService: CoreService
   ) {
     this.resetForm = this.createForm();
   }
   ngOnInit(): void {
-    this.formService.handleFormError(
+    this.coreService.formService.handleFormError(
       this.resetForm,
       this.errorObserver$,
       this.errorGenerator
@@ -125,7 +125,7 @@ export class ResetPasswordComponent implements OnInit {
 
   onSubmit() {
     if (!this.resetForm.valid) {
-      this.formService.checkFormStatus(this.resetForm);
+      this.coreService.formService.checkFormStatus(this.resetForm);
       return;
     }
     const result: ResetPassWord = Object.assign({}, this.resetForm.value);

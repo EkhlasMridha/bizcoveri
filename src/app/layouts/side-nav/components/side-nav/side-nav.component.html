@@ -1,13 +1,20 @@
 <mat-drawer-container class="sidenav-container">
-    <mat-drawer #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-drawer #drawer class="sidenav gradient-background" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        <mat-toolbar color="accent" fxLayoutAlign="space-between center">
+            <bizcoveri class="bizcoveri-title" isWhite="true"></bizcoveri>
+            <button mat-icon-button (click)="openDrawer(drawer)">
+                <mat-icon class="back-icon">arrow_back</mat-icon>
+            </button>
+        </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item *ngFor="let nav of navigations"
-                [ngClass]="{'primary-background-override color-white-override': activatedRoute==nav.route}" id="{{nav.route}}"
-                [routerLink]="nav.route">
-                <div class="full-width" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start end">
-                    <mat-icon>{{nav.matIcon}}</mat-icon>
+            <mat-list-item *ngFor="let nav of navigationList"
+                [ngClass]="{'primary-background-override color-white-override': activatedRoute==nav.route}"
+                id="{{nav.route}}" [routerLink]="nav.route">
+                <div class="full-width color-white" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start end">
+                    <mat-icon *ngIf="nav.matIcon">{{nav.matIcon}}</mat-icon>
+                    <mat-icon *ngIf="nav.localIcon" [svgIcon]="nav.localIcon"></mat-icon>
                     <span class="nav-text">{{nav.name}}</span>
                 </div>
             </mat-list-item>
