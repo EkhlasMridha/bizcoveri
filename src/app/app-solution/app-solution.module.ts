@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SolutionComponent } from './components/solution/solution.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedMaterialModule } from "@material/shared-material.module";
 import { TopToolbarModule } from "@modules/top-toolbar/top-toolbar.module";
 import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { MatChipsModule } from "@angular/material/chips";
+import { FormsMaterialModule } from '@material/forms-material.module';
+import { AuthGuardService } from '@route-guard/auth-guard';
 
 const routes: Routes = [
   {
@@ -22,6 +24,7 @@ const routes: Routes = [
     data: {
       breadCrumb: "Project"
     },
+    canActivateChild: [AuthGuardService],
     children: [
       {
         path: '',
@@ -40,13 +43,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     TopToolbarModule,
-    FlexLayoutModule,
     SharedMaterialModule,
+    FormsMaterialModule,
+    MatChipsModule
   ]
 })
 export class AppSolutionModule { }

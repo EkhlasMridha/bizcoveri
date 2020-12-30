@@ -16,8 +16,8 @@ project-description {
         flex-direction: column;
         width: 100%;
         min-width: 0;
-        min-height: 0;
-  
+        height: 90vh;
+
         .scroller-container {
           position: relative;
           display: flex;
@@ -41,3 +41,5 @@ project-description {
       }
     }
   }
+
+  
