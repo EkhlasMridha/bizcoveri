@@ -11,7 +11,8 @@
                             <button mat-raised-button color="primary">Start Project</button>
                         </div>
                         <div>
-                            <button mat-stroked-button color="accent" fxLayout="row" fxLayoutAlign="center center">
+                            <button mat-stroked-button color="accent" fxLayout="row" fxLayoutAlign="center center"
+                                routerLink="/dashboard/create-project" [queryParams]="{p_step:0}">
                                 <mat-icon>file_copy</mat-icon>
                                 <span>Enter Project details</span>
                             </button>
@@ -22,7 +23,7 @@
                         <span class="primary-color align-center">SELECT APPROPRIATE VENDOR</span>
                         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
                             <button mat-raised-button fxLayout="row" fxLayoutAlign="center center"
-                                *ngFor="let vendor of vendorList">
+                                *ngFor="let vendor of vendorList" routerLink="/company-details">
                                 <mat-icon>person</mat-icon>
                                 <span>{{vendor}}</span>
                             </button>

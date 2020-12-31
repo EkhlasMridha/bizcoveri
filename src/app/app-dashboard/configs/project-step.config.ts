@@ -16,7 +16,7 @@ export const ProjectSteps: StepModel[] = [
     {
         headerMatIcon: "language",
         headerTitle: "Project Logistics",
-        headerDescript: ">Provide project timelines and administration details",
+        headerDescript: "Provide project timelines and administration details",
         userType: "client",
         component: ProjectLogisticsComponent
     },
