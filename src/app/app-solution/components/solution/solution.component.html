@@ -69,7 +69,7 @@
                         <span class="primary-color align-center">CLOSE PROJECT</span>
                         <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">
                             <button *ngFor="let closeProject of closeProjectList" mat-stroked-button color="accent"
-                                fxLayout="row" fxLayoutAlign="center center">
+                                fxLayout="row" fxLayoutAlign="center center" [routerLink]="closeProject.route">
                                 <mat-icon [svgIcon]="closeProject.localIcon" color="accent"></mat-icon>
                                 <span class="accent-color">{{closeProject.title}}</span>
                             </button>
