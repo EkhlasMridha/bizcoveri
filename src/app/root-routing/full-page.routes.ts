@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    loadChildren: () => import("../app-tools/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
+    loadChildren: () => import("@modules/app-not-found/app-not-found.module").then(m => m.AppNotFoundModule),
     data: {
       breadCrumb: '404',
     },

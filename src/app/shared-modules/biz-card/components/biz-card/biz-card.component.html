@@ -1,0 +1,14 @@
+<mat-card class="vendor-card" fxLayout="column" *ngIf="cardData">
+    <img mat-card-image src="../../../../../assets/images/dummy-vendor.jpg" alt="Photo of a vendor">
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <img src="../../../../../assets/images/vendor-logo.png" alt="logo">
+        <div fxLayout="column" fxLayoutGap="5px">
+            <span class="comp-name">{{cardData.name}}</span>
+            <span class="comp-address">{{cardData.location}}</span>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <mat-icon>language</mat-icon>
+        <a (click)="openUrl(cardData.web)" class="cursor-pointer">{{cardData.web}}</a>
+    </div>
+</mat-card>

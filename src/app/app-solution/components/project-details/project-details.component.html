@@ -1,0 +1,83 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <chip-list [chipList]="chips"></chip-list>
+        </div>
+    </div>
+    <div class="page-container">
+        <mat-card>
+            <section fxLayout="column">
+                <span class="title-step accent-color">Company Info</span>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput placeholder="company name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Company URL</mat-label>
+                        <input matInput placeholder="company url">
+                    </mat-form-field>
+                </div>
+            </section>
+            <section fxLayout="column">
+                <span class="title-step accent-color">Project category</span>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Project category</mat-label>
+                    <input matInput placeholder="project category">
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Description</mat-label>
+                        <input matInput placeholder="project description">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Scope</mat-label>
+                        <input matInput placeholder="project scope">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Deliverables</mat-label>
+                        <input matInput placeholder="project description">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Project Additional</mat-label>
+                        <input matInput placeholder="project scope">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <span>Project video</span>
+                        <button mat-stroked-button>
+                            <mat-icon>videocam</mat-icon>
+                            <span>View</span>
+                        </button>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <span>Project documents</span>
+                        <button mat-stroked-button>
+                            <mat-icon>description</mat-icon>
+                            <span>View</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section fxLayout="column" style="margin-top: 20px;">
+                <span class="title-step accent-color">Vendor Selection Criteria</span>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Criteria 1</mat-label>
+                        <input matInput placeholder="criteria 1">
+                    </mat-form-field>
+                </div>
+            </section>
+            <section fxLayout="column" style="margin-top: 20px;">
+                <span class="title-step accent-color">Project Team</span>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <span>Team display</span>
+                </div>
+            </section>
+        </mat-card>
+    </div>
+</div>

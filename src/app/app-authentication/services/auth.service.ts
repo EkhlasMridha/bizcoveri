@@ -1,53 +1,73 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { SignUpModel } from '../models/signup.model';
 import {
   tap,
   retry,
   catchError,
-  retryWhen,
-  take,
-  concatMap,
-  delay,
+  switchMap,
 } from 'rxjs/operators';
-import {
-  TokenService,
-  TokenModel,
-} from 'src/app/shared-services/utilities/token.service';
-import { throwError, of } from 'rxjs';
-import { ErrorHandlerService } from 'src/app/shared-services/utilities/error-handler.service';
+import { TokenModel } from '@core/services/token.service';
+import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { CoreService } from '@core/core-service';
+import { SignUpDto } from '../dto/signup.dto';
+import { LogInResponseModel } from '@contracts/login-response.model';
+import { UserCheckModel } from '../models/user-check.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(
+  constructor (
     private http: HttpClient,
-    private tokenService: TokenService,
+    private coreService: CoreService,
     private router: Router
-  ) {}
+  ) { }
 
-  signUp(payload: SignUpModel) {
-    return this.http.post('identity/signup', payload).pipe(
-      retry(3),
-      catchError((err) => {
-        return throwError(err);
-      })
+  private signin(payload: any) {
+    return this.http.post<LogInResponseModel>('auth/login', payload).pipe(
+      retry(2),
+      tap((res) => {
+        this.coreService.tokenService.storeToken(res);
+      }),
     );
   }
 
-  signin(payload: any) {
-    return this.http.post<TokenModel>('identity/login', payload).pipe(
-      retry(3),
+  signUp(payload: SignUpDto) {
+    return this.http.post('auth/signup', payload).pipe(
       catchError((err) => {
         return throwError(err);
       }),
       tap((res) => {
-        this.tokenService.storeToken(res);
-        this.router.navigate(['']);
+        this.router.navigate(["login"]);
       })
     );
+  }
+
+  login(payload: any) {
+    return this.signin(payload).pipe(
+      switchMap(res => {
+        if (res.userType == "CLIENT") {
+          return this.checkUser(`client/checkclientforuseremail/${res.userEmail}`);
+        } else {
+          return this.checkUser(`vendor/checkvendorforuseremail/${res.userEmail}`);
+        }
+      }),
+      tap(res => {
+        localStorage.setItem("message", res.Message);
+        localStorage.setItem("name", res.Name);
+        localStorage.setItem("status", res.Status);
+        if (res.Status == "1") {
+          this.router.navigate([""]);
+        } else if (res.Status == "0") {
+          this.router.navigate(["company-details"]);
+        }
+      })
+    );
+  }
+
+  checkUser(url: string) {
+    return this.http.get<UserCheckModel>(url);
   }
 
   resetRequest(userIdentity: string) {

@@ -1,85 +1,83 @@
 <div class="page-theme" fxLayout="column">
-    <div>
-        <biz-toolbar [barColor]="color" [firstNavigation]="firstNavList" [navigationList]="secondNavList" hasLogo
-            hasBackground hasShadow></biz-toolbar>
-    </div>
-    <div class="full-height gradient-background" fxLayoutAlign="start center" fxLayout="column">
-        <div class="landing-container full-width" fxLayoutAlign="start center" fxLayout="column">
+    <biz-toolbar *ngIf="!isLoggedIn" [barColor]="color" [firstNavigation]="firstNavList"
+        [navigationList]="secondNavList" hasLogo hasBackground hasShadow></biz-toolbar>
+    <div class="gradient-background custom-container" fxLayoutAlign="start center" fxLayout="column">
+        <div class="landing-container" fxLayoutAlign="start center" fxLayout="column">
             <span class="page-title color-white">How does the platform work?</span>
             <div fxLayout="row" fxLayoutGap="10px" class="full-width" style="margin-top: 20px;">
-                <div class="full-width">
-                    <mat-card fxLayout="column" fxLayoutGap="25px" fxLayoutAlign="center center">
-                        <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center">
-                            <div>
-                                <button mat-raised-button color="primary">Start Project</button>
-                            </div>
-                            <div>
-                                <button mat-stroked-button color="accent" fxLayout="row" fxLayoutAlign="center center">
-                                    <mat-icon>file_copy</mat-icon>
-                                    <span>Enter Project details</span>
+                <mat-card fxLayout="column" fxLayoutGap="25px" fxLayoutAlign="center center">
+                    <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center">
+                        <div>
+                            <button mat-raised-button color="primary">Start Project</button>
+                        </div>
+                        <div>
+                            <button mat-stroked-button color="accent" fxLayout="row" fxLayoutAlign="center center"
+                                routerLink="/dashboard/create-project" [queryParams]="{p_step:0}">
+                                <mat-icon>file_copy</mat-icon>
+                                <span>Enter Project details</span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="full-width">
+                    <div fxLayout="column" fxLayoutGap="15px">
+                        <span class="primary-color align-center">SELECT APPROPRIATE VENDOR</span>
+                        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                            <button mat-raised-button fxLayout="row" fxLayoutAlign="center center"
+                                *ngFor="let vendor of vendorList" routerLink="/company-details">
+                                <mat-icon>person</mat-icon>
+                                <span>{{vendor}}</span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="full-width">
+                    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+                        <span class="primary-color align-center">RECEIVE MULTIPLE PROPOSAL & SELECT THE BEST
+                            ONE</span>
+                        <div fxLayout="row" fxLayoutGap="10px">
+                            <div *ngFor="let proposal of proposalList" class="proposal-button">
+                                <button *ngIf="proposal.isSelected" mat-raised-button color="accent"
+                                    fxLayoutAlign="center center" fxLayout="row" [routerLink]="proposal.route">
+                                    <mat-icon>assignment_turned_in</mat-icon>
+                                    <span>{{proposal.name}}</span>
+                                </button>
+                                <button *ngIf="!proposal.isSelected" mat-stroked-button color="accent"
+                                    (click)="selectProposal(proposal)" [routerLink]="proposal.route">
+                                    <mat-icon>assignment_turned_in</mat-icon>
+                                    <span>{{proposal.name}}</span>
                                 </button>
                             </div>
                         </div>
-                        <hr class="full-width">
-                        <div fxLayout="column" fxLayoutGap="15px">
-                            <span class="primary-color align-center">SELECT APPROPRIATE VENDOR</span>
-                            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
-                                <button mat-raised-button fxLayout="row" fxLayoutAlign="center center"
-                                    *ngFor="let vendor of vendorList">
-                                    <mat-icon>person</mat-icon>
-                                    <span>{{vendor}}</span>
-                                </button>
+                        <div>
+                            <button mat-raised-button color="primary" routerLink="project/proposals">Execute
+                                Agreement</button>
+                        </div>
+                    </div>
+                    <hr class="full-width">
+                    <div fxLayout="column" fxLayoutGap="15px">
+                        <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
+                        <div fxLayout="row" fxLayoutGap="20px">
+                            <div *ngFor="let workflow of workflowList" [routerLink]="workflow.route"
+                                class="circle-element cursor-pointer" fxLayoutAlign="center center" fxLayout="column">
+                                <mat-icon [svgIcon]="workflow.localIcon" color="accent"></mat-icon>
+                                <span class="accent-color align-center"
+                                    style="font-weight: 600;">{{workflow.title}}</span>
                             </div>
                         </div>
-                        <hr class="full-width">
-                        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
-                            <span class="primary-color align-center">RECEIVE MULTIPLE PROPOSAL & SELECT THE BEST
-                                ONE</span>
-                            <div fxLayout="row" fxLayoutGap="10px">
-                                <div *ngFor="let proposal of proposalList" class="proposal-button">
-                                    <button *ngIf="proposal.isSelected" mat-raised-button color="accent"
-                                        fxLayoutAlign="center center" fxLayout="row">
-                                        <mat-icon>assignment_turned_in</mat-icon>
-                                        <span>{{proposal.name}}</span>
-                                    </button>
-                                    <button *ngIf="!proposal.isSelected" mat-stroked-button color="accent"
-                                        (click)="selectProposal(proposal)">
-                                        <mat-icon>assignment_turned_in</mat-icon>
-                                        <span>{{proposal.name}}</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div>
-                                <button mat-raised-button color="primary">Execute Agreement</button>
-                            </div>
+                    </div>
+                    <hr class="full-width">
+                    <div fxLayout="column" fxLayoutGap="15px">
+                        <span class="primary-color align-center">CLOSE PROJECT</span>
+                        <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">
+                            <button *ngFor="let closeProject of closeProjectList" mat-stroked-button color="accent"
+                                fxLayout="row" fxLayoutAlign="center center">
+                                <mat-icon [svgIcon]="closeProject.localIcon" color="accent"></mat-icon>
+                                <span class="accent-color">{{closeProject.title}}</span>
+                            </button>
                         </div>
-                        <hr class="full-width">
-                        <div fxLayout="column" fxLayoutGap="15px">
-                            <span class="primary-color align-center">START EXECUTION & MANAGE WORKFLOWS</span>
-                            <div fxLayout="row" fxLayoutGap="20px">
-                                <div *ngFor="let workflow of workflowList" class="circle-element cursor-pointer"
-                                    fxLayoutAlign="center center" fxLayout="column">
-                                    <mat-icon [svgIcon]="workflow.localIcon" color="accent"></mat-icon>
-                                    <span class="accent-color align-center"
-                                        style="font-weight: 600;">{{workflow.title}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="full-width">
-                        <div fxLayout="column" fxLayoutGap="15px">
-                            <span class="primary-color align-center">CLOSE PROJECT</span>
-                            <div class="proposal-button" fxLayout="row" fxLayoutGap="10px">
-                                <button *ngFor="let closeProject of closeProjectList" mat-stroked-button color="accent"
-                                    fxLayout="row" fxLayoutAlign="center center">
-                                    <mat-icon [svgIcon]="closeProject.localIcon" color="accent"></mat-icon>
-                                    <span class="accent-color">{{closeProject.title}}</span>
-                                </button>
-                            </div>
-                        </div>
-                    </mat-card>
-                </div>
+                    </div>
+                </mat-card>
                 <div class="vertical-line primary-color"></div>
-                <div fxLayout="column" class="full-width parent-description">
+                <div fxLayout="column" class="parent-description">
                     <div *ngFor="let tutorial of tutorialList;let i = index" class="child-description">
                         <div fxFlex="20" class="primary-color" fxLayoutAlign="center center">
                             <div class="arrow-content">&#x27A5;</div>

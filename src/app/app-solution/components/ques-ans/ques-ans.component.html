@@ -1,0 +1,62 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <chip-list [chipList]="chips"></chip-list>
+        </div>
+    </div>
+    <div class="page-container" fxLayout="column" fxLayoutGap="15px">
+        <mat-card fxLayout="column">
+            <span class="title-step">Post a new information about the project</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Text</mat-label>
+                <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                    placeholder="text"></textarea>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
+                <button mat-raised-button class="gray-background">Save</button>
+                <button mat-raised-button color="accent">Post</button>
+            </div>
+        </mat-card>
+        <mat-card fxLayout="column">
+            <div fxLayout="column">
+                <span>Vendor name</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Name of Company Rep</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Text</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                        placeholder="text"></textarea>
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
+                    <button mat-raised-button class="gray-background">Save</button>
+                    <button mat-raised-button color="accent">Post</button>
+                </div>
+            </div>
+            <div fxLayout="column">
+                <span>Vendor name</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Name of Company Rep</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Text</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                        placeholder="text"></textarea>
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
+                    <button mat-raised-button class="gray-background">Save</button>
+                    <button mat-raised-button color="accent">Post</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

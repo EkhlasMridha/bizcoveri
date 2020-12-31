@@ -1,0 +1,63 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <chip-list [chipList]="chips"></chip-list>
+        </div>
+    </div>
+    <div class="page-container">
+        <mat-card fxLayout="column">
+            <span class="title-step accent-color">Add Team Member</span>
+            <form fxLayout="column">
+                <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start start">
+                    <div fxLayout="column" class="full-width">
+                        <div fxLayout="column">
+                            <div fxLayout="row" fxLayoutGap="10px">
+                                <mat-form-field appearance="outline" class="full-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput placeholder="name">
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" class="full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="email" placeholder="email">
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Contact No</mat-label>
+                                <input matInput placeholder="+91 1234567890">
+                            </mat-form-field>
+                            <div fxLayout="row" fxLayoutGap="10px">
+                                <mat-form-field appearance="outline" class="full-width">
+                                    <mat-label>Function</mat-label>
+                                    <input matInput placeholder="function">
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" class="full-width">
+                                    <mat-label>Designation</mat-label>
+                                    <input matInput placeholder="designation">
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Project role</mat-label>
+                                <input matInput placeholder="member/admin">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="upload-avatar">
+                            <img src="../../../../assets/images/avatar.png" alt="avatar">
+                        </div>
+                        <input hidden type="file" multiple="false">
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <button mat-raised-button class="gray-background">Add member</button>
+                    <button mat-raised-button color="accent">Add member</button>
+                </div>
+            </form>
+            <span class="title-step accent-color" style="margin-top: 20px;">Project team members</span>
+            <div>
+                team
+            </div>
+        </mat-card>
+    </div>
+</div>

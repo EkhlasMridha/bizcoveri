@@ -4,8 +4,8 @@ import { WhyBizcoveriComponent } from './components/why-bizcoveri/why-bizcoveri.
 import { CompaniesComponent } from './components/companies/companies.component';
 import { ServiceProviderComponent } from './components/service-provider/service-provider.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedMaterialModule } from '../shared-modules/shared-materials/shared-material/shared-material.module';
-import { TopToolbarModule } from '../shared-modules/top-toolbar/top-toolbar.module';
+import { TopToolbarModule } from "@modules/top-toolbar/top-toolbar.module";
+import { SharedMaterialModule } from "@material/shared-material.module";
 
 const routes: Routes = [
   {

@@ -1,0 +1,118 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+        <div fxLayout="row">
+            <chip-list [chipList]="chips"></chip-list>
+        </div>
+    </div>
+    <div class="page-container" fxLayout="row" fxLayoutGap="15px">
+        <mat-nav-list fxFlex="15">
+            <mat-list-item *ngFor="let vendor of vendorList">
+                {{vendor}}
+            </mat-list-item>
+            <mat-list-item>
+                Compare
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-card fxFlex="85" fxLayout="column">
+            <div fxLayout="column">
+                <span>Project Manager</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project Manager</mat-label>
+                    <input matInput placeholder="project manager">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Project Scope</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project Scope</mat-label>
+                    <input matInput placeholder="project scope">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Project Deliverable</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project Deliverable</mat-label>
+                    <input matInput placeholder="project deliverable">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Project StartDate</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project StartDate</mat-label>
+                    <input matInput placeholder="project startdate">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Project Duration</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project Duration</mat-label>
+                    <input matInput placeholder="project duration">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Project Process</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Project Process</mat-label>
+                    <input matInput placeholder="project process">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Cost</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Cost</mat-label>
+                    <input matInput placeholder="Cost">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Payment Terms</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Payment Terms</mat-label>
+                    <input matInput placeholder="Payment Terms">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Other key commercials</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Other key commercials</mat-label>
+                    <input matInput placeholder="Other key commercials">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column">
+                <span>Other Comments</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Other Comments</mat-label>
+                    <input matInput placeholder="Other Comments">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <span>Reference projects</span>
+                    <button mat-stroked-button class="gray-background">
+                        <mat-icon>description</mat-icon>
+                        <span>View</span>
+                    </button>
+                </div>
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <span>Other documents</span>
+                    <button mat-stroked-button class="gray-background">
+                        <mat-icon>description</mat-icon>
+                        <span>View</span>
+                    </button>
+                </div>
+            </div>
+            <div fxLayout="column" style="margin-top: 20px;">
+                <span>Key Legal Terms</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Key Legal Terms</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="4"
+                        placeholder="terms"></textarea>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end end">
+                <button mat-raised-button class="gray-background">Rework</button>
+                <button mat-raised-button color="primary" (click)="acceptProposal()">Accept Proposal</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

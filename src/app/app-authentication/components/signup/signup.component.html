@@ -1,32 +1,27 @@
-<div class="page-theme" fxLayout="row">
-  <div fxFlex.xs="0" fxFlex="40" class="side-image signup-image" fxLayoutAlign="center start"></div>
-  <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
-    <div>
-      <biz-toolbar [barColor]="color" [navigationList]="navigationList" hasBackground></biz-toolbar>
-    </div>
-    <div fxLayout="column" fxLayoutAlign="start center">
-      <bizcoveri></bizcoveri>
-      <span class="sub-title">Create your account</span>
-      <div class="signup-content" fxLayout="row" fxLayoutGap="10px">
-        <div class="custom-button" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
-          (click)="navigateTo('service')">
-          <mat-icon>business_center</mat-icon>
-          <span class="button-title"> I am looking for a service</span>
-          <span class="button-sub">We help you find the most suited service from our curated list</span>
-        </div>
-        <div class="custom-button" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
-          (click)="navigateTo('p_service')">
-          <mat-icon>people</mat-icon>
-          <span class="button-title"> I am looking to provide services</span>
-          <span class="button-sub">Find potential clients and work on the projects you are interested in</span>
-        </div>
+<authpage-wrapper>
+  <div sideImage fxFlex.xs="0" fxFlex="40" class="side-image signup-image" fxLayoutAlign="center start"></div>
+  <div authBody fxLayout="column" fxLayoutAlign="start center">
+    <bizcoveri></bizcoveri>
+    <span class="sub-title">Create your account</span>
+    <div class="signup-content" fxLayout="row" fxLayoutGap="10px">
+      <div class="custom-button" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+        (click)="navigateTo('CLIENT')">
+        <mat-icon>business_center</mat-icon>
+        <span class="button-title"> I am looking for a service</span>
+        <span class="button-sub">We help you find the most suited service from our curated list</span>
       </div>
-      <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
-        <span>Already have a Bizcovery account?</span>
-        <div fxLayoutAlign="center center">
-          <button mat-raised-button class="gray-background" routerLink="/signin">Login</button>
-        </div>
+      <div class="custom-button" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+        (click)="navigateTo('VENDOR')">
+        <mat-icon>people</mat-icon>
+        <span class="button-title"> I am looking to provide services</span>
+        <span class="button-sub">Find potential clients and work on the projects you are interested in</span>
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 20px;">
+      <span>Already have a Bizcovery account?</span>
+      <div fxLayoutAlign="center center">
+        <button mat-raised-button class="gray-background" routerLink="/login">Login</button>
       </div>
     </div>
   </div>
-</div>
+</authpage-wrapper>

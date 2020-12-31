@@ -1,16 +1,25 @@
-<mat-toolbar #matToolbar color="primary" fxLayout="row">
+<mat-toolbar #matToolbar fxLayout="row">
     <mat-toolbar-row>
-        <div *ngIf="showMenuButton" fxLayout="row" fxLayoutAlign="start center">
+        <div class="color-white" *ngIf="showMenuButton" fxLayout="row" fxLayoutAlign="start center">
             <button mat-icon-button (click)="openDrawer($event)">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Root Line</span>
+            <bizcoveri class="bizcoveri-title" isWhite="true"></bizcoveri>
         </div>
         <div class="spacer"></div>
-        <div class="nav-items">
-            <div class="item" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" (click)="signoutUser()">
-                <span>Signout</span>
-                <mat-icon svgIcon="signout" class="color-icon"></mat-icon>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+            <div class="person color-white" fxLayout="row" fxLayoutAlign="start end">
+                <mat-icon>person</mat-icon>
+                <span class="username">{{userName}}</span>
+            </div>
+            <section>
+                <div class="divider">&ensp;</div>
+            </section>
+            <div class="item nav-items" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center"
+                (click)="signoutUser()">
+                <button mat-icon-button>
+                    <mat-icon svgIcon="signout" class="color-white"></mat-icon>
+                </button>
             </div>
         </div>
     </mat-toolbar-row>

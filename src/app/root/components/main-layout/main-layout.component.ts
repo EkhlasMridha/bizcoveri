@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavTracerService } from 'src/app/shared-services/utilities/nav-tracer.service';
-import { DomainService } from 'src/app/shared-services/utilities/domain.service';
+import { CoreService } from '@core/core-service';
+import { DomainService } from '@core/env-domain';
 
 @Component({
   selector: 'main-layout',
@@ -10,17 +10,17 @@ import { DomainService } from 'src/app/shared-services/utilities/domain.service'
 })
 export class MainLayoutComponent implements OnInit {
   BREAD_CRUMB_NAME: string = 'breadcrumb';
-  constructor(
-    private navTracer: NavTracerService,
+  constructor (
+    private coreService: CoreService,
     private routes: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.navTracer.setTitle(
+    this.coreService.navTracerService.setTitle(
       this.routes.root,
       DomainService.domains.AppName,
       '::'
     );
-    this.navTracer.activatedRouteBroadCaster();
+    this.coreService.navTracerService.activatedRouteBroadCaster();
   }
 }
