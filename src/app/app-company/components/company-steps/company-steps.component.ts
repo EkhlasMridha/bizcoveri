@@ -1,10 +1,8 @@
-import { NgComponentOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoreService } from '@core/services/core.service';
 import { StepConfig } from '../../configs/step.config';
 import { StepModel } from '../../configs/step.model';
-import { StepBasicInfoComponent } from '../step-basic-info/step-basic-info.component';
 
 @Component({
   selector: 'company-steps',
@@ -14,7 +12,6 @@ import { StepBasicInfoComponent } from '../step-basic-info/step-basic-info.compo
 export class CompanyStepsComponent implements OnInit {
   userType: string;
   step: number;
-  basicInfo: any = StepBasicInfoComponent;
   stepList: StepModel[];
 
   constructor (private coreService: CoreService, private route: ActivatedRoute) {
