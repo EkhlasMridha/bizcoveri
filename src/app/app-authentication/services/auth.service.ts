@@ -26,7 +26,7 @@ export class AuthService {
 
   private signin(payload: any) {
     return this.http.post<LogInResponseModel>('auth/login', payload).pipe(
-      retry(2),
+      retry(1),
       tap((res) => {
         this.coreService.tokenService.storeToken(res);
       }),
