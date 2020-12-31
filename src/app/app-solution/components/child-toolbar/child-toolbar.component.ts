@@ -32,7 +32,7 @@ export class ChildToolbarComponent implements OnInit {
     },
     {
       name: "Proposals",
-      route: "#",
+      route: "proposals",
       type: "secondary"
     },
     {

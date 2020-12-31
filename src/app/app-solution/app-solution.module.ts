@@ -14,6 +14,8 @@ import { ChipModuleModule } from '@modules/chip-module/chip-module.module';
 import { ServicePartnerComponent } from './components/service-partner/service-partner.component';
 import { BizCardModule } from '@modules/biz-card/biz-card.module';
 import { QuesAnsComponent } from './components/ques-ans/ques-ans.component';
+import { ProposalsComponent } from './components/proposals/proposals.component';
+import { MatListModule } from '@angular/material/list';
 
 const projectChild: Routes = [
   {
@@ -48,6 +50,13 @@ const projectChild: Routes = [
     data: {
       breadCrumb: "Q & A"
     }
+  },
+  {
+    path: "proposals",
+    component: ProposalsComponent,
+    data: {
+      breadCrumb: "Proposals"
+    }
   }
 ];
 
@@ -71,7 +80,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent, ProposalsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -79,7 +88,8 @@ const routes: Routes = [
     SharedMaterialModule,
     FormsMaterialModule,
     ChipModuleModule,
-    BizCardModule
+    BizCardModule,
+    MatListModule
   ]
 })
 export class AppSolutionModule { }

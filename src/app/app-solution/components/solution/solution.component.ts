@@ -67,7 +67,7 @@ export class SolutionComponent implements OnInit {
     {
       localIcon: "team",
       title: "Manage Teams",
-      route: "/manage-team"
+      route: "project/project-roles"
     }
   ];
   closeProjectList: Partial<TutorialModel>[] = [
