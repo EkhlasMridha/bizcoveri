@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './step-basic-info.component.html',
   styleUrls: ['./step-basic-info.component.scss']
 })
-export class StepBasicInfoComponent implements OnInit {
+export class StepBasicInfoComponent {
 
   constructor () { }
-
-  ngOnInit(): void {
-  }
 
 }
