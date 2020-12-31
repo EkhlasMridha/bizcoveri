@@ -13,7 +13,8 @@ const authRoutes: string[] = [
   '/biz-solution/project/project-roles',
   '/biz-solution/project/service-partner',
   '/biz-solution/project/qa',
-  '/biz-solution/project/proposals'
+  '/biz-solution/project/proposals',
+  '/biz-solution/project/agreement'
 ];
 
 export function isAuhtRoute(url: string) {

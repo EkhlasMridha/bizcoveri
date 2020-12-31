@@ -16,6 +16,7 @@ import { BizCardModule } from '@modules/biz-card/biz-card.module';
 import { QuesAnsComponent } from './components/ques-ans/ques-ans.component';
 import { ProposalsComponent } from './components/proposals/proposals.component';
 import { MatListModule } from '@angular/material/list';
+import { AgreementComponent } from './components/agreement/agreement.component';
 
 const projectChild: Routes = [
   {
@@ -57,6 +58,13 @@ const projectChild: Routes = [
     data: {
       breadCrumb: "Proposals"
     }
+  },
+  {
+    path: "agreement",
+    component: AgreementComponent,
+    data: {
+      breadCrumb: "Agreement"
+    }
   }
 ];
 
@@ -80,7 +88,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent, ProposalsComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent, ProposalsComponent, AgreementComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
