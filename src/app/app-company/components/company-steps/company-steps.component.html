@@ -1,0 +1,17 @@
+<rt-stepper [initialStep]="step">
+    <cdk-step *ngFor="let step of stepList">
+        <ng-template cdkStepLabel>
+            <div class="cursor-pointer" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <button mat-mini-fab color="accent">
+                    <mat-icon *ngIf="step.headerMatIcon">{{step.headerMatIcon}}</mat-icon>
+                    <mat-icon *ngIf="step.headerLocalIcon" [svgIcon]="step.headerLocalIcon"></mat-icon>
+                </button>
+                <div fxLayout="column">
+                    <span class="stepper-title">{{step.headerTitle}}</span>
+                    <span class="stepper-sub">{{step.headerDescript}}</span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-container *ngComponentOutlet="step.component"></ng-container>
+    </cdk-step>
+</rt-stepper>

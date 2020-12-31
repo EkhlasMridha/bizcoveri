@@ -1,0 +1,23 @@
+.container{
+    padding: 20px;
+    display: flex;
+    flex:1 0 auto;
+}
+
+.stepper-title{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.stepper-sub{
+    font-size: 12px;
+}
+
+project-overview,
+project-logistics,
+evaluation-process,
+team-members,
+review{
+    display: flex;
+    flex:1 0 auto;
+}

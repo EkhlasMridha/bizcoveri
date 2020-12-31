@@ -1,0 +1,9 @@
+<div class="page-theme" fxLayout="row">
+    <ng-content select="[sideImage]"></ng-content>
+    <div fxFlex="60" fxFlex.xs="100" fxLayout="column">
+        <div>
+            <biz-toolbar [barColor]="color" [navigationList]="navigationList" hasBackground></biz-toolbar>
+        </div>
+        <ng-content select="[authBody]"></ng-content>
+    </div>
+</div>
