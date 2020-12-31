@@ -20,14 +20,17 @@ export class SolutionComponent implements OnInit {
     {
       name: "Proposal 1",
       isSelected: true,
+      route: "project/proposals"
     },
     {
       name: "Proposal 2",
       isSelected: false,
+      route: "project/proposals"
     },
     {
       name: "Proposal 3",
       isSelected: false,
+      route: "project/proposals"
     },
   ];
   tutorialList: TutorialModel[] = [

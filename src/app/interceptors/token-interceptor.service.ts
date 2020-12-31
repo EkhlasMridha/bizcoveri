@@ -30,7 +30,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((res) => {
         this.coreService.stopLoader();
-        if (res instanceof HttpErrorResponse && res.status == 401 || this.coreService.tokenService.isTokenExpired()) {
+        if (res instanceof HttpErrorResponse && res.status == 401 && this.coreService.tokenService.isTokenExpired()) {
           this.coreService.tokenService.removeToken();
           this.router.navigate(['login']);
           return null;

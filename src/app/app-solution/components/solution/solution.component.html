@@ -35,19 +35,20 @@
                         <div fxLayout="row" fxLayoutGap="10px">
                             <div *ngFor="let proposal of proposalList" class="proposal-button">
                                 <button *ngIf="proposal.isSelected" mat-raised-button color="accent"
-                                    fxLayoutAlign="center center" fxLayout="row">
+                                    fxLayoutAlign="center center" fxLayout="row" [routerLink]="proposal.route">
                                     <mat-icon>assignment_turned_in</mat-icon>
                                     <span>{{proposal.name}}</span>
                                 </button>
                                 <button *ngIf="!proposal.isSelected" mat-stroked-button color="accent"
-                                    (click)="selectProposal(proposal)">
+                                    (click)="selectProposal(proposal)" [routerLink]="proposal.route">
                                     <mat-icon>assignment_turned_in</mat-icon>
                                     <span>{{proposal.name}}</span>
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <button mat-raised-button color="primary">Execute Agreement</button>
+                            <button mat-raised-button color="primary" routerLink="project/proposals">Execute
+                                Agreement</button>
                         </div>
                     </div>
                     <hr class="full-width">
