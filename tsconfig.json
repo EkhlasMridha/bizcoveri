@@ -41,6 +41,10 @@
       "@contracts/*": [
         "src/app/contracts/*"
       ],
+      "@rootline-dialog": [
+        "libs/rootline-dialog/rootline-dialog",
+        "libs/rootline-dialog"
+      ]
     }
   }
 }

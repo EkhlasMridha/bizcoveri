@@ -17,6 +17,7 @@ import { QuesAnsComponent } from './components/ques-ans/ques-ans.component';
 import { ProposalsComponent } from './components/proposals/proposals.component';
 import { MatListModule } from '@angular/material/list';
 import { AgreementComponent } from './components/agreement/agreement.component';
+import { RootlineDialogModule } from '@rootline-dialog';
 
 const projectChild: Routes = [
   {
@@ -97,7 +98,10 @@ const routes: Routes = [
     FormsMaterialModule,
     ChipModuleModule,
     BizCardModule,
-    MatListModule
+    MatListModule,
+    RootlineDialogModule.forChild({
+      modalWidth: "500px"
+    })
   ]
 })
 export class AppSolutionModule { }

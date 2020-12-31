@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChipModel } from '@modules/chip-module/models/chip.model';
+import { RootlineDialogService } from '@rootline-dialog';
 
 @Component({
   selector: 'app-proposals',
@@ -30,9 +31,25 @@ export class ProposalsComponent implements OnInit {
     },
   ];
   vendorList: string[] = ["Vendor 1", "Vendor 2"];
-  constructor () { }
+  constructor (private rootlineDialog: RootlineDialogService) { }
 
   ngOnInit(): void {
+    this.primaryButton.bind(this);
   }
 
+  acceptProposal() {
+    this.rootlineDialog.openConfirmationModal({
+      type: "success",
+      color: "primary",
+      matIcon: "check_circle",
+      headerText: "Thank you! Your request has been sent to the service parnter",
+      description: "The Service partner will soon share the agreement for your review",
+      primaryButtonName: "Ok",
+      primaryEvent: this.primaryButton
+    });
+  }
+
+  primaryButton(event) {
+    console.log("Ok");
+  }
 }
