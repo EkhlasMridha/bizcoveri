@@ -41,6 +41,7 @@ $custom-typography: mat-typography-config(
 
 $primary-color: map-get($custom-theme, primary);
 $accent-color:map-get($custom-theme, accent );
+$warn-color:map-get($custom-theme, warn);
 
 .primary-background {
   background-color: mat-color($primary-color, default);
@@ -52,6 +53,10 @@ $accent-color:map-get($custom-theme, accent );
 
 .accent-color{
   color: mat-color($accent-color, default);
+}
+
+.warn-color{
+  color: mat-color($warn-color, default);
 }
 
 .accent-background{

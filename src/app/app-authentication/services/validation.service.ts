@@ -74,9 +74,9 @@ export class ValidationService {
 
   errorMessageHandler(name: string, owner: string) {
     switch (owner) {
-      case 'firstname':
+      case 'firstName':
         return 'First name is required';
-      case 'lastname':
+      case 'lastName':
         return 'Last name is required';
       case 'username':
         if (name == 'isExists') {

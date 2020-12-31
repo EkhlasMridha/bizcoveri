@@ -7,11 +7,12 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { NavigationModel } from 'src/app/contracts/navigation.model';
 import { authPageToolbarNav } from "../../../shared-modules/navigations/customtoolbar.nav";
-import { DomainService } from "@core/env-domain";
+import { DomainService } from '@core/env-domain';
 import { CoreService } from 'src/app/core/services/core.service';
 import { SignInDto } from '../../dto/signin.dto';
 import { SigninModel } from '../../dto/signin.dto';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject, Subscription, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sigin',
@@ -23,7 +24,8 @@ export class SiginComponent implements OnInit {
   color: string = DomainService.domains.ctColor;
   navigationList: NavigationModel[] = authPageToolbarNav;
   isLoading$: Observable<boolean>;
-
+  signInError$: Subject<string> = new Subject<string>();
+  subscription: Subscription;
   errorObserver$ = {
     username: '',
     password: '',
@@ -62,6 +64,14 @@ export class SiginComponent implements OnInit {
     });
   }
 
+  handleLoginError(error: string) {
+    if (error = 'Invalid Username/Password') {
+      this.signInError$.next("Invalid username or password");
+    } else {
+      this.signInError$.next("Unknown error occurred");
+    }
+  }
+
   onSubmit() {
     if (!this.loginForm.valid) {
       this.coreService.formService.checkFormStatus(this.loginForm);
@@ -71,6 +81,19 @@ export class SiginComponent implements OnInit {
     let credential = new SignInDto(result);
 
 
-    this.authService.login(credential).subscribe(res => { });
+    this.subscription = this.authService.login(credential).pipe(
+      catchError(res => {
+        this.handleLoginError(res.error.error_description);
+        return throwError(res);
+      })
+    ).subscribe(res => { });
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

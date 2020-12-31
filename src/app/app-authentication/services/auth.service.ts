@@ -7,7 +7,7 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { TokenModel } from '@core/services/token.service';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreService } from '@core/core-service';
 import { SignUpDto } from '../dto/signup.dto';
@@ -18,6 +18,7 @@ import { UserCheckModel } from '../models/user-check.model';
   providedIn: 'root',
 })
 export class AuthService {
+
   constructor (
     private http: HttpClient,
     private coreService: CoreService,

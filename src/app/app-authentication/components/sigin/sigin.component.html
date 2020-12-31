@@ -10,15 +10,18 @@
           <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
             <input matInput formControlName="username" placeholder="username">
-            <mat-error>{{errorObserver$.username}}</mat-error>
+            <mat-error>{{errorObserver$.username | async}}</mat-error>
           </mat-form-field>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" type="password" placeholder="password">
-            <mat-error>{{errorObserver$.password}}</mat-error>
+            <mat-error>{{errorObserver$.password | async}}</mat-error>
           </mat-form-field>
+        </div>
+        <div class="error-message">
+          <span class="warn-color">{{signInError$ | async}}</span>
         </div>
         <div style="margin-top: 25px;padding-bottom: 10px;" fxLayout="row" fxLayoutAlign="space-between center">
           <span class="accent-color cursor-pointer" routerLink="/forgot-password">Forgot Password?</span>
