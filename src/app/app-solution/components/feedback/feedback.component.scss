@@ -1,0 +1,16 @@
+.type{
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.description{
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.feedback-container{
+    padding: 8px;
+}
+.feedback-container:not(:last-of-type){
+    border-bottom: 1px solid #afafaf;
+}

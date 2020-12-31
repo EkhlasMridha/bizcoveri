@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutGap="2px">
     <ng-container *ngFor="let star of getStarArray(totalStar);let i=index">
-        <rating-icon [index]="i" [active]="i<=rating?true:false" (indexEmitter)="hoverRating($event)"
+        <rating-icon [fixed]="fixed" [index]="i" [active]="i<=rating?true:false" (indexEmitter)="hoverRating($event)"
             (resetRating)="resetRating($event)" (click)="setRating(i)"></rating-icon>
     </ng-container>
 </div>

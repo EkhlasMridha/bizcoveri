@@ -1,0 +1,29 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+    </div>
+    <div class="page-container" fxLayout="column" fxLayoutGap="15px">
+        <mat-card fxLayout="column">
+            <div *ngFor="let feedback of feedBackList" class="feedback-container" fxLayout="row"
+                fxLayoutAlign="space-between center">
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <span class="type">{{feedback.type}}</span>
+                    <span class="description gray-color">{{feedback.description}}</span>
+                </div>
+                <rating [rating]="feedback.rating-1" fixed></rating>
+            </div>
+        </mat-card>
+        <mat-card>
+            <div fxLayout="column">
+                <span>Other comments</span>
+                <mat-form-field appearance="outline">
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+                        placeholder="text"></textarea>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end end">
+                <button mat-raised-button color="primary" routerLink="/dashboard">Close project</button>
+            </div>
+        </mat-card>
+    </div>
+</div>
