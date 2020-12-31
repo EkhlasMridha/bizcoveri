@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoreService } from '@core/services/core.service';
 import { StepConfig } from '../../configs/step.config';
-import { StepModel } from '../../configs/step.model';
+import { StepModel } from '@contracts/step.model';
 
 @Component({
   selector: 'company-steps',

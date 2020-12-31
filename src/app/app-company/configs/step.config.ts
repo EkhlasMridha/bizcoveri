@@ -5,7 +5,7 @@ import { StepProjectComponent } from "../components/step-project/step-project.co
 import { StepReviewComponent } from "../components/step-review/step-review.component";
 import { StepServiceComponent } from "../components/step-service/step-service.component";
 import { StepTeamMembersComponent } from "../components/step-team-members/step-team-members.component";
-import { StepModel } from "./step.model";
+import { StepModel } from "@contracts/step.model";
 
 export const StepConfig: StepModel[] = [
     {
