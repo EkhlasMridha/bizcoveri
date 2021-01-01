@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ColumnConfig, ProjectCategory } from '../../configs/category.project';
 
 export interface PeriodicElement {
@@ -26,7 +27,7 @@ export class ProjectComponent implements OnInit {
   displayedColumns: string[] = [];
   displayedColumns2: string[] = ['name', 'weight', 'symbol', 'position', 'action'];
   dataSource = ELEMENT_DATA;
-  constructor () { }
+  constructor (private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.displayedColumns = this.initializeColumns(this.project.tableConf);
@@ -38,5 +39,11 @@ export class ProjectComponent implements OnInit {
       columnList.push(col.cellId);
     });
     return columnList;
+  }
+
+  navigateTo(route: string) {
+    if (route) {
+      this.router.navigate([route], { relativeTo: this.route });
+    }
   }
 }

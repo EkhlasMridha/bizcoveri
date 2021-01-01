@@ -13,7 +13,8 @@
                     <span *ngIf="!col.button">{{element[col.cellId]}}</span>
                     <div class="full-width" fxLayoutAlign="end end" *ngIf="col.button">
                         <button mat-raised-button [ngClass]="{'gray-background': !col.isHighlight}"
-                            [color]="col.isHighlight?'primary':''">{{col.header}}</button>
+                            [color]="col.isHighlight?'primary':''"
+                            (click)="navigateTo(col.route)">{{col.header}}</button>
                     </div>
                 </td>
             </ng-container>

@@ -1,0 +1,97 @@
+<div class="full-width" fxLayout="column">
+    <div class="page-header" fxLayout="column" fxLayoutGap="15px">
+        <span class="page-title accent-color">Project Title</span>
+    </div>
+    <div class="page-container">
+        <mat-card fxLayout="column" fxLayoutGap="30px">
+            <section fxLayout="column" fxLayoutGap="10px">
+                <span class="title-step accent-color">Company Info</span>
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <span class="field-title">Industry Type:</span>
+                        <span class="field">Industry type text</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <span class="field-title">Size of company:</span>
+                        <span class="field">Size of company</span>
+                    </div>
+                </div>
+                <div class="full-width" fxLayout="row" fxLayoutGap="10px" style="padding-top: 15px;">
+                    <span class="field-title">Company Description:</span>
+                    <span class="field full-width">Description</span>
+                </div>
+            </section>
+            <section fxLayout="column" fxLayoutGap="10px">
+                <span class="title-step accent-color">Project Overview</span>
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Category:</span>
+                        <span fxFlex="70" class="field">category</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Description:</span>
+                        <span fxFlex="70" class="field">text</span>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Scope:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Deliverables:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Additional details:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="20px" style="padding-top: 20px;">
+                        <div fxLayout="row" fxLayoutGap="10px">
+                            <span class="field-title">Project Video:</span>
+                            <button mat-stroked-button class="gray-background">
+                                <mat-icon>videocam</mat-icon>
+                                <span>View</span>
+                            </button>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="10px">
+                            <span class="field-title">Project Documents:</span>
+                            <button mat-stroked-button class="gray-background">
+                                <mat-icon>description</mat-icon>
+                                <span>View</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section fxLayout="column" fxLayoutGap="15px">
+                <span class="title-step accent-color">Project Overview</span>
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <div fxLayout="row" fxLayoutGap="10px">
+                        <div fxLayout="row" fxLayoutGap="10px" class="full-width">
+                            <span fxFlex="30" class="field-title">Project Management:</span>
+                            <span fxFlex="70" class="field">category</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="10px" class="full-width">
+                            <span fxFlex="30" class="field-title">Project StartDate:</span>
+                            <span fxFlex="70" class="field">text</span>
+                        </div>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Duration:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title">Project Location:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                    <div class="full-width" fxLayout="row" fxLayoutGap="10px">
+                        <span fxFlex="30" class="field-title decoration accent-color">Fee amount:</span>
+                        <span fxFlex="70" class="field full-width">text</span>
+                    </div>
+                </div>
+            </section>
+            <div fxLayoutAlign="end end">
+                <button mat-raised-button color="primary" routerLink="../pay-fee">Pay fee to participate</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 const authRoutes: string[] = [
   '/dashboard',
   '/dashboard/create-project',
+  '/dashboard/project-finalize',
+  '/dashboard/pay-fee',
   '/company-details',
   '/pricing',
   '/account-settings',

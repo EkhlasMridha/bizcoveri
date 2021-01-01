@@ -18,6 +18,9 @@ import { MatRadioModule } from "@angular/material/radio";
 import { TextFieldModule } from "@angular/cdk/text-field";
 import { ServiceButtonModule } from '@modules/service-button/service-button.module';
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { PayFeeComponent } from './components/pay-fee/pay-fee.component';
+import { ProjectConfirmComponent } from './components/project-confirm/project-confirm.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 const routes: Routes = [
   {
@@ -31,13 +34,38 @@ const routes: Routes = [
     path: "create-project",
     component: CreateProjectComponent,
     data: {
-      breadCrumb: "Create Project"
+      breadCrumb: "Create project"
+    }
+  },
+  {
+    path: "project-finalize",
+    component: ProjectConfirmComponent,
+    data: {
+      breadCrumb: "Confirm Project"
+    }
+  },
+  {
+    path: "pay-fee",
+    component: PayFeeComponent,
+    data: {
+      breadCrumb: "Pay fee"
     }
   }
 ];
 
 @NgModule({
-  declarations: [HomeComponent, ProjectComponent, CreateProjectComponent, ProjectOverviewComponent, ProjectLogisticsComponent, EvaluationProcessComponent, TeamMembersComponent, ReviewComponent],
+  declarations: [
+    HomeComponent,
+    ProjectComponent,
+    CreateProjectComponent,
+    ProjectOverviewComponent,
+    ProjectLogisticsComponent,
+    EvaluationProcessComponent,
+    TeamMembersComponent,
+    ReviewComponent,
+    PayFeeComponent,
+    ProjectConfirmComponent
+  ],
   imports: [
     CommonModule,
     SharedMaterialModule,
@@ -49,6 +77,7 @@ const routes: Routes = [
     TextFieldModule,
     ServiceButtonModule,
     MatCheckboxModule,
+    MatChipsModule,
     RouterModule.forChild(routes),
   ],
 })

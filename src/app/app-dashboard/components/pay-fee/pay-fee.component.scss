@@ -1,0 +1,22 @@
+.payment-container{
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    max-width: 700px;
+}
+
+.payment-method{
+    height: 30px;
+    width: 30px;
+    transform: scale(1.5);
+}
+
+.card-info{
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #a3a3a3;
+    &:focus{
+        outline: none;
+        border-color: #fc8e29;
+    }
+}

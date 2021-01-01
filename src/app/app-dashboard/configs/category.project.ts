@@ -12,6 +12,7 @@ export interface ColumnConfig {
     cellId?: string;
     button?: boolean;
     isHighlight?: boolean;
+    route?: string;
 }
 
 export const VendorProjectCategory: ProjectCategory[] = [
@@ -41,7 +42,8 @@ export const VendorProjectCategory: ProjectCategory[] = [
                 header: "Pay Fee",
                 cellId: "action",
                 isHighlight: true,
-                button: true
+                button: true,
+                route: "project-finalize"
             }
         ]
     },
