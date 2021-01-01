@@ -64,12 +64,19 @@
                 <div fxLayout="row" fxLayoutGap="10px">
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Password</mat-label>
-                        <input matInput formControlName="password" placeholder="password" required>
+                        <input matInput formControlName="password" [type]="isVisible?'text':'password'"
+                            placeholder="password" required>
+                        <button matSuffix mat-icon-button type="button">
+                            <mat-icon (click)="toggleVisibility()">
+                                {{isVisible?'visibility':'visibility_off'}}
+                            </mat-icon>
+                        </button>
                         <mat-error>{{errorObserver.password | async}}</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Confirm Password</mat-label>
-                        <input matInput formControlName="confirmPassword" placeholder="confirm password" required>
+                        <input matInput formControlName="confirmPassword" [type]="isVisible?'text':'password'"
+                            placeholder="confirm password" required>
                         <mat-error>{{errorObserver.confirmPassword | async}}</mat-error>
                     </mat-form-field>
                 </div>

@@ -35,6 +35,7 @@ export class SignupFormComponent implements OnInit {
     designation: null
   };
 
+  isVisible: boolean = false;
   constructor (private coreService: CoreService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -95,5 +96,9 @@ export class SignupFormComponent implements OnInit {
     let data = new SignUpDto(result);
 
     this.authService.signUp(data).subscribe(res => { });
+  }
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
   }
 }
