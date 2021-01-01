@@ -8,6 +8,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 export class RatingIconComponent implements OnInit {
   @Input() active: boolean;
   @Input() index: number;
+  @Input() fixed: boolean;
 
   @Output() indexEmitter = new EventEmitter();
   @Output() resetRating = new EventEmitter();
@@ -16,10 +17,14 @@ export class RatingIconComponent implements OnInit {
   ngOnInit(): void { }
 
   @HostListener('mouseover') onMouseOver() {
-    this.indexEmitter.emit(this.index);
+    if (!this.fixed) {
+      this.indexEmitter.emit(this.index);
+    }
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.resetRating.emit();
+    if (!this.fixed) {
+      this.resetRating.emit();
+    }
   }
 }

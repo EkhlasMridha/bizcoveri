@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CoreService } from '@core/services/core.service';
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
 
 @Component({
   selector: 'rating',
@@ -17,7 +18,14 @@ import { CoreService } from '@core/services/core.service';
 export class RatingComponent implements ControlValueAccessor {
   private _rating: number = -1;
   private _ratingStore: number = this._rating;
-
+  private _fixed: boolean;
+  @Input()
+  get fixed() {
+    return this._fixed;
+  }
+  set fixed(value) {
+    this._fixed = coerceBooleanProperty(value);
+  }
   @Input()
   get rating(): number {
     return this._rating;
@@ -62,7 +70,7 @@ export class RatingComponent implements ControlValueAccessor {
   }
 
   setRating(rating: number) {
-    if (this.disabled) {
+    if (this.disabled || this.fixed) {
       return;
     }
 

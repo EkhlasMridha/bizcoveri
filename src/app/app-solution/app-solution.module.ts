@@ -18,6 +18,8 @@ import { ProposalsComponent } from './components/proposals/proposals.component';
 import { MatListModule } from '@angular/material/list';
 import { AgreementComponent } from './components/agreement/agreement.component';
 import { RootlineDialogModule } from '@rootline-dialog';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { RatingBarModule } from '@modules/rating-bar/rating-bar.module';
 
 const projectChild: Routes = [
   {
@@ -85,11 +87,18 @@ const routes: Routes = [
     },
     canActivateChild: [AuthGuardService],
     children: projectChild
-  }
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent,
+    data: {
+      breadCrumb: "Feedback"
+    }
+  },
 ];
 
 @NgModule({
-  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent, ProposalsComponent, AgreementComponent],
+  declarations: [SolutionComponent, ProjectDescriptionComponent, ProjectDetailsComponent, ProjectRolesComponent, ChildToolbarComponent, ServicePartnerComponent, QuesAnsComponent, ProposalsComponent, AgreementComponent, FeedbackComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -99,6 +108,7 @@ const routes: Routes = [
     ChipModuleModule,
     BizCardModule,
     MatListModule,
+    RatingBarModule,
     RootlineDialogModule.forChild({
       modalWidth: "500px"
     })
