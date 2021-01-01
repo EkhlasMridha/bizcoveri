@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BizCardModel } from '@modules/biz-card/model/biz-card.model';
 import { ChipModel } from '@modules/chip-module/models/chip.model';
+import { ChipData } from '../../configs/chip.config';
+import { SolutionService } from '../../services/solution.service';
 
 @Component({
   selector: 'app-service-partner',
@@ -8,28 +10,7 @@ import { ChipModel } from '@modules/chip-module/models/chip.model';
   styleUrls: ['./service-partner.component.scss']
 })
 export class ServicePartnerComponent implements OnInit {
-  chips: ChipModel[] = [
-    {
-      title: "RFP Submitted",
-      status: "accent"
-    },
-    {
-      title: "Request proposal",
-      status: "accent"
-    },
-    {
-      title: "Proposal Receipt",
-      status: "accent"
-    },
-    {
-      title: "Select Service Provider",
-      status: "accent"
-    },
-    {
-      title: "Execute Agreement",
-      status: "primary"
-    },
-  ];
+  chips: ChipModel[];
 
   cardList: Partial<BizCardModel>[] = [
     {
@@ -38,10 +19,11 @@ export class ServicePartnerComponent implements OnInit {
       web: "www.fynav.com"
     },
   ];
-  constructor () {
+  constructor (private solutionService: SolutionService) {
   }
 
   ngOnInit(): void {
+    this.chips = this.solutionService.filterListByUserType<ChipModel>(ChipData);
   }
 
 }

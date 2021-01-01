@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChipModel } from '@modules/chip-module/models/chip.model';
+import { ChipData } from '../../configs/chip.config';
+import { SolutionService } from '../../services/solution.service';
 
 @Component({
   selector: 'app-project-details',
@@ -7,31 +9,11 @@ import { ChipModel } from '@modules/chip-module/models/chip.model';
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit {
-  chips: ChipModel[] = [
-    {
-      title: "RFP Submitted",
-      status: "accent"
-    },
-    {
-      title: "Request proposal",
-      status: "accent"
-    },
-    {
-      title: "Proposal Receipt",
-      status: "accent"
-    },
-    {
-      title: "Select Service Provider",
-      status: "accent"
-    },
-    {
-      title: "Execute Agreement",
-      status: "primary"
-    },
-  ];
-  constructor () { }
+  chips: ChipModel[];
+  constructor (private solutionService: SolutionService) { }
 
   ngOnInit(): void {
+    this.chips = this.solutionService.filterListByUserType<ChipModel>(ChipData);
   }
 
 }

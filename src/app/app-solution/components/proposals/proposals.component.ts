@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChipModel } from '@modules/chip-module/models/chip.model';
 import { RootlineDialogService } from '@rootline-dialog';
+import { ChipData } from '../../configs/chip.config';
+import { SolutionService } from '../../services/solution.service';
 
 @Component({
   selector: 'app-proposals',
@@ -8,33 +10,13 @@ import { RootlineDialogService } from '@rootline-dialog';
   styleUrls: ['./proposals.component.scss']
 })
 export class ProposalsComponent implements OnInit {
-  chips: ChipModel[] = [
-    {
-      title: "RFP Submitted",
-      status: "accent"
-    },
-    {
-      title: "Request proposal",
-      status: "accent"
-    },
-    {
-      title: "Proposal Receipt",
-      status: "accent"
-    },
-    {
-      title: "Select Service Provider",
-      status: "accent"
-    },
-    {
-      title: "Execute Agreement",
-      status: "primary"
-    },
-  ];
+  chips: ChipModel[];
   vendorList: string[] = ["Vendor 1", "Vendor 2"];
-  constructor (private rootlineDialog: RootlineDialogService) { }
+  constructor (private rootlineDialog: RootlineDialogService, private solutionService: SolutionService) { }
 
   ngOnInit(): void {
     this.primaryButton.bind(this);
+    this.chips = this.solutionService.filterListByUserType<ChipModel>(ChipData);
   }
 
   acceptProposal() {
