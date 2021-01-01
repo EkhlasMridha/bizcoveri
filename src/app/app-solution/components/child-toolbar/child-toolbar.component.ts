@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NavigationModel } from '@contracts/navigation.model';
+import { Component, OnInit } from '@angular/core';
 import { CoreService } from '@core/services/core.service';
+import { ChildNavigations, ChildToolbarNavModel } from '../../models/child-toolbar.nav';
 
 @Component({
   selector: 'child-toolbar',
@@ -9,44 +9,26 @@ import { CoreService } from '@core/services/core.service';
 })
 export class ChildToolbarComponent implements OnInit {
   selectedNav: string;
-  navList: NavigationModel[] = [
-    {
-      name: "Project Details",
-      route: "detail",
-      type: "secondary"
-    },
-    {
-      name: "Project Roles & Users",
-      route: "project-roles",
-      type: "secondary"
-    },
-    {
-      name: "Service Partner Selection",
-      route: "service-partner",
-      type: "secondary"
-    },
-    {
-      name: "Q & A",
-      route: "qa",
-      type: "secondary"
-    },
-    {
-      name: "Proposals",
-      route: "proposals",
-      type: "secondary"
-    },
-    {
-      name: "Agreement",
-      route: "agreement",
-      type: "secondary"
-    }
-  ];
-  constructor (private coreService: CoreService) { }
+  navList: ChildToolbarNavModel[];
+  userType: string;
+  constructor (private coreService: CoreService) {
+    this.userType = localStorage.getItem("userType");
+  }
 
   ngOnInit(): void {
     this.coreService.navTracerService.routeReceiver.subscribe(res => {
       this.selectedNav = res[2] ? res[2].path : res[0].path;
     });
+    this.navList = this.filterNavigations(ChildNavigations);
+  }
+
+  filterNavigations(navigationList: ChildToolbarNavModel[]) {
+    let data = navigationList.filter(nav => {
+      if (nav.userType == this.userType.toLowerCase() || nav.userType == "shared") {
+        return nav;
+      }
+    });
+    return data;
   }
 
 }
