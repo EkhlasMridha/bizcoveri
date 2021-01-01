@@ -41,9 +41,9 @@ export class ProjectComponent implements OnInit {
     return columnList;
   }
 
-  navigateTo(route: string) {
+  navigateTo(route: string, param: any) {
     if (route) {
-      this.router.navigate([route], { relativeTo: this.route });
+      this.router.navigate([route], { relativeTo: this.route, queryParams: { p_step: param } });
     }
   }
 }

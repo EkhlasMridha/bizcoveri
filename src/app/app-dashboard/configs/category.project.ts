@@ -13,6 +13,7 @@ export interface ColumnConfig {
     button?: boolean;
     isHighlight?: boolean;
     route?: string;
+    queryParam: any;
 }
 
 export const VendorProjectCategory: ProjectCategory[] = [
@@ -71,7 +72,8 @@ export const VendorProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "/biz-solution/project/detail",
             }
         ]
     },
@@ -99,7 +101,8 @@ export const VendorProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "/biz-solution/project/detail",
             }
         ]
     }
@@ -130,7 +133,9 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "create-project",
+                queryParam: -1
             }
         ]
     },
@@ -158,7 +163,9 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "create-project",
+                queryParam: -1
             }
         ]
     },
@@ -186,7 +193,9 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "create-project",
+                queryParam: -1
             }
         ]
     },
@@ -214,7 +223,9 @@ export const ClientProjectCategory: ProjectCategory[] = [
             {
                 header: "View",
                 cellId: "action",
-                button: true
+                button: true,
+                route: "create-project",
+                queryParam: -1
             }
         ]
     }

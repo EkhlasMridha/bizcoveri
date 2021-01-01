@@ -14,7 +14,7 @@
                     <div class="full-width" fxLayoutAlign="end end" *ngIf="col.button">
                         <button mat-raised-button [ngClass]="{'gray-background': !col.isHighlight}"
                             [color]="col.isHighlight?'primary':''"
-                            (click)="navigateTo(col.route)">{{col.header}}</button>
+                            (click)="navigateTo(col.route,col.queryParam)">{{col.header}}</button>
                     </div>
                 </td>
             </ng-container>
