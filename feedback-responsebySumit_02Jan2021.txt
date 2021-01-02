@@ -1,0 +1,75 @@
+1. If I directly type http://localhost:4200/dashboard, it opens the dashboard page with user UNDEFINED.
+Without login, it should have redirected to login page or home page.
+
+=>I am not sure what are you talkin about here but if you are not logged in you will be redirected to
+  http://localhost:4200/landing link, which is the landing page. That's how it's working on my end.
+ Can you recheck about this feedback.
+
+[Sumit] I tried it again multiple times, this happens first time after application START/NPM START....once you come to the LANDING page, from that point onwards, it works fine.
+To test it, do npm start and go to localhost:4200/dashboard....check if it goes to landing page
+
+
+2. Without login, I can click on any page and it opens up.....this needs to change.
+Without login, I can visit the home page or login/sign up page.
+
+=> So that means without log in you won't be able to visit Solution, Why Bizcover,About, Contact us and Create project pages?
+
+[SUMIT] Without login, I can go to 
+landing, 
+login, 
+signup, 
+solution, 
+why bizcoveri,
+contact us, 
+create project....that's it. No other pages should be accessible. 
+On click of any other page, you may show "You can access this page post authentication. Click here to login in/Sign up"....and then take to login/sign up page
+
+
+3. On login page, please capture username, email and password and then using the email, call
+if the usertype is CLIENT, call another GET API...if VENDOR, change the API to vendor instead of client and pass the email
+GET: http://34.123.122.72:8080/v1/<client/vendor>/checkclientforuseremail/<email:shimulclient_1@gmail.com>
+
+=> But you are returning the user type and email on login request, do we really need to give the email separately?
+
+[SUMIT] Yes, we may actually want to use the email as the the primary key.
+
+
+
+4. Post login with username "sumit2021" and email "sumit2021@email.com" and password 123456 does not show logged in user
+The user and customer name is STILL "undefined" on all pages post login.
+
+=> (i am getting name from this http://34.123.122.72:8080/v1/<client/vendor>/checkclientforuseremail/<email> api call which is returning null for
+ "sumit2021", I think if we set the name from the login request response, it would be better)
+
+ [SUMIT] Yes, you should save the state post login, and use the NAME from there. The login RESPONSE sends the complete user data that you can store and use anywhere in the application. The above API is used only to check if there is a client/vendor profile created or not. 
+ You can show UserName: "Sumit2021" Company: "Undefined" if Company/Vendor profile is returned as NULL from the above API.
+
+
+5. From http://localhost:4200/dashboard/create-project....if I click DASHBOARD on the LEFT NAV, it shows console error as below
+core.js:4197 ERROR TypeError: Cannot read property 'map' of undefined
+    at HomeComponent.mapProjectsWithLifeCycle (home.component.ts:49)
+    at SafeSubscriber._next (home.component.ts:31)
+    at SafeSubscriber.__tryOrUnsub (Subscriber.js:183)
+    at SafeSubscriber.next (Subscriber.js:122)
+    at Subscriber._next (Subscriber.js:72)
+    at Subscriber.next (Subscriber.js:49)
+    at MapSubscriber._next (map.js:35)
+    at MapSubscriber.next (Subscriber.js:49)
+    at FilterSubscriber._next (filter.js:33)
+    at FilterSubscriber.next (Subscriber.js:49)
+If no project is found, handle the use case and show a message, "no project found"...NO CONSOLE ERRORS please...
+
+=>(Ok, I have to restrict access to dashboard page if you don't have a client or vendor created for that user, right?)
+
+[SUMIT] The dashboard shows PROJECTS. If you do not have PROJECTS, just show..."No projects to display"....the code should NOT throw an ERROR, that's all.
+
+
+3. Page TITLE missing on almost all pages
+
+=> What type of title you are talkning about?
+
+[SUMIT] Most of the Figma pages have a TITLE on the TOP (Vendor Registration Page, Company Registration page etc), you may want to check all the pages once. 
+
+
+(It will be better if you provide screenshots for confusing areas)
+[SUMIT] Once these basic issues are resolved, I shall send a word document with screen shots, if needed.
