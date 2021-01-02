@@ -1,0 +1,94 @@
+Jan 02 2021
+----------------
+1. If I directly type http://localhost:4200/dashboard, it opens the dashboard page with user UNDEFINED.
+Without login, it should have redirected to login page or home page.
+
+2. Without login, I can click on any page and it opens up.....this needs to change.
+Without login, I can visit the home page or login/sign up page.
+
+3. From home page, if I click create project button on top right corner, it shows no page found
+
+4. create/start project button at bottom left does not work
+
+5. on Landing page, "how it works" do not open any page..should open the solution page
+
+6. on Solution page, create project does not work
+
+7. On login page, please capture username, email and password and then using the email, call
+if the usertype is CLIENT, call another GET API...if VENDOR, change the API to vendor instead of client and pass the email
+GET: http://34.123.122.72:8080/v1/<client/vendor>/checkclientforuseremail/<email:shimulclient_1@gmail.com>
+
+8. On http://localhost:4200/company-details.....the NEXT buttons do not work
+
+9. Post login with username "sumit2021" and email "sumit2021@email.com" and password 123456 does not show logged in user
+The user and customer name is STILL "undefined" on all pages post login
+
+10. Post successful signup, please show a message on a small MODAL window "user created successfully, please sig in"...show it for 3 seconds and then
+route to LOGIN page
+
+11. From http://localhost:4200/dashboard/create-project....if I click DASHBOARD on the LEFT NAV, it shows console error as below
+core.js:4197 ERROR TypeError: Cannot read property 'map' of undefined
+    at HomeComponent.mapProjectsWithLifeCycle (home.component.ts:49)
+    at SafeSubscriber._next (home.component.ts:31)
+    at SafeSubscriber.__tryOrUnsub (Subscriber.js:183)
+    at SafeSubscriber.next (Subscriber.js:122)
+    at Subscriber._next (Subscriber.js:72)
+    at Subscriber.next (Subscriber.js:49)
+    at MapSubscriber._next (map.js:35)
+    at MapSubscriber.next (Subscriber.js:49)
+    at FilterSubscriber._next (filter.js:33)
+    at FilterSubscriber.next (Subscriber.js:49)
+If no project is found, handle the use case and show a message, "no project found"...NO CONSOLE ERRORS please...
+
+12. On http://localhost:4200/dashboard, if I click on Bizcoveri logo on top left corner, I am not routed to HOME/LANDING page
+
+13. Clicking the BIZCOVERI logo on ANY PAGE, should take us to HOME/LANDING page
+
+14. On http://localhost:4200/company-details
+Clicking NEXT on the next set of pages do not take to next pages in the workflow
+
+15. On http://localhost:4200/biz-solution/project/agreement,
+please keep the SAVE buttons in the SAME row as the line items
+
+16. From solution pgae, if I click on EXECUTE agreement, you go to page 28, with page header "bidding workflow", with AGREEMENT tab in focus
+
+17. From the solution page, once logged in as VENDOR, clicking on EXCEUTE AGREEMENT
+does not take to page 28 "Bidding workflow" and also does not show all the TABS i.e. VENDOR SELECTION tab is missing
+
+
+
+
+Jan 01 2021
+------------------
+1. On solution page. clicking on START PROJECT button should take to page 12
+
+2. On solution page, clicking on a VENDOR should take to page 39
+
+3. Page TITLE missing on almost all pages
+
+4. Even after login, user name and company does not show up on the right top corner
+
+5. Schedule meetings page is still not there
+
+6. EVERY PAGE should have a STATIC data model using which you shall populate data, I shall refresh the model later using API calls
+
+
+Past feedback
+---------------
+
+All pages should redirect to homepage or login page, when session has expired or not logged in
+example: http://localhost:4200/dashboard opens the dashboard page with user underfined, here it should take us to sign in page
+
+If user cannot sign in, please show appropriate message
+
+Lots of errors as I can see in the console window
+
+Still shows undefined user post successful login
+
+username, email and pwd...all should be there in the login page
+
+Post login as client, if CLIENT details do not exist, it should open page 18 and not 19
+
+Page 18 should have a header as given in Figma design
+
+Solution page buttons like start project, vendor registration etc do not work as designed in figma prototype
